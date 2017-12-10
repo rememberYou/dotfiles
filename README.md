@@ -30,6 +30,8 @@ manager.
 With that, it is easy to share files among multiple users or computers with a
 few command lines.
 
+--------------------
+
 ### Getting started ###
 
 No matter what your Linux distribution, `stow` can easily be installed according
