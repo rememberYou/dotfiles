@@ -1,0 +1,338 @@
+# Author: Terencio Agozzino
+# Mail: terencio.agozzino@gmail.com
+# Website: http://terencio-agozzino.com/
+# GitHub: https://github.com/rememberYou/
+
+### Global variables
+#
+# Set window key
+set $mod Mod4
+#
+# Set navigation keys
+set $left h
+set $down j
+set $up k
+set $right l
+#
+# Set terminal
+set $term urxvt
+#
+# Set browser
+set $browser chromium
+
+### Settings
+#
+# Set default border style for new windows
+default_border pixel 1
+#
+# Hide window borders adjacent to the screen edges
+hide_edge_borders both
+#
+# Enable gaps when a workspace has more than one child container
+smart_gaps on
+#
+# Repeating a workspace switch command will switch back to the prior workspace
+workspace_auto_back_and_forth yes
+#
+# Gap between each view, and around each workspace in pixels
+gaps inner 5
+gaps outer 5
+
+### Output configuration
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+#
+# Default wallpaper
+output * bg `/home/someone/bin/scripts/wallpaper.py` fill
+output DP-1 pos 0,0 res 2560x1440
+output eDP-1 pos 2560,0 res 2560x1440
+### Input configuration
+#
+# You can get the names of your inputs by running: swaymsg -t get_inputs
+# Read `man 5 sway-input` for more information about this section.
+#
+# Touchpad configuration
+input "2:7:SynPS/2_Synaptics_TouchPad" {
+    dwt enabled
+    tap enabled
+    accel_profile flat
+    pointer_accel 0.8
+}
+input "5426:41:Razer_Razer_DeathAd" {
+    accel_profile flat
+    pointer_accel 0.1
+}
+### Key bindings
+#
+# Start a terminal
+bindsym $mod+Return exec $term
+#
+# Start a terminal with ranger
+bindsym $mod+Shift+r exec $term -e "ranger"
+#
+# swaymsg exec is used for that the pid is known to sway and the window opens in
+# that workspace.
+bindsym $mod+d exec --no-startup-id ~/bin/rofi/rofi.sh -d
+#
+# Kill focused window
+bindsym $mod+Shift+q kill
+#
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
+#
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+#
+# Exit sway (logs you out of your wayland session)
+bindsym $mod+Shift+e exit
+#
+# Start a calculator
+bindsym $mod+c exec speedcrunch
+
+### Moving around
+#
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+# or use $mod+[up|down|left|right]
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+g focus next
+bindsym $mod+Shift+g focus prev
+#
+# _move_ the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+# Ditto, with arrow keys
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+# Few more
+bindsym $mod+Mod1+h workspace prev_on_output
+bindsym $mod+Mod1+l workspace next_on_output
+bindsym $mod+Mod1+Left workspace prev_on_output
+bindsym $mod+Mod1+Right workspace next_on_output
+### Workspaces
+#
+# Global variables for workspaces.
+# To use these icons don't forget to install ttf-font-awesome.
+# Feel free to use some others: http://fontawesome.io/cheatsheet/
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: "
+set $ws6 "6: "
+set $ws7 "7: "
+set $ws8 "8: "
+#
+workspace $ws1 output eDP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output DP-1
+workspace $ws6 output DP-1
+workspace $ws7 output DP-1
+workspace $ws8 output eDP-1
+# Switch to workspaces
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+#
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+#
+### Layout stuff
+#
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+#
+# Switch the current container between different layout styles
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+#
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+#
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+#
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+#
+# Move focus to the parent container
+bindsym $mod+a focus parent
+#
+# Cycle through border styles with mod+b
+bindsym $mod+b border toggle
+
+### Scratchpad
+#
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+#
+# Move the currently focused window to the scratchpad
+bindsym $mod+Shift+t move scratchpad
+#
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+t scratchpad show
+
+### Resizing containers
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Resize move
+bindsym $mod+r mode "resize"
+
+### Tools
+#
+# Brightness
+bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+#
+# Power mode
+set $locker swaylock -c 00000000
+set $mode_power "System lock (l), logout (e), suspend (s), reboot (r), shutdown (Shift+s)"
+mode $mode_power {
+
+    # Lock the screen
+    bindsym l exec $locker, mode "default"
+    # Logout the current session
+    bindsym e exec swaymsg exit, mode "default"
+    # Suspend the current session
+    bindsym s exec $locker && systemctl suspend, mode "default"
+    # Reboot the computer
+    bindsym r exec systemctl reboot, mode "default"
+    # Shutdown the computer
+    bindsym Shift+s exec systemctl poweroff -i, mode "default"
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Set power mode
+bindsym $mod+p mode $mode_power
+#
+# Media player
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+#
+# Screenshot mode
+#
+set $mode_screenshot "full screen (f)"
+mode $mode_screenshot {
+    bindsym f exec swaygrab -f ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+# Set screenshot mode
+bindsym $mod+Print mode $mode_screenshot
+#
+# Volume/Microphone Keys
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
+bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
+bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
+
+### Bar
+#
+# colors
+# color class           border  background text    indicator
+client.focused          #eee8d5 #93a1a1    #073642 #93a1a1
+client.focused_inactive #657b83 #586e75    #eee8d5 #657b83
+client.unfocused        #073642 #002b36    #839496 #073642
+client.urgent           #cb4b16 #dc322f    #eee8d5 #dc322f
+
+### Status Bar
+#
+# Read `man 5 sway-bar` for more information about this section.
+#
+# Color scheme
+set $black  #000000
+set $cyan   #6bbed2
+set $grey   #747474
+set $orange #f1af5f
+set $red    #ff5137
+set $white  #dddcff
+#
+bar {
+    position top
+    colors {
+        background $black
+	# workspace class  border  background  text
+        inactive_workspace $black  $black      $white
+        active_workspace   $black  $black      $orange
+        focused_workspace  $black  $black      $orange
+    }
+    separator_symbol " "
+    #strip_workspace_numbers yes
+    font pango:Terminus 13
+    position top
+    #status_command polybar top
+}
+
+### Startup programs
+#
+exec --no-startup-id xbindkeys
+exec --no-startup-id dropbox-cli start
+exec --no-startup-id nm-applet
+exec --no-startup-id redshift-gtk -l 50.4814:4.5488
+exec --no-startup-id caffeine
+exec --no-startup-id razercfg -r 2
+exec --no-startup-id emacs --daemon
+
+include /etc/sway/config.d/*
+include ~/.config/sway/config.d/*
+
+exec xrdb -merge ~/.Xresources
+
+#exec ~/bin/scripts/wallpaper.py -t 300
