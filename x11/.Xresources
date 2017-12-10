@@ -1,0 +1,74 @@
+! To update X apps configuration : xrdb -merge ~/.Xresources
+
+! Font -----------------------------
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 192
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+!  -----------------------------
+
+! Urxvt settings
+! https://wiki.archlinux.org/index.php/Rxvt-unicode
+
+URxvt*font: xft:DejaVu Sans Mono-10
+URxvt*foreground: #f2f2f2
+URxvt*locale: true
+URxvt.geometry: 80x24
+URxvt*saveLines: 1024
+URxvt*scrollBar: false
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*selectToClipboard: true
+URxvt*termName: rxvt-unicode-256color
+URxvt*toolBar: false
+
+! Urxvt colors
+
+! Black color
+URxvt*color0:  #5F5F5F
+URxvt*color8:  #898989
+
+! Red color
+URxvt*color1:  #C4596E
+URxvt*color9:  #E3959E
+
+! Green color
+URxvt*color2:  #85B99C
+URxvt*color10: #A1D8BB
+
+! Yellow color
+URxvt*color3:  #E0C188
+URxvt*color11: #EDD3B2
+
+! Blue color
+URxvt*color4:  #6692B1
+URxvt*color12: #8EB8E2
+
+! Magenta color
+URxvt*color5:  #B98CC3
+URxvt*color13: #CC9CCA
+
+! Cyan color
+URxvt*color6:  #88C9C4
+URxvt*color14: #B4D5D6
+
+! White color
+URxvt*color7:  #D0D0D0
+URxvt*color15: #F7F7F7
+
+! -----------------------------
+
+! Emacs settings
+Emacs.background: #022C37
+Emacs.foreground: #7D898A
+Emacs.cursorBlink: off
+Emacs.menuBar: off
+Emacs.toolBar: off
+Emacs.verticalScrollBars: off
