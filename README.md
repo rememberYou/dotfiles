@@ -6,14 +6,14 @@ This repository contains all of my dotfiles configuration.
 List of files:
 
 ```
- awesome        – dynamic tiling window manager for X11 written in the C and Lua
- git            – global git config and aliases
- i3             – dynamic tiling window manager for X11 inspired by wmii
- polybar        – status bars
- ranger         – console file manager with VI key bindings
- sway           – i3-compatible Wayland compositor
- x11            – X11 settings
- zsh            – zshell settings, aliases, and custom prompts
+ awesome        ➔ dynamic tiling window manager for X11 written in the C and Lua
+ git            ➔ global git config and aliases
+ i3             ➔ dynamic tiling window manager for X11 inspired by wmii
+ polybar        ➔ status bars
+ ranger         ➔ console file manager with VI key bindings
+ sway           ➔ i3-compatible Wayland compositor
+ x11            ➔ X11 settings
+ zsh            ➔ zshell settings, aliases, and custom prompts
 ```
 
 --------------------
