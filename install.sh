@@ -10,7 +10,7 @@ fi
 
 echo -e "Stowing directories...\n"
 
-DIRS=`ls -l --time-style="long-iso" $MYDIR | egrep '^d' | awk '{print $8}'`
+DIRS=`ls -l --time-style="long-iso" . | egrep '^d' | awk '{print $8}'`
 
 for DIR in $DIRS
 do
