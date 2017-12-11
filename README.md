@@ -61,6 +61,18 @@ stow sway
 stow -D sway
 ```
 
+If you want to install all the configurations, you can do it directly
+with
+[`install.sh`](https://github.com/rememberYou/dotfiles/blob/master/install.sh):
+
+```bash
+# Change permission to execute the script
+chmod +x install.sh
+
+# Execute the script
+./install.sh
+```
+
 Easy, isn't it? For those who want to find my Emacs configuration files, they
 are available: [here](https://github.com/rememberYou/.emacs.d/).
 
