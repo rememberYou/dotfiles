@@ -72,7 +72,7 @@ bindsym $mod+Shift+r exec $term -e "ranger"
 #
 # swaymsg exec is used for that the pid is known to sway and the window opens in
 # that workspace.
-bindsym $mod+d exec --no-startup-id ~/bin/rofi/rofi.sh -d
+bindsym $mod+d exec --no-startup-id ~/bin/rofi -d
 #
 # Kill focused window
 bindsym $mod+Shift+q kill
