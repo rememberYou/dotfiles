@@ -46,8 +46,8 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+r exec $term -e "ranger"
 #
 # Start rofi
-bindsym $mod+d exec --no-startup-id ~/bin/rofi/rofi.sh -d
-bindsym $mod+Shift+d exec --no-startup-id ~/bin/rofi/rofi.sh -w
+bindsym $mod+d exec --no-startup-id ~/bin/rofi -d
+bindsym $mod+Shift+d exec --no-startup-id ~/bin/rofi -w
 #
 # Kill focused window
 bindsym $mod+Shift+q kill
