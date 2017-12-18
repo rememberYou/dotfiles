@@ -1,0 +1,23 @@
+#!/bin/bash
+
+case $1 in
+    "-d") action="drun"
+          ;;
+    "-w") action="window"
+          ;;
+    *) exit
+       ;;
+esac
+
+rofi -modi "drun,window" \
+     -show $action \
+     -font "Source Code Pro 14" \
+     -lines 8 \
+     -separator-style none \
+     -location 1 \
+     -width 100 \
+     -line-padding 2 \
+     -color-window "#111111, #111111, #f1af5f" \
+     -color-normal "#111111, #d0d0d0, #111111, #7aeae7, #022c37" \
+     -color-active "#111111, #d0d0d0, #444444, #c5b78a, #111111" \
+     -color-urgent "#111111, #d0d0d0, #111111, #e1bbb5, #d0d0d0"
