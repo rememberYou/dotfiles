@@ -1,0 +1,22 @@
+[general]
+accounts = TerencioGmail
+pythonfile = ~/bin/.offlineimap-password.py
+
+[Account TerencioGmail]
+localrepository = Local
+remoterepository = Gmail
+
+[Repository Local]
+type = Maildir
+localfolders = ~/Maildir
+
+[Repository Gmail]
+type = Gmail
+maxconnections = 2
+ssl = yes
+remoteuser = terencio.agozzino@gmail.com
+realdelete = no
+folderfilter = lambda foldername: foldername in ['INBOX', '[Gmail]/All Mail', '[Gmail]/Sent Mail', '[Gmail].Starred', '[Gmail].Drafts', '[Gmail].Important']
+nametrans = lambda folder: re.sub('^INBOX$', '[Gmail].Inbox', folder)
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+remotepasseval = mailpasswd("gmail")
