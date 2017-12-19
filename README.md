@@ -7,8 +7,10 @@ List of files:
 
 ```
  awesome        ➔ dynamic tiling window manager for X11 written in the C and Lua
+ bin            ➔ various useful scripts (borg, rofi, etc)
  git            ➔ global git config and aliases
  i3             ➔ dynamic tiling window manager for X11 inspired by wmii
+ offlineimap    ➔ capable of synchronizing mail on IMAP server with local Maildir folder
  polybar        ➔ status bars
  ranger         ➔ console file manager with VI key bindings
  sway           ➔ i3-compatible Wayland compositor
