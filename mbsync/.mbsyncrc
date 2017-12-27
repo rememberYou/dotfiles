@@ -1,0 +1,24 @@
+IMAPAccount gmail
+Host imap.gmail.com
+User terencio.agozzino
+PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/Dropbox/shared/.mbsyncpass.gpg"
+Port 993
+SSLType IMAPS
+AuthMechs Login
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore gmail-remote
+Account gmail
+
+MaildirStore gmail-local
+Path ~/Maildir/gmail/
+Inbox ~/Maildir/gmail/INBOX
+
+Channel gmail
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX" "All Mail" "Deleted Items "Drafts "Important" "Sent Mail" "Starred"
+Create Slave
+Sync All
+Expunge Both
+SyncState *
