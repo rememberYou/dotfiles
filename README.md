@@ -8,6 +8,7 @@ List of files:
 ```
  awesome        ➔ dynamic tiling window manager for X11 written in the C and Lua
  bin            ➔ various useful scripts (borg, rofi, etc)
+ dunst          ➔ lightweight replacement for the notification-daemons
  git            ➔ global git config and aliases
  i3             ➔ dynamic tiling window manager for X11 inspired by wmii
  mbsync         ➔ capable of synchronizing mail on IMAP server with local Maildir folder
