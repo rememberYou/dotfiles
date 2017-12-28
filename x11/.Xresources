@@ -72,3 +72,12 @@ Emacs.cursorBlink: off
 Emacs.menuBar: off
 Emacs.toolBar: off
 Emacs.verticalScrollBars: off
+
+! -----------------------------
+
+! Rofi settings
+rofi.color-enabled: true
+rofi.color-window: #111111, #111111, #f1af5f
+rofi.color-normal: #111111, #d0d0d0, #111111, #7aeae7, #022c37
+rofi.color-active: #111111, #d0d0d0, #444444, #c5b78a, #111111
+rofi.color-urgent: #111111, #d0d0d0, #111111, #e1bbb5, #d0d0d0
