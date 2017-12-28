@@ -83,9 +83,8 @@
     # Set to 0 to disable.
     idle_threshold = 120
 
-    ### Text ###
-
-    font = Monospace 8
+    ### Text ###   
+    font = Source Code Pro 8
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
