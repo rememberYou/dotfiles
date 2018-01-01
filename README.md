@@ -84,6 +84,16 @@ are available: [here](https://github.com/rememberYou/.emacs.d/).
 
 --------------------
 
+### TODO ###
+
+Here is a list of tasks I plan to do in my spare time to improve this
+configuration:
+
+*  Fix icons with `polybar` and the new version of `ttf-font-awesome` (instead
+   of going back to an earlier version of `ttf-font-awesome`).
+
+--------------------
+
 ### Contributions ###
 
 Various functions may be optimized or spelling errors may occur. If you want to
