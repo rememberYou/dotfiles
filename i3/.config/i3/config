@@ -213,6 +213,9 @@ bindsym $mod+r mode "resize"
 
 ### Tools
 #
+# Passwords
+bindsym $mod+p exec ~/bin/pass-rofi
+#
 # Brightness
 bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
@@ -267,6 +270,8 @@ exec --no-startup-id compton -bCG --backend glx --vsync opengl-swc
 
 exec --no-startup-id udiskie --tray --use-udisks2
 
-exec_always --no-startup-id feh --bg-center `/home/someone/bin/scripts/wallpaper.py`
+exec --no-startup-id dunst
+ 
+exec_always --no-startup-id feh --bg-center `/home/someone/bin/wallpaper.py`
 
 exec startup i3
