@@ -43,7 +43,7 @@ gaps outer 5
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 #
 # Default wallpaper
-output * bg `/home/someone/bin/scripts/wallpaper.py` fill
+output * bg `/home/someone/bin/wallpaper.py` fill
 output DP-1 pos 0,0 res 2560x1440
 output eDP-1 pos 2560,0 res 2560x1440
 ### Input configuration
