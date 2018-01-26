@@ -66,7 +66,7 @@ export LANG=en_US.UTF-8
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='emacsclient'
 else
-    export EDITOR='emacsclient'
+    export EDITOR='nano'
 fi
 
 # Compilation flags
@@ -99,6 +99,10 @@ alias odt2pdf="libreoffice --headless --convert-to pdf *.odt"
 # Battery
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
 
+# Docker
+alias dke="docker exec -it $1 sh"
+alias dkr="docker run -d -P --name $1 $2"
+
 # Emacs
 alias ec='emacsclient -a "" -c'
 
@@ -116,8 +120,6 @@ alias xelatex="xelatex --shell-escape"
 
 # nmcli
 alias list_wifi="nmcli device wifi list"
-alias connect_vpn="nmcli con up id Germany.Hesse.Frankfurt.UDP"
-alias disable_vpn="nmcli con down id Germany.Hesse.Frankfurt.UDP"
 
 # top
 alias top_mem="top -b -o +%MEM | head -n 22"
@@ -126,6 +128,15 @@ alias top_cpu="top -b -o +%MEM | head -n 22"
 # pacman
 alias inpac="pacman -Qmq | sort"
 alias mymakepkg="makepkg -sirc"
+
+# Navigation
+alias gD="cd ~/Downloads/"
+alias gde="cd ~/Desktop/"
+alias gdo="cd ~/Documents"
+
+alias gp="cd ~/Pictures/"
+alias gw="cd ~/Pictures/Wallpapers/2560x1440/"
+alias gW="cd ~/Pictures/Wallpapers/"
 
 export PATH="/home/someone/.gem/ruby/2.4.0/bin:$PATH"
 
@@ -136,3 +147,5 @@ export PATH="/home/someone/.gem/ruby/2.4.0/bin:$PATH"
 # Parsing documentation for travis-1.8.8
 # Done installing documentation for travis after 1 seconds
 # 1 gem installed
+
+# journalctl -b -1
