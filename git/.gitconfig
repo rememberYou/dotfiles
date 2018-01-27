@@ -1,11 +1,43 @@
 [alias]
+	last = log -1
+	latest = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-[user]
-	name = Terencio Agozzino
-[github]
-	user = rememberYou
+	quicklog = log --oneline --decorate -10 --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	quicklog-long = log --oneline --decorate --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	today = diff --stat 'HEAD@{midnight}'
+	yesterday = diff --stat 'HEAD@{yesterday}' 'HEAD@{midnight}'
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow bold
+	local = white bold
+	remote = cyan bold
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "status"]
+	added = green bold
+	changed = yellow bold
+	untracked = red bold
+[core]
+	editor = emacsclient -a "" -c
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-	required = true
+	required = true	
+[github]
+	email = terencio.agozzino@gmail.com
+	name = Terencio Agozzino
+	user = rememberYou
+[log]
+	decorate = short
+[pull]
+	default = simple	
+[push]
+	default = current	
+[web]
+	browser = chromium
