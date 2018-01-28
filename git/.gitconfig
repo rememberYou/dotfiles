@@ -1,9 +1,12 @@
 [alias]
+	find = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --grep
 	last = log -1
 	latest = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	quicklog = log --oneline --decorate -10 --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	quicklog-long = log --oneline --decorate --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	rfind = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --invert-grep --grep
+	search = grep --line-number --ignore-case -E -I
 	today = diff --stat 'HEAD@{midnight}'
 	yesterday = diff --stat 'HEAD@{yesterday}' 'HEAD@{midnight}'
 [color]
@@ -28,7 +31,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-	required = true	
+	required = true
 [github]
 	email = terencio.agozzino@gmail.com
 	name = Terencio Agozzino
@@ -36,8 +39,8 @@
 [log]
 	decorate = short
 [pull]
-	default = simple	
+	default = simple
 [push]
-	default = current	
+	default = current
 [web]
 	browser = chromium
