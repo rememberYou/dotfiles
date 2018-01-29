@@ -1,5 +1,6 @@
 [alias]
 	find = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --grep
+	fuck-it = reset --hard
 	last = log -1
 	latest = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
