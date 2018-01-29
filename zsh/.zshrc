@@ -114,12 +114,25 @@ alias cpumbrella="xclip -selection clipboard /home/someone/Documents/Emojis/umbr
 alias cpsad="xclip -selection clipboard /home/someone/Documents/Emojis/sad"
 alias cpsmile="xclip -selection clipboard /home/someone/Documents/Emojis/smile"
 
+# GPG
+alias gpgC="gpg --recipient $GPGKEY --encrypt"
+alias gpgDP="gpg --delete-keys"
+alias gpgDS="gpg --delete-secret-keys"
+alias gpgE="gpg --edit-key"
+alias gpgG="gpg --full-generate-key"
+alias gpgLP="gpg --list-keys"
+alias gpgLS="gpg -K"
+alias gpgR="gpg-connect-agent reloadagent /bye"
+
 # LaTeX
 alias cleartex="rm -rf *(.aux|.log|.nav|.out|.snm|.toc|synctex\.gz|.blg|.bbl)"
 alias xelatex="xelatex --shell-escape"
 
 # nmcli
 alias list_wifi="nmcli device wifi list"
+
+# systemctl
+alias services="systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled"
 
 # top
 alias top_mem="top -b -o +%MEM | head -n 22"
