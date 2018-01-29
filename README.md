@@ -10,6 +10,7 @@ List of files:
  bin            ➔ various useful scripts (borg, rofi, etc)
  dunst          ➔ lightweight replacement for the notification-daemons
  git            ➔ global git config and aliases
+ gnupg          ➔ allows you to encrypt and sign your data and communication
  i3             ➔ dynamic tiling window manager for X11 inspired by wmii
  mbsync         ➔ capable of synchronizing mail on IMAP server with local Maildir folder
  polybar        ➔ status bars
