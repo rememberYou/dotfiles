@@ -33,15 +33,14 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[github]
-	email = terencio.agozzino@gmail.com
-	name = Terencio Agozzino
-	user = rememberYou
 [log]
 	decorate = short
 [pull]
 	default = simple
 [push]
 	default = current
+[user]
+	name = Terencio Agozzino
+	email = terencio.agozzino@gmail.com
 [web]
 	browser = chromium
