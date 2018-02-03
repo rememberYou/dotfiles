@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# This script uses the `whereami` package that uses WiFi signals and machine
+# learning to predict your location, in the format: "xx.xxxx,y.yyyy" where 'x'
+# is latitude and 'y' is longitude.
+#
+# The purpose of this script is to allows you to easily publish the
+# configuration of your windows manager without revealing your position. It
+# replaces the ',' character by ':' in coordinate format returned by `whereami`
+# in order to match the preferred `redshift` format
+#
+# A problem encountered with `whereami` is that it returns other hidden numbers.
+# One way to override this is to take the 7 characters before the ":" and take
+# the 6 characters after it.
+
+if [ whereami > /dev/null ]; then
+    echo $(whereami | tr , : | grep -o -P '.{0,7}:.{0,6}')
+else
+    echo "You must install the \"whereami\" package before using this script"
+fi
