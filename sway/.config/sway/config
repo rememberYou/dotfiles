@@ -325,7 +325,7 @@ bar {
 exec --no-startup-id xbindkeys
 exec --no-startup-id dropbox-cli start
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift-gtk -l 50.4814:4.5488
+exec --no-startup-id redshift-gtk -l "$(where-ami)"
 exec --no-startup-id caffeine
 exec --no-startup-id razercfg -r 2
 exec --no-startup-id emacs --daemon
