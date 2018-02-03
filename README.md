@@ -6,7 +6,6 @@ This repository contains all of my dotfiles configuration.
 List of files:
 
 ```
- awesome         ➔ dynamic tiling window manager for X11 written in the C and Lua
  bin             ➔ various useful scripts (borg, rofi, etc)
  dunst           ➔ lightweight replacement for the notification-daemons
  git             ➔ global git config and aliases
@@ -20,6 +19,9 @@ List of files:
  x11             ➔ X11 settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
+
+However, it is still possible to access my [old dotfiles](https://github.com/rememberYou/old-dotfiles) that I no longer use, in
+case they can help you.
 
 --------------------
 
