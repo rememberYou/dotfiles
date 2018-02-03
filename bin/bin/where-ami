@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # This script uses the `whereami` package that uses WiFi signals and machine
-# learning to predict your location, in the format: "xx.xxxx,y.yyyy" where 'x'
+# learning to predict your location, in the "xx.xxxx,y.yyyy" format, where 'x'
 # is latitude and 'y' is longitude.
 #
 # The purpose of this script is to allows you to easily publish the
