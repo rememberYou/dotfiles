@@ -262,7 +262,7 @@ bar {
 exec compton -f
 exec --no-startup-id xbindkeys
 exec --no-startup-id nm-applet
-exec --no-startup-id redshift-gtk -l 50.4814:4.5488
+exec --no-startup-id redshift-gtk -l "$(where-ami)"
 exec --no-startup-id caffeine
 exec --no-startup-id razercfg -r 3
 exec --no-startup-id emacs --daemon
@@ -271,7 +271,7 @@ exec --no-startup-id compton -bCG --backend glx --vsync opengl-swc
 exec --no-startup-id udiskie --tray --use-udisks2
 
 exec --no-startup-id dunst
- 
+
 exec_always --no-startup-id feh --bg-center `/home/someone/bin/wallpaper.py`
 
 exec startup i3
