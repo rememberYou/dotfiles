@@ -151,6 +151,10 @@ alias gp="cd ~/Pictures/"
 alias gw="cd ~/Pictures/Wallpapers/2560x1440/"
 alias gW="cd ~/Pictures/Wallpapers/"
 
+# Traduction
+alias en="trans --brief :en"
+alias fr="trans --brief :fr"
+
 export PATH="/home/someone/.gem/ruby/2.4.0/bin:$PATH"
 export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
 
@@ -165,13 +169,3 @@ unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
     export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
 fi
-
-# [13:29:19] someone:heroku-dadada git:(master*) $ gem install travis
-# WARNING:  You don't have /home/someone/.gem/ruby/2.4.0/bin in your PATH,
-# 	  gem executables will not run.
-# Successfully installed travis-1.8.8
-# Parsing documentation for travis-1.8.8
-# Done installing documentation for travis after 1 seconds
-# 1 gem installed
-
-# journalctl -b -1
