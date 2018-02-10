@@ -17,7 +17,7 @@ Inbox ~/Maildir/gmail/INBOX
 Channel gmail
 Master :gmail-remote:
 Slave :gmail-local:
-Patterns "INBOX" "All Mail" "Deleted Items "Drafts "Important" "Sent Mail" "Starred"
+Patterns "INBOX" "All Mail" "Deleted Items" "Drafts" "Important" "Sent Mail" "Starred"
 Create Slave
 Sync All
 Expunge Both
