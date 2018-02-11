@@ -124,20 +124,10 @@ alias yeam="youtube-dl --extract-audio --audio-format mp3"
 alias zshconfig="emacsclient ~/.zshrc"
 
 
-# Exports
-# ----------------------------------------
-
-export EDITOR='emacsclient'
-export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
-export GPG_TTY=$(tty)
-export LANG=en_US.UTF-8
-export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
-export ZSH=$HOME/.oh-my-zsh
-
 # Sources
 # ----------------------------------------
 
-source $ZSH/oh-my-zsh.sh
+. $ZSH/oh-my-zsh.sh
 
 
 # ----------------------------------------
