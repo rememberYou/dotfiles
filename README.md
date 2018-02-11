@@ -6,6 +6,7 @@ This repository contains all of my dotfiles configuration.
 List of files:
 
 ```
+ bash            ➔ bash settings, aliases, and custom prompts
  bin             ➔ various useful scripts (borg, rofi, etc)
  dunst           ➔ lightweight replacement for the notification-daemons
  git             ➔ global git config and aliases
