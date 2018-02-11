@@ -1,98 +1,61 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+# Executed by zsh(1) for interactive shells.
 
-# Path to your oh-my-zsh installation.
-export ZSH=/home/someone/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="geoffgarside"
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
+# ----------------------------------------
 
-# User configuration
+HISTCONTROL='ignorespace:erasedups'
+HISTFILE="$HOME/.local/share/zsh_history"
+HISTFILESIZE=1000
+HISTIGNORE='exit'
+HISTSIZE=10000
+SAVEHIST=10000
 
-# export MANPATH="/usr/local/man:$MANPATH"
+setopt always_to_end          # move the cursor to the end of the word after each completion.
+setopt auto_cd                # if command is a path, cd into it.
+setopt auto_pushd             # make cd push old dir in dir stack.
+setopt auto_resume            # treat single word simple commands without redirection as candidates for resumption of an existing job.
+setopt brace_ccl              # expand expressions in braces to allow things like `echo {a-g}`.
+setopt cdable_vars            # add '~' to every cd commands which the argument is not a directory and does not begin with a slash.
+setopt combining_chars        # display combining characters correctly.
+setopt complete_in_word       # make the cursor stays there and completion is done from both ends.
+setopt extended_history       # save each command's beginning timestamp and the duration to the history file.
+setopt glob_dots              # include dotfiles in globbing.
+setopt hist_expire_dups_first # cause the oldest history event that has a duplicate to be lost before losing a unique event from the list.
+setopt hist_find_no_dups      # when searching for history entries in the line editor, do not display duplicates of a line previously found.
+setopt hist_ignore_all_dups   # avoid duplication when adding a new command.
+setopt hist_ignore_dups       # do not enter command lines into the history list if they are duplicates of the previous event.
+setopt hist_ignore_space      # remove command lines from the history list when the first character on the line is a space.
+setopt hist_save_no_dups      # when writing out the history file, older commands that duplicate newer ones are omitted.
+setopt hist_verify            # show before executing history commands.
+setopt inc_append_history     # add commands as they are typed, don't wait until shell exit.
+setopt interactive_comments   # allow comments even in interactive shells.
+setopt long_list_jobs         # list jobs in the long format by default.
+setopt nomultios              # no perform implicit tees or cats when multiple redirections are attempted (e.g. no things like: `< a < b > c`).
+setopt nonomatch              # if a pattern for filename generation has no matches, leaving it unchanged instead of printing an error.
+setopt notify                 # report the status of background jobs immediately, rather than waiting until just before printing a prompt.
+setopt path_dirs              # perform a path search even on command names with slashes in them.
+setopt posix_builtins         # allow builtin to execute shell builtin commands.
+setopt prompt_subst           # parameter expansion, command substitution and arithmetic expansion are performed in prompts.
+setopt pushd_ignore_dups      # no duplicates in dir stack.
+setopt pushd_silent           # no dir stack after pushd or popd.
+setopt pushd_to_home          # `pushd` = `pushd $HOME`
+setopt rc_quotes              # allow the character sequence `''' to signify a single quote within singly quoted strings.
+setopt rm_star_silent         # do not query the user before executing `rm *' or `rm path/*'.
+setopt share_history          # import new commands from the history file, and append typed commands to the history file.
 
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
+unsetopt beep                 # no bell on error.
+unsetopt bg_nice              # no lower priority for background jobs.
+unsetopt check_jobs           # no report the status of background and suspended jobs before exiting a shell with job control.
+unsetopt flow_control         # output flow control via start/stop characters is disabled in the shell's editor.
+unsetopt hist_beep            # no bell on error in history.
+unsetopt hup                  # no hup signal at shell exit.
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='emacsclient'
-else
-    export EDITOR='nano'
-fi
+# Aliases
+# ----------------------------------------
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias zshconfig="emacsclient ~/.zshrc"
-
-alias yeam="youtube-dl --extract-audio --audio-format mp3"
-
-function pdf2eps {
-    inkscape $1 --export-eps=$2
-}
-
-# Converts
-alias pdf2eps=pdf2eps $1 $2
+# Convertions
 alias doc2pdf="libreoffice --headless --convert-to pdf *.docx"
 alias odt2pdf="libreoffice --headless --convert-to pdf *.odt"
 
@@ -107,12 +70,12 @@ alias dkr="docker run -d -P --name $1 $2"
 alias ec='emacsclient -a "" -c'
 
 # Emoji
-alias cpangel="xclip -selection clipboard /home/someone/Documents/Emojis/angel"
-alias cpheart="xclip -selection clipboard /home/someone/Documents/Emojis/heart"
-alias cpkiss="xclip -selection clipboard /home/someone/Documents/Emojis/kiss"
-alias cpumbrella="xclip -selection clipboard /home/someone/Documents/Emojis/umbrella"
-alias cpsad="xclip -selection clipboard /home/someone/Documents/Emojis/sad"
-alias cpsmile="xclip -selection clipboard /home/someone/Documents/Emojis/smile"
+alias cpangel="xclip -selection clipboard $HOME/Documents/Emojis/angel"
+alias cpheart="xclip -selection clipboard $HOME/Documents/Emojis/heart"
+alias cpkiss="xclip -selection clipboard $HOME/Documents/Emojis/kiss"
+alias cpumbrella="xclip -selection clipboard $HOME/Documents/Emojis/umbrella"
+alias cpsad="xclip -selection clipboard $HOME/Documents/Emojis/sad"
+alias cpsmile="xclip -selection clipboard $HOME/Documents/Emojis/smile"
 
 # GPG
 alias gpgC="gpg --recipient $GPGKEY --encrypt"
@@ -128,8 +91,20 @@ alias gpgR="gpg-connect-agent reloadagent /bye"
 alias cleartex="rm -rf *(.aux|.log|.nav|.out|.snm|.toc|synctex\.gz|.blg|.bbl)"
 alias xelatex="xelatex --shell-escape"
 
+# Navigation
+alias gD="cd ~/Downloads/"
+alias gde="cd ~/Desktop/"
+alias gdo="cd ~/Documents"
+alias gp="cd ~/Pictures/"
+alias gw="cd ~/Pictures/Wallpapers/2560x1440/"
+alias gW="cd ~/Pictures/Wallpapers/"
+
 # nmcli
 alias list_wifi="nmcli device wifi list"
+
+# pacman
+alias inpac="pacman -Qmq | sort"
+alias mymakepkg="makepkg -sirc"
 
 # systemctl
 alias services="systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled"
@@ -138,28 +113,34 @@ alias services="systemctl list-unit-files | grep enabled && systemctl --user lis
 alias top_mem="top -b -o +%MEM | head -n 22"
 alias top_cpu="top -b -o +%MEM | head -n 22"
 
-# pacman
-alias inpac="pacman -Qmq | sort"
-alias mymakepkg="makepkg -sirc"
-
-# Navigation
-alias gD="cd ~/Downloads/"
-alias gde="cd ~/Desktop/"
-alias gdo="cd ~/Documents"
-
-alias gp="cd ~/Pictures/"
-alias gw="cd ~/Pictures/Wallpapers/2560x1440/"
-alias gW="cd ~/Pictures/Wallpapers/"
-
 # Traduction
 alias en="trans --brief :en"
 alias fr="trans --brief :fr"
 
-export PATH="/home/someone/.gem/ruby/2.4.0/bin:$PATH"
-export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
+# youtube-dl
+alias yeam="youtube-dl --extract-audio --audio-format mp3"
 
-# set GPG TTY
+# zsh
+alias zshconfig="emacsclient ~/.zshrc"
+
+
+# Exports
+# ----------------------------------------
+
+export EDITOR='emacsclient'
+export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
 export GPG_TTY=$(tty)
+export LANG=en_US.UTF-8
+export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
+export ZSH=$HOME/.oh-my-zsh
+
+# Sources
+# ----------------------------------------
+
+source $ZSH/oh-my-zsh.sh
+
+
+# ----------------------------------------
 
 # Refresh gpg-agent tty in case user switches into an X Session
 gpg-connect-agent updatestartuptty /bye >/dev/null
