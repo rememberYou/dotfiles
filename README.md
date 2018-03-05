@@ -94,8 +94,7 @@ are available: [here](https://github.com/rememberYou/.emacs.d/).
 Here is a list of tasks I plan to do in my spare time to improve this
 configuration:
 
-*  Fix icons with `polybar` and the new version of `ttf-font-awesome` (instead
-   of going back to an earlier version of `ttf-font-awesome`).
+*  Refactoring my `i3` configuration.
 
 --------------------
 
