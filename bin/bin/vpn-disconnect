@@ -5,7 +5,7 @@ target="Germany.Hesse.Frankfurt.UDP"
 
 if nmcli con | grep -i $target | grep $interface; then
     nmcli con down id $target
-    notify-send -t 5000 "Network Manager" " Disconnected from the VPN: $target"
+    notify-send -t 5000 "Network Manager" "Disconnected from the VPN: $target"
 else
-    notify-send -t 5000 "Network Manager" " Already disconnected from the VPN."
+    notify-send -t 5000 "Network Manager" "Already disconnected from the VPN."
 fi

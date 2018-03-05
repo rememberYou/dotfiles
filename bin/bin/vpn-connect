@@ -5,7 +5,7 @@ target="Germany.Hesse.Frankfurt.UDP"
 
 if ! nmcli con | grep -i $target | grep $interface; then
     nmcli con up id $target
-    notify-send -t 5000 "Network Manager" " Connected to VPN: $target"
+    notify-send -t 5000 "Network Manager" "Connected to VPN: $target"
 else
-    notify-send -t 5000 "Network Manager" " Already connected to the VPN."
+    notify-send -t 5000 "Network Manager" "Already connected to the VPN."
 fi
