@@ -26,6 +26,20 @@ case they can help you.
 
 --------------------
 
+### Quick preview ###
+
+A non-exhaustive preview of the environment I use on a daily basis.
+
+Last Updated: **10 March, 2018**.
+
+Note: you can find my wallpapers [here](https://github.com/rememberYou/wallpapers).
+
+![Wall](assets/wall.png "Wallpaper")
+![Global](assets/i3_gaps_neofetch_ranger_emacs_dunst.png "i3-gaps, GNU/Emacs, ranger, neofetch, dunst")
+![Rofi](assets/rofi.png "Rofi")
+
+--------------------
+
 ### Dotfiles manager ###
 
 I'm using [GNU Stow](https://www.gnu.org/software/stow/) a free, lightweight
