@@ -110,12 +110,12 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 assign [class="URxvt"]         → $ws1
 assign [class="Chromium"]      → $ws2
 assign [class="Emacs"]         → $ws3
-assign [class="Skype Preview"] → $ws5
 assign [class="Gimp"]          → $ws6
 assign [class="VirtualBox"]    → $ws7
 assign [class="TeamViewer"]    → $ws7
 
 for_window [class="Spotify"] move to workspace $ws4
+for_window [class="Skype Preview"] move to workspace ws5
 for_window [class="chromium"] border none
 
 ### Layout stuff ###
@@ -179,7 +179,7 @@ bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 
 # Power mode.
-set $locker xautolock -time 10 -locker 'xtrlock'
+set $locker 'xtrlock'
 
 ### Different menu ###
 
