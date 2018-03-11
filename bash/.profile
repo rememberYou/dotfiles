@@ -12,7 +12,8 @@ export XDG_RUNTIME_DIR="/run/user/$UID"
 
 export TMPDIR="/tmp/$USER"
 
-export EDITOR='emacsclient'
+export EDITOR='emacsclient -a "" -nw'
+
 export TERMINAL='urxvt'
 
 export JAVA_HOME='/usr/lib/jvm/default-runtime'
