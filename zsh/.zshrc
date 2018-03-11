@@ -131,7 +131,6 @@ alias zshconfig="emacsclient ~/.zshrc"
 
 . $ZSH/oh-my-zsh.sh
 
-
 # ----------------------------------------
 
 # Refresh gpg-agent tty in case user switches into an X Session
