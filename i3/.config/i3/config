@@ -11,6 +11,8 @@ set $up k
 set $right l
 # Set URxvt as main terminal.
 set $term urxvt
+# Set rofi as dmenu replacement.
+set $menu rofi
 # Set chromium as main browser.
 set $browser chromium
 
@@ -31,8 +33,8 @@ bindsym $mod+Return exec $term
 # Start a terminal with ranger.
 bindsym $mod+Shift+r exec $term -e "ranger"
 # Start rofi.
-bindsym $mod+d exec --no-startup-id ~/bin/rofi -d
-bindsym $mod+Shift+d exec --no-startup-id ~/bin/rofi -w
+bindsym $mod+d exec $menu -show "drun"
+bindsym $mod+Shift+d exec $menu -show "window"
 # Kill focused window with $mod+shift+q.
 bindsym $mod+Shift+q kill
 # Reload the configuration file.

@@ -1,6 +1,8 @@
 ! To update X apps configuration : xrdb -merge ~/.Xresources
 
-! Font -----------------------------
+! -----------------------------
+! Font
+
 Xft.autohint: 0
 Xft.antialias: 1
 Xft.hinting: true
@@ -9,12 +11,12 @@ Xft.dpi: 192
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
-!  -----------------------------
-
+! -----------------------------
 ! Urxvt settings
 ! https://wiki.archlinux.org/index.php/Rxvt-unicode
 
 URxvt*font: xft:DejaVu Sans Mono-10
+! Urxvt*font: xft:Font Awesome 5 Brands:pixelsize=10, xft:Font Awesome 5 Free Solid:pixelsize=10
 URxvt*foreground: #f2f2f2
 URxvt*locale: true
 URxvt.geometry: 80x24
@@ -26,9 +28,10 @@ URxvt*scrollTtyKeypress: true
 URxvt*scrollTtyOutput: false
 URxvt*scrollWithBuffer: true
 URxvt*selectToClipboard: true
-URxvt*termName: rxvt-unicode-256color
+! URxvt*termName: rxvt-unicode-256color
 URxvt*toolBar: false
 
+! -----------------------------
 ! Urxvt colors
 
 ! Black color
@@ -64,8 +67,8 @@ URxvt*color7:  #D0D0D0
 URxvt*color15: #F7F7F7
 
 ! -----------------------------
-
 ! Emacs settings
+
 Emacs.background: #022C37
 Emacs.foreground: #7D898A
 Emacs.cursorBlink: off
@@ -74,10 +77,19 @@ Emacs.toolBar: off
 Emacs.verticalScrollBars: off
 
 ! -----------------------------
-
 ! Rofi settings
-rofi.color-enabled: true
-rofi.color-window: #111111, #111111, #f1af5f
-rofi.color-normal: #111111, #d0d0d0, #111111, #7aeae7, #022c37
-rofi.color-active: #111111, #d0d0d0, #444444, #c5b78a, #111111
-rofi.color-urgent: #111111, #d0d0d0, #111111, #e1bbb5, #d0d0d0
+
+rofi.combi-modi:      window,drun,ssh
+rofi.width:           100
+rofi.padding:         10
+rofi.color-enabled:   true
+rofi.color-window:    #18181a, #18181a, #282c34
+rofi.color-normal:    #18181a, #abb2bf, #18181a, #18181a, #81a2be
+rofi.color-active:    #18181a, #61afef, #18181a, #18181a, #b5bd68
+rofi.color-urgent:    #18181a, #e06c75, #18181a, #18181a, #cc6666
+rofi.font:            Source Code Pro 13
+rofi.hide-scrollbar:  true
+rofi.location:        1
+rofi.lines:           8
+rofi.line-padding:    2
+rofi.separator-style: none
