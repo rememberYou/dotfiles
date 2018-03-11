@@ -1,7 +1,7 @@
 #!/bin/bash
 
 set -e
-target=$(find ~/.password-store/ | sed -re "s/\.gpg$//" | sed -re "s/^.*\/.password-store\///" | rofi -dmenu -l 5 -nb \#FF004F)
+target=$(find ~/.password-store/ | sed -re "s/\.gpg$//" | sed -re "s/^.*\/.password-store\///" | rofi -dmenu -width 30 -location 0 -nb \#FF004F)
 gopass -c $target
 time=$(gopass config cliptimeout | awk 'NR==1 {print $2}')
 notify-send -u critical -t $(($time * 1000)) "Password in clipboard" "Your $target password is currently in your clipboard."
