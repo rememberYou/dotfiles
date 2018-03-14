@@ -10,7 +10,7 @@ set $down j
 set $up k
 set $right l
 # Set URxvt as main terminal.
-set $term urxvt
+set $term termite
 # Set rofi as dmenu replacement.
 set $menu rofi
 # Set chromium as main browser.
@@ -18,6 +18,8 @@ set $browser chromium
 
 ### Settings ###
 
+# Set default border style for new windows
+# default_border pixel 1
 new_window none
 # Drag floating windows with $mod+mouse.
 floating_modifier $mod
@@ -106,7 +108,6 @@ bindsym $mod+Shift+4 move container to workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5
 bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
 
 # Assign applications to their own workspace.
 assign [class="URxvt"]         → $ws1
@@ -149,9 +150,6 @@ bindsym $mod+a focus parent
 # bindsym $mod+b border toggle
 
 ### Scratchpad ###
-
-# Sway has a "scratchpad", which is a bag of holding for windows.
-# You can send windows there and get them back later.
 
 # Move the currently focused window to the scratchpad.
 bindsym $mod+Shift+t move scratchpad
@@ -275,9 +273,8 @@ smart_gaps on
 
 ### Startup programs. ###
 
-exec compton -f
+exec --no-startup-id compton -f -bCG --backend glx --vsync opengl-swc
 exec --no-startup-id caffeine
-exec --no-startup-id compton -bCG --backend glx --vsync opengl-swc
 exec --no-startup-id dunst
 exec --no-startup-id emacs --daemon
 exec --no-startup-id nm-applet
