@@ -9,7 +9,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Set URxvt as main terminal.
+# Set termite as main terminal.
 set $term termite
 # Set rofi as dmenu replacement.
 set $menu rofi
@@ -19,8 +19,8 @@ set $browser chromium
 ### Settings ###
 
 # Set default border style for new windows
-# default_border pixel 1
-new_window none
+new_window pixel 1
+new_float pixel 1
 # Drag floating windows with $mod+mouse.
 floating_modifier $mod
 # Hide window borders adjacent to the screen edges.
@@ -265,10 +265,8 @@ bar {
 }
 
 ### i3-gaps ###
-
-for_window [class="^.*"]                border pixel 0
-gaps inner 30
-gaps outer 10
+gaps inner 6
+gaps outer 6
 smart_gaps on
 
 ### Startup programs. ###

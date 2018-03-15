@@ -1,0 +1,37 @@
+[options]
+allow_bold = true
+audible_bell = false
+clickable_url = true
+cursor_blink = off
+cursor_shape = block
+dynamic_title = true
+icon_name = terminal
+font = DejaVu Sans Mono 10.5
+mouse_autohide = true
+scrollback_lines = 1000
+scroll_on_keystroke = true
+scroll_on_output = false
+search_wrap = true
+urgent_on_bell = true
+
+[colors]
+cursor = #93a1a1
+foreground = #839496
+foreground_bold = #ffffff
+background = rgba(0, 43, 54, 0.95)
+color0 = #073642
+color1 = #dc322f
+color2 = #859900
+color3 = #b58900
+color4 = #268bd2
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002b36
+color9 = #cb4b16
+color10 = #586e75
+color11 = #657b83
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
