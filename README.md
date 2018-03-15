@@ -17,6 +17,7 @@ List of files:
  polybar         ➔ status bars
  ranger          ➔ console file manager with VI key bindings
  sway            ➔ i3-compatible Wayland compositor
+ termite         ➔ keyboard-centric VTE-based terminal
  x11             ➔ X11 settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
