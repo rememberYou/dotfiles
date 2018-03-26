@@ -89,7 +89,7 @@ workspace $ws3 output DP1
 workspace $ws4 output DP1
 workspace $ws5 output DP1
 workspace $ws6 output DP1
-workspace $ws8 output DP1
+workspace $ws7 output eDP1
 
 # Switch to workspaces.
 bindsym $mod+1 workspace $ws1
@@ -277,8 +277,8 @@ exec --no-startup-id dunst
 exec --no-startup-id emacs --daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id razercfg -r 3
-exec --no-startup-id redshift-gtk -l "$(where-ami)"
+exec --no-startup-id redshift-gtk -l `whereami.py`
 exec --no-startup-id udiskie --tray --use-udisks2
 exec --no-startup-id xbindkeys
-exec_always --no-startup-id feh --bg-center `/home/someone/bin/wallpaper.py`
+exec_always --no-startup-id feh --bg-center `wallpaper.py`
 exec startup i3
