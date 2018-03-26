@@ -12,7 +12,7 @@ colour_mag = ${xrdb:color5:#ffffff}
 colour_cyn = ${xrdb:color6:#ffffff}
 colour_grn = ${xrdb:color2:#ffffff}
 colour_ylw = ${xrdb:color3:#ffffff}
-colour_org = ${xrdb:color16:#ffffff}
+colour_org = ${xrdb:color15:#ffffff}
 
 
 [bar/top]
@@ -26,7 +26,7 @@ module-margin-right = 1
 
 background          = ${colors.background}
 foreground          = ${colors.foreground}
-font-0              = Tamzen:size=13;1
+font-0              = Tamzen:size=15;1
 font-1              = Font Awesome 5 Free:style=Regular:pixelsize=8;1
 font-2              = Font Awesome 5 Free:style=Solid:pixelsize=8;1
 font-3              = Font Awesome 5 Brands:pixelsize=8;1
@@ -172,7 +172,7 @@ ramp-foreground       = ${colors.colour_ylw}
 
 
 [module/volume]
-type                     = internal/alsa
+type                     = internal/volume
 format-volume            =  <label-volume>
 format-muted             =  <label-muted>
 label-muted              = Muted
