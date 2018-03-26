@@ -36,7 +36,7 @@ def get_location():
     try:
         return json.load(urllib.request.urlopen(url))
     except urllib.error.URLError:
-        return False
+        return None
 
 def get_default(path):
     """Gets the default location.
