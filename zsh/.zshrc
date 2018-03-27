@@ -88,7 +88,6 @@ alias gpgLS="gpg -K"
 alias gpgR="gpg-connect-agent reloadagent /bye"
 
 # LaTeX
-alias cleartex="rm -rf *(.aux|.log|.nav|.out|.snm|.toc|synctex\.gz|.blg|.bbl)"
 alias xelatex="xelatex --shell-escape"
 
 # Navigation
