@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Allows rofi to display a message labeled with $1 to perform the $2 command
+# using dmenu.
+#
+# Example:
+# `./prompt-rofi "Do you want to shutdown?" "shutdown -h now"`
+
+[ $(echo -e "No\nYes" | rofi -dmenu -width 30 -lines 2 -location 0 -i -p "$1") \
+== "Yes" ] && $2
