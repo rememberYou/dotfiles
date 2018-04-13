@@ -164,9 +164,11 @@ bindsym $mod+t scratchpad show
 bindsym $mod+p exec ~/bin/pass-rofi
 
 # Brightness.
-bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-#
+# Uses the Backlight Utility that's right for you, mine may not work
+# with your system.
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+
 # Media player.
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
