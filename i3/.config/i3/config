@@ -41,8 +41,6 @@ bindsym $mod+Shift+d exec $menu -show "window"
 bindsym $mod+Shift+q kill
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
-# Exit i3.
-bindsym $mod+Shift+e exit
 # Move your focus around with $mod+hjkl or $mod+arrow.
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
