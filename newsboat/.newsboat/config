@@ -1,0 +1,44 @@
+auto-reload yes
+browser chromium
+external-url-viewer "urlview"
+max-items 100
+reload-time 10
+reload-threads 2
+save-path ~/.newsboat/bookmarks.txt
+show-read-feeds no
+text-width 80
+
+feedlist-title-format "—[%u feeds with new articles]——%>——(%N %V)—"
+articlelist-title-format "—[%T]——(%u unread, %t total)——%>——(%U)—"
+datetime-format "%b %d %H:%M"
+
+notify-format "%d new articles."
+notify-program "~/bin/newsboat-notify"
+
+bind-key G end
+bind-key S save
+bind-key g home
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key s sort
+bind-key ^F pagedown
+bind-key ^B pageup
+
+color article white black
+color info green default
+color listnormal_unread white default
+color listfocus green black
+color listfocus_unread black green standout bold
+
+highlight feedlist "^ *[0-9]+ *N " color156 default
+highlight articlelist "^ *[0-9]+ *N " color156 default
+highlight article "^(Feed|Title|Author|Link|Date|Linux):.*" color5 default
+highlight article "^Links:" color74 default underline
+highlight article "\\[[0-9][0-9]*\\]" color72 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color72 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color72 default bold
+highlight article ":.*\\(link\\)$" color74 default
+highlight article ":.*\\(image\\)$" color74 default
+highlight article ":.*\\(embedded flash\\)$" color74 default

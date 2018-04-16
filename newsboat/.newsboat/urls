@@ -1,0 +1,16 @@
+# Emacs
+http://cestlaz.github.io/rss.xml "~Emacs: C'est la Z"
+http://planet.emacsen.org/atom.xml "emacs" "~Emacs: Planet Emacsen"
+http://pragmaticemacs.com/feed/ "emacs" "~Emacs: Pragmatic Emacs"
+http://sachachua.com/blog/feed/ "emacs" "~Emacs: Sacha Chua's Blog"
+https://www.reddit.com/r/emacs.rss "emacs" "~Emacs: emacs (Reddit)"
+
+# Hack
+https://feedex.net/feed/news.ycombinator.com/rss "hack" "~Hack: Hacker News"
+
+# Tech
+https://www.reddit.com/r/archlinux.rss "tech" "~Tech: Arch Linux (Reddit)"
+https://www.reddit.com/r/Backup.rss "tech" "~Tech: Backup"
+https://sircmpwn.github.io/feed.xml "tech" "~Tech: Drew DeVault's Blog"
+https://www.reddit.com/r/i3wm.rss "tech" "~Tech: i3wm (Reddit)"
+https://www.reddit.com/r/swaywm.rss "tech" "~Tech: swaywm (Reddit)"
