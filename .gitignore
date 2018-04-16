@@ -3,3 +3,5 @@ ranger/.config/ranger/bookmarks
 ranger/.config/ranger/history
 ranger/.config/ranger/plugins/
 ranger/.config/ranger/tagged
+newsboat/.newsboat/history.*
+newsboat/.newsboat/cache.*
