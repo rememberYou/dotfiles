@@ -12,7 +12,7 @@ feedlist-title-format "—[%u feeds with new articles]——%>——(%N %V)—"
 articlelist-title-format "—[%T]——(%u unread, %t total)——%>——(%U)—"
 datetime-format "%b %d %H:%M"
 
-notify-format "%d new articles."
+notify-format "%d new articles"
 notify-program "~/bin/newsboat-notify"
 
 bind-key G end
