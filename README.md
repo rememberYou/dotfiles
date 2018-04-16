@@ -14,6 +14,7 @@ List of files:
  i3              ➔ dynamic tiling window manager for X11 inspired by wmii
  mbsync          ➔ capable of synchronizing mail on IMAP server with local Maildir folder
  neofetch        ➔ CLI system information tool
+ newsboat        ➔ RSS/Atom feed reader for text terminals
  polybar         ➔ status bars
  ranger          ➔ console file manager with VI key bindings
  sway            ➔ i3-compatible Wayland compositor
