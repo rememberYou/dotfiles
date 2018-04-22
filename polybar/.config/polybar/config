@@ -35,7 +35,7 @@ font-5              = WenQuanYi WenQuanYi Bitmap Song:size=10;2
 
 modules-left        = i3
 modules-center      = date
-modules-right       = volume memory cpu temperature battery filesystem wireless-network
+modules-right       = volume backlight memory cpu temperature battery filesystem wireless-network
 
 tray-position       = right
 tray-padding        = 5
@@ -114,6 +114,13 @@ animation-charging-2          = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate  = 750
 format-foreground             = ${colors.colour_grn}
+
+
+[module/backlight]
+type                     = internal/xbacklight
+format-prefix            = " "
+format-prefix-foreground = ${colors.colour_ylw}
+label                    = %percentage%%
 
 
 [module/cpu]
