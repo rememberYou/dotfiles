@@ -67,7 +67,7 @@ alias dke="docker exec -it $1 sh"
 alias dkr="docker run -d -P --name $1 $2"
 
 # Emacs
-alias ec='emacsclient -a "" -c'
+alias ec='emacsclient -a "" -nw'
 
 # Emoji
 alias cpangel="xclip -selection clipboard $HOME/Documents/Emojis/angel"
