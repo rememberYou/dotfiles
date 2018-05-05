@@ -14,7 +14,7 @@ export TMPDIR="/tmp/$USER"
 
 export EDITOR='emacsclient -a "" -nw'
 
-export TERMINAL='urxvt'
+export TERMINAL='termite'
 
 export JAVA_HOME='/usr/lib/jvm/default-runtime'
 export JDK_HOME='/usr/lib/jvm/default'
