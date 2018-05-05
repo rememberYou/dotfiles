@@ -1,63 +1,48 @@
 [colors]
-background = ${xrdb:background:#ffffff}
-foreground = ${xrdb:foreground:#ffffff}
-
-colour_blk = ${xrdb:color0:#ffffff}
-colour_gry = ${xrdb:color8:#ffffff}
-colour_wht = ${xrdb:color7:#ffffff}
-
-colour_red = ${xrdb:color1:#ffffff}
-colour_blu = ${xrdb:color4:#ffffff}
-colour_mag = ${xrdb:color5:#ffffff}
-colour_cyn = ${xrdb:color6:#ffffff}
-colour_grn = ${xrdb:color2:#ffffff}
-colour_ylw = ${xrdb:color3:#ffffff}
-colour_org = ${xrdb:color15:#ffffff}
+black   = ${xrdb:background:#000000}
+blue    = ${xrdb:color4:#268bd2}
+cyan    = ${xrdb:color6:#2aa198}
+green   = ${xrdb:color2:#859900}
+grey    = ${xrdb:color14:#93a1a1}
+magenta = ${xrdb:color5:#d33682}
+orange  = ${xrdb:color9:#cb4b16}
+purple  = ${xrdb:color13:#6c71c4}
+red     = ${xrdb:color1:#dc322f}
+yellow  = ${xrdb:color3:#b58900}
+white   = ${xrdb:color7:#eee8d5}
 
 
 [bar/top]
-dpi                 = 116
-height              = 23
-line-size           = 0
+monitor             = DP1
+monitor-fallback    = eDP1
+dpi                 = ${xrdb:Xft.dpi}
+height              = 25
 padding-left        = 1
 padding-right       = 1
 module-margin-left  = 1
 module-margin-right = 1
 
-background          = ${colors.background}
-foreground          = ${colors.foreground}
-font-0              = Tamzen:size=15;1
-font-1              = Font Awesome 5 Free:style=Regular:pixelsize=8;1
-font-2              = Font Awesome 5 Free:style=Solid:pixelsize=8;1
-font-3              = Font Awesome 5 Brands:pixelsize=8;1
-font-4              = Wuncon Siji:pixelsize=10;2
-font-5              = WenQuanYi WenQuanYi Bitmap Song:size=10;2
+background          = ${colors.black}
+foreground          = ${colors.white}
+
+font-0              = "Tamzen:size=15;0"
+font-1 		    = "Font Awesome 5 Free:style=Regular:pixelsize=5;0"
+font-2		    = "Font Awesome 5 Free:style=Solid:pixelsize=5;0"
+font-3 		    = "Font Awesome 5 Brands:style=Regular:pixelsize=5;0"
+font-4              = "Wuncon Siji:pixelsize=13;0"
+font-5              = "Noto Sans Symbols 2:size=5;1"
 
 modules-left        = i3
 modules-center      = date
-modules-right       = volume backlight memory cpu temperature battery filesystem wireless-network
+modules-right       = battery volume backlight cpu temperature memory filesystem wireless-network
 
 tray-position       = right
 tray-padding        = 5
-tray-offset-y       = 0%
-tray-offset-x       = 0%
 tray-maxsize        = 18
-tray-detached       = false
-tray-transparent    = false
-tray-color          = ${colors.background}
-
-
-[global/wm]
-margin-top        = 5
-margin-bottom     = 5
-wm-restack        = i3
-override-redirect = false
 
 
 [module/i3]
-type          = internal/i3
-index-sort    = true
-enable-scroll = false
+type            = internal/i3
 
 ws-icon-0       = 1: ;
 ws-icon-1       = 2: ;
@@ -68,127 +53,114 @@ ws-icon-5       = 6: ;
 ws-icon-6       = 7: ;
 ws-icon-default = 
 
-label-unfocused-background = ${colors.background}
-label-unfocused-foreground = ${colors.colour_gry}
-label-mode                 = %mode%
-label-mode-padding         = 1
-label-mode-background      = ${colors.background}
+label-mode-background      = ${root.background}
+
 label-focused              = %icon%
-label-focused-foreground   = ${colors.foreground}
-label-focused-background   = ${colors.background}
+label-focused-background   = ${root.background}
+label-focused-foreground   = ${colors.yellow}
 label-focused-padding      = 1
+
 label-unfocused            = %icon%
+label-unfocused-background = ${root.background}
+label-unfocused-foreground = ${root.foreground}
 label-unfocused-padding    = 1
+
 label-visible              = %icon%
 label-visible-padding      = 1
+
 label-urgent               = %icon%
-label-urgent-foreground    = ${colors.colour_red}
-label-urgent-background    = ${colors.background}
+label-urgent-background    = ${root.background}
+label-urgent-foreground    = ${colors.red}
 label-urgent-padding       = 1
 
 
 [module/battery]
-type    = internal/battery
-battery = BAT0
-adapter = AC
-full-at = 94
+type                          = internal/battery
+battery                       = BAT0
+adapter                       = AC
+full-at                       = 97
 
-format-charging           = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging           = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-charging               = <animation-charging> <label-charging>
+format-discharging            = <ramp-capacity> <label-discharging>
 
 format-full-prefix            = " "
-format-full-prefix-foreground = ${colors.foreground}
-format-full-underline         = ${self.format-charging-underline}
+format-full-prefix-foreground = ${colors.green}
 
-ramp-capacity-0          = 
-ramp-capacity-1          = 
-ramp-capacity-2          = 
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-0               = 
+ramp-capacity-1               = 
+ramp-capacity-2               = 
+ramp-capacity-foreground      = ${colors.red}
 
 animation-charging-0          = 
 animation-charging-1          = 
 animation-charging-2          = 
-animation-charging-foreground = ${colors.foreground}
-animation-charging-framerate  = 750
-format-foreground             = ${colors.colour_grn}
-
+animation-charging-foreground = ${colors.green}
 
 [module/backlight]
 type                     = internal/xbacklight
 format-prefix            = " "
-format-prefix-foreground = ${colors.colour_ylw}
+format-prefix-foreground = ${colors.yellow}
 label                    = %percentage%%
 
 
 [module/cpu]
 type                     = internal/cpu
-interval                 = 1
 format-prefix            = " "
-format-prefix-foreground = ${colors.colour_cyn}
-format-underline         = #f90000
+format-prefix-foreground = ${colors.grey}
 label                    = %percentage%%
 
 
 [module/date]
 type              = internal/date
-interval          = 1.0
 date              = %a %d %b %Y
 time              = "%H:%M:%S"
 label             = %date% %time%
-format            =  <label>
-format-foreground = ${colors.colour_blu}
-label-foreground  = ${colors.foreground}
+label-foreground  = ${root.foreground}
 
 
 [module/filesystem]
 type                       = internal/fs
 interval                   = 25
 mount-0                    = /
-label-mounted              = %{F#de935f}%mountpoint%%{F-} %percentage_used%%
+label-mounted              = %{F#859900}%mountpoint%%{F-} %percentage_used%%
 label-unmounted            = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.colour_grn}
+label-unmounted-foreground = ${colors.red}
 
 
 [module/memory]
 type                     = internal/memory
 interval                 = 2
 format-prefix            = " "
-format-prefix-foreground = ${colors.colour_mag}
-format-underline         = #4bffdc
+format-prefix-foreground = ${colors.green}
 label                    = %percentage_used%%
 
 
 [module/temperature]
 type                  = internal/temperature
-thermal-zone          = 0
-warn-temperature      = 80
+warn-temperature      = 60
 format                = <ramp> <label>
-format-underline      = #f50a4d
 format-warn           = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
 label                 = %temperature%
 label-warn            = %temperature%
-label-warn-foreground = ${colors.colour_red}
+label-warn-foreground = ${colors.red}
 ramp-0                = 
 ramp-1                = 
 ramp-2                = 
-ramp-foreground       = ${colors.colour_ylw}
+ramp-foreground       = ${colors.cyan}
 
 
 [module/volume]
 type                     = internal/volume
-format-volume            =  <label-volume>
-format-muted             =  <label-muted>
+format-volume            = <ramp-volume> <label-volume>
+format-muted             = 🔇 <label-muted>
 label-muted              = Muted
-format-volume-foreground = ${colors.colour_org}
-format-volume-background = ${colors.background}
-label-volume-foreground  = ${colors.foreground}
-format-muted-foreground  = ${colors.colour_org}
-format-muted-background  = ${colors.background}
-label-muted-foreground   = ${colors.foreground}
+format-volume-foreground = ${colors.white}
+label-volume-foreground  = ${root.foreground}
+format-muted-foreground  = ${colors.red}
+label-muted-foreground   = ${root.foreground}
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
 
 
 [module/wired-network]
@@ -196,14 +168,16 @@ type                           = internal/network
 interface                      = enp0s31f6
 interval                       = 3.0
 accumulate-stats               = true
+
 format-connected               =  <label-connected>
-format-connected-foreground    = ${colors.colour_blu}
-format-disconnected            =  <label-disconnected>
-format-disconnected-foreground = ${colors.colour_red}
+format-connected-foreground    = ${colors.cyan}
 label-connected                = %ifname%
-label-connected-foreground     = ${colors.foreground}
+label-connected-foreground     = ${root.foreground}
+
+format-disconnected            =  <label-disconnected>
+format-disconnected-foreground = ${colors.red}
 label-disconnected             = disconnected
-label-disconnected-foreground  = ${colors.foreground}
+label-disconnected-foreground  = ${root.foreground}
 
 
 [module/wireless-network]
@@ -211,16 +185,19 @@ type                           = internal/network
 interface                      = wlp4s0
 interval                       = 3.0
 accumulate-stats               = true
+
 format-connected               = <ramp-signal> <label-connected>
-format-connected-foreground    = ${colors.colour_blu}
-format-disconnected            =  <label-disconnected>
-format-disconnected-foreground = ${colors.colour_red}
+format-connected-foreground    = ${colors.cyan}
 label-connected                = %essid%
-label-connected-foreground     = ${colors.foreground}
+label-connected-foreground     = ${root.foreground}
+
+format-disconnected            =  <label-disconnected>
+format-disconnected-foreground = ${colors.red}
 label-disconnected             = disconnected
-label-disconnected-foreground  = ${colors.foreground}
-ramp-signal-4                  = 
-ramp-signal-3                  = 
-ramp-signal-2                  = 
-ramp-signal-1                  = 
+label-disconnected-foreground  = ${root.foreground}
+
 ramp-signal-0                  = 
+ramp-signal-1                  = 
+ramp-signal-2                  = 
+ramp-signal-3                  = 
+ramp-signal-4                  = 
