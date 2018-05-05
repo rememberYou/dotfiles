@@ -132,5 +132,8 @@ alias zshconfig="emacsclient ~/.zshrc"
 
 # ----------------------------------------
 
+# Add only functional commands to the history
+zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
+
 # Refresh gpg-agent tty in case user switches into an X Session
 gpg-connect-agent updatestartuptty /bye >/dev/null
