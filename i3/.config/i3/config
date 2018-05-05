@@ -262,10 +262,6 @@ set $orange #f1af5f
 set $red    #ff5137
 set $white  #dddcff
 
-bar {
-    i3bar_command $HOME/.config/polybar/launch.sh
-}
-
 ### i3-gaps ###
 gaps inner 6
 gaps outer 6
@@ -282,5 +278,6 @@ exec --no-startup-id razercfg -r 3
 exec --no-startup-id redshift-gtk -l `whereami.py`
 exec --no-startup-id udiskie --tray --use-udisks2
 exec --no-startup-id xbindkeys
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-center `wallpaper.py`
 exec startup i3
