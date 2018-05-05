@@ -32,12 +32,14 @@ case they can help you.
 
 A non-exhaustive preview of the environment I use on a daily basis.
 
-Last Updated: **10 March, 2018**.
+Last Updated: **05 May, 2018**.
 
 Note: you can find my wallpapers [here](https://github.com/rememberYou/wallpapers).
 
 ![Wall](assets/wall.png "Wallpaper")
-![Global](assets/i3_gaps_neofetch_ranger_emacs_dunst.png "i3-gaps, GNU/Emacs, ranger, neofetch, dunst")
+![Global](assets/i3_gaps_neofetch_emacs_dunst.png "i3-gaps, GNU/Emacs, termite,
+neofetch, dunst")
+![Newsboat](assets/newsboat_ranger.png "Newsboat, Ranger")
 ![Rofi](assets/rofi.png "Rofi")
 
 --------------------
