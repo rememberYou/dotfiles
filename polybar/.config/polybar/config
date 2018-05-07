@@ -43,6 +43,8 @@ tray-maxsize        = 18
 
 [module/i3]
 type            = internal/i3
+index-sort      = true
+enable-scroll   = false
 
 ws-icon-0       = 1: ;
 ws-icon-1       = 2: ;
