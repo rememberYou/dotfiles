@@ -9,8 +9,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Set URxvt as main terminal.l
-set $term urxvt
+# Set termite as main terminal.
+set $term termite
 # Set rofi as dmenu replacement.
 set $menu rofi
 # Set chromium as main browser.
