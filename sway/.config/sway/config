@@ -25,7 +25,7 @@ new_float pixel 1
 floating_modifier $mod
 # Hide window borders adjacent to the screen edges.
 hide_edge_borders both
-# Repeating a workspace switch command will switch back to the prior workspace
+# Switch back to the prior workspace when repeating a workspace.
 workspace_auto_back_and_forth yes
 # The window takes the focus when an event occurs.
 focus_on_window_activation focus
