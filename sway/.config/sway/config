@@ -18,7 +18,9 @@ set $browser chromium
 
 ### Settings ###
 
-new_window none
+# Set default border style for new windows
+new_window pixel 1
+new_float pixel 1
 # Drag floating windows with $mod+mouse.
 floating_modifier $mod
 # Hide window borders adjacent to the screen edges.
