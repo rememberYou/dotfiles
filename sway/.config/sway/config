@@ -71,6 +71,15 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+c reload
 # Exit sway.
 bindsym $mod+Shift+e exit
+# _move_ the focused window with the same, but add Shift.
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
 # Move your focus around with $mod+hjkl or $mod+arrow.
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
@@ -82,15 +91,6 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 bindsym $mod+g focus next
 bindsym $mod+Shift+g focus prev
-# _move_ the focused window with the same, but add Shift.
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 # Few more
 bindsym $mod+Mod1+h workspace prev_on_output
 bindsym $mod+Mod1+l workspace next_on_output
