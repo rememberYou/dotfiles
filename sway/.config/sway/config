@@ -69,8 +69,6 @@ bindsym $mod+Shift+d exec $menu -show "window"
 bindsym $mod+Shift+q kill
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
-# Exit sway.
-bindsym $mod+Shift+e exit
 # _move_ the focused window with the same, but add Shift.
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
