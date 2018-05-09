@@ -1,7 +1,7 @@
 # Executed by zsh(1) for interactive shells.
 
 ZSH_THEME="geoffgarside"
-plugins=(git zsh-autosuggestions)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # ----------------------------------------
 
