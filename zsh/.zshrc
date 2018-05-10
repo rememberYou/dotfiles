@@ -130,6 +130,26 @@ alias zshconfig="emacsclient ~/.zshrc"
 
 . $ZSH/oh-my-zsh.sh
 
+if ! [ -d "$HOME/.zplug" ]; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
+
+. ~/.zplug/init.zsh
+
+if type zplug >/dev/null 2>&1; then
+    zplug "zsh-users/zsh-autosuggestions"
+    zplug "zsh-users/zsh-syntax-highlighting"
+    if ! zplug check --verbose; then
+	print - "Install? [y/N]: "
+	if read -s; then
+	    zplug install;
+	fi
+    fi
+    zplug load
+fi
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
+
 # ----------------------------------------
 
 # Add only functional commands to the history
