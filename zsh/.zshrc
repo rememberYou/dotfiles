@@ -112,11 +112,11 @@ alias top_mem="top -b -o +%MEM | head -n 22"
 alias top_cpu="top -b -o +%MEM | head -n 22"
 
 # Traduction
-alias de="trans --brief :de"
-alias en="trans --brief :en"
-alias fr="trans --brief :fr"
-alias it="trans --brief :it"
-alias nl="trans --brief :nl"
+alias de="trans --brief :de -e deepl"
+alias en="trans --brief :en -e deepl"
+alias fr="trans --brief :fr -e deepl"
+alias it="trans --brief :it -e deepl"
+alias nl="trans --brief :nl -e deepl"
 
 # youtube-dl
 alias yeam="youtube-dl --extract-audio --audio-format mp3"
