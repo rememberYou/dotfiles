@@ -308,6 +308,7 @@ exec --no-startup-id redshift-gtk -l `where-ami`
 exec --no-startup-id caffeine
 exec --no-startup-id razercfg -r 2
 exec --no-startup-id emacs --daemon
+exec --no-startup-id syncthing -no-browser
 
 include /etc/sway/config.d/*
 include ~/.config/sway/config.d/*
