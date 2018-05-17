@@ -1,7 +1,6 @@
 # Executed by zsh(1) for interactive shells.
 
 ZSH_THEME="geoffgarside"
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 # ----------------------------------------
 
@@ -138,7 +137,7 @@ fi
 
 if type zplug >/dev/null 2>&1; then
     zplug "zsh-users/zsh-autosuggestions"
-    zplug "zsh-users/zsh-syntax-highlighting"
+    zplug "zsh-users/zsh-syntax-highlighting", defer:2
     if ! zplug check --verbose; then
 	print - "Install? [y/N]: "
 	if read -s; then
