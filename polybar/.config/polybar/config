@@ -34,7 +34,7 @@ font-5              = "Noto Sans Symbols 2:size=5;1"
 
 modules-left        = i3
 modules-center      = date
-modules-right       = github battery volume backlight cpu temperature memory filesystem wireless-network
+modules-right       = reddit github battery volume backlight cpu temperature memory filesystem wireless-network
 
 tray-position       = right
 tray-padding        = 5
@@ -141,6 +141,12 @@ interval                 = 2
 format-prefix            = " "
 format-prefix-foreground = ${colors.green}
 label                    = %percentage_used%%
+
+
+[module/reddit]
+type = custom/script
+exec = ~/bin/polybar-reddit.sh
+interval = 60
 
 
 [module/temperature]
