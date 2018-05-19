@@ -34,7 +34,7 @@ font-5              = "Noto Sans Symbols 2:size=5;1"
 
 modules-left        = i3
 modules-center      = date
-modules-right       = battery volume backlight cpu temperature memory filesystem wireless-network
+modules-right       = github battery volume backlight cpu temperature memory filesystem wireless-network
 
 tray-position       = right
 tray-padding        = 5
@@ -127,6 +127,12 @@ mount-0                    = /
 label-mounted              = %{F#859900}%mountpoint%%{F-} %percentage_used%%
 label-unmounted            = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.red}
+
+
+[module/github]
+type = custom/script
+exec = ~/bin/polybar-github.sh
+interval = 60
 
 
 [module/memory]
