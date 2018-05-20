@@ -1,5 +1,4 @@
 ! Set the modi to combine in combi mode.
-
 rofi.combi-modi:      window,drun,ssh
 
 ! Basic configuration
