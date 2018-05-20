@@ -22,5 +22,5 @@ notifications=$(curl -fs "$url" | jq ".[].unread" | grep -c true)
 if [ "$notifications" -gt 0 ]; then
     echo "%{F#cb4b16} %{F-}$notifications"
 else
-    echo " 0 |"
+    echo " 0"
 fi
