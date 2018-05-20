@@ -34,7 +34,7 @@ font-5              = "Noto Sans Symbols 2:size=5;1"
 
 modules-left        = i3
 modules-center      = date
-modules-right       = reddit github battery volume backlight cpu temperature memory filesystem wireless-network
+modules-right       = mail reddit github battery volume backlight cpu temperature memory filesystem wireless-network
 
 tray-position       = right
 tray-padding        = 5
@@ -133,6 +133,13 @@ label-unmounted-foreground = ${colors.red}
 type = custom/script
 exec = ~/bin/polybar-github.sh
 interval = 60
+
+
+[module/mail]
+type = custom/script
+interval = 10
+format = <label>
+exec = ~/bin/polybar-mail.sh
 
 
 [module/memory]
