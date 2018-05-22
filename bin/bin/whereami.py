@@ -52,4 +52,4 @@ if __name__ == '__main__':
     if is_internet():
         print(get_location()['loc'].replace(',', ':'))
     else:
-        print(get_default("/home/someone/Dropbox/shared/localization"))
+        print(get_default("/home/someone/Sync/shared/localization"))
