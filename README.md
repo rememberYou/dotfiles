@@ -128,5 +128,5 @@ Please note that I can't guarantee that your changes will be accepted.
 
 ### License ###
 
-The code is unlicensed, take what you like and hope that thes dotfiles can be so
-useful to you that it is for me.
+The code is unlicensed, take what you like and hope that these dotfiles can be
+so useful to you that it is for me.
