@@ -135,6 +135,13 @@ exec = ~/bin/polybar-github.sh
 interval = 60
 
 
+# [module/github]
+# type = internal/github
+# token = ${env:GITHUB_ACCESS_TOKEN}
+# empty-notifications = false
+# interval = 10
+
+
 [module/mail]
 type = custom/script
 interval = 10
@@ -153,7 +160,7 @@ label                    = %percentage_used%%
 [module/reddit]
 type = custom/script
 exec = ~/bin/polybar-reddit.sh
-interval = 60
+interval = 10
 
 
 [module/temperature]
