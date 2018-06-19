@@ -1,7 +1,7 @@
-![Dotfiles Logo](assets/dotfiles-logo.png "Dotfiles logo")
-===============================
+<p align="center"><img src="assets/dotfiles-logo.svg" width=512/></p>
+<p align="center">This repository contains all of my dotfiles configuration.</p>
 
-This repository contains all of my dotfiles configuration.
+---
 
 List of files:
 
@@ -27,9 +27,7 @@ List of files:
 However, it is still possible to access my [old dotfiles](https://github.com/rememberYou/old-dotfiles) that I no longer use, in
 case they can help you.
 
---------------------
-
-### Quick preview ###
+## Quick preview
 
 A non-exhaustive preview of the environment I use on a daily basis.
 
@@ -43,9 +41,7 @@ neofetch, dunst")
 ![Newsboat](assets/newsboat_ranger.png "Newsboat, Ranger")
 ![Rofi](assets/rofi.png "Rofi")
 
---------------------
-
-### Dotfiles manager ###
+## Dotfiles Manager
 
 I'm using [GNU Stow](https://www.gnu.org/software/stow/) a free, lightweight
 dotfiles manager written in Perl to manages my dotfiles.
@@ -57,9 +53,7 @@ manager.
 With that, it is easy to share files among multiple users or computers with a
 few command lines.
 
---------------------
-
-### Getting started ###
+## Getting Started
 
 No matter what your Linux distribution, `stow` can easily be installed according
 to your package manager:
@@ -106,27 +100,21 @@ chmod +x stowsym.sh
 Easy, isn't it? For those who want to find my Emacs configuration files, they
 are available: [here](https://github.com/rememberYou/.emacs.d/).
 
---------------------
-
-### TODO ###
+## TODO
 
 Here is a list of tasks I plan to do in my spare time to improve this
 configuration:
 
 *  Refactoring my `sway` configuration.
 
---------------------
-
-### Contributions ###
+## Contributions
 
 Various functions may be optimized or spelling errors may occur. If you want to
 make your own correction on these dotfiles, you are free to do so.
 
 Please note that I can't guarantee that your changes will be accepted.
 
---------------------
-
-### License ###
+## License
 
 The code is unlicensed, take what you like and hope that these dotfiles can be
 so useful to you that it is for me.
