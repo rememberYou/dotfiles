@@ -1,6 +1,6 @@
 ! Basic configuration
-Emacs.background: #022C37
-Emacs.foreground: #7D898A
+Emacs.background: #2e3440
+Emacs.foreground: #d8dee9
 Emacs.cursorBlink: off
 Emacs.menuBar: off
 Emacs.toolBar: off
