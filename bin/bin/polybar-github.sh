@@ -15,7 +15,7 @@
 # separate GPG file.
 
 # Replace the path below with yours.
-TOKEN="/home/$USER/Sync/shared/.github-token.gpg"
+TOKEN="/home/$USER/.gnupg/shared/.github-token.gpg"
 url="https://api.github.com/notifications?access_token=$(gpg -qd "$TOKEN")"
 notifications=$(curl -fs "$url" | jq ".[].unread" | grep -c true)
 

@@ -15,7 +15,7 @@
 # separate GPG file.
 
 # Replace this path by yours.
-reddit_gpg="/home/$USER/Sync/shared/.reddit-json.gpg"
+reddit_gpg="/home/$USER/.gnupg/shared/.reddit-json.gpg"
 url="https://www.reddit.com/message/unread/.json?feed=$(gpg -qd "$reddit_gpg")"
 unread=$(curl -sf "$url" | jq '.["data"]["children"] | length')
 
