@@ -1,10 +1,12 @@
 # Emacs
-http://cestlaz.github.io/rss.xml "~Emacs: C'est la Z"
+https://emacs.cafe/feed.xml "emacs" "~Emacs: Café"
+http://cachestocaches.com/ "emacs" "~Emacs: Caches to Caches"
+http://cestlaz.github.io/rss.xml "emacs" "~Emacs: C'est la Z"
+http://emacsninja.com/feed.atom "emacs" "~Emacs: Ninja"
 http://planet.emacsen.org/atom.xml "emacs" "~Emacs: Planet Emacsen"
 http://pragmaticemacs.com/feed/ "emacs" "~Emacs: Pragmatic Emacs"
 http://sachachua.com/blog/feed/ "emacs" "~Emacs: Sacha Chua's Blog"
-https://emacs.cafe/feed.xml "~Emacs: Emacs Café"
-https://www.reddit.com/r/emacs.rss "emacs" "~Emacs: emacs (Reddit)"
+https://www.reddit.com/r/emacs.rss "emacs" "~Emacs: Reddit"
 
 # Hack
 https://feedex.net/feed/news.ycombinator.com/rss "hack" "~Hack: Hacker News"
