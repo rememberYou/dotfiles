@@ -65,8 +65,9 @@ alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "stat
 alias dke="docker exec -it $1 sh"
 alias dkr="docker run -d -P --name $1 $2"
 
-# Emacs
-alias ec='emacsclient -a "" -nw'
+# GNU Emacs
+alias ec="emacsclient -a '' -t"
+alias moc="mu cfind --format=org-contact"
 
 # Emoji
 alias cpangel="xclip -selection clipboard $HOME/Documents/Emojis/angel"
