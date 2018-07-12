@@ -120,7 +120,7 @@ alias it="trans --brief :it -e deepl"
 alias nl="trans --brief :nl -e deepl"
 
 # youtube-dl
-alias yeam="youtube-dl --extract-audio --audio-format mp3"
+alias yeam="youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/%(title)s.%(ext)s'"
 
 # zsh
 alias zshconfig="emacsclient ~/.zshrc"
