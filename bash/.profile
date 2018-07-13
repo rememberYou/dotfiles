@@ -23,6 +23,7 @@ export AUR_MAINTAINER='rememberYou'
 export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
 export CCACHE_PATH='/usr/bin'
 export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
+export GITHUB_ACCESS_TOKEN="$(gpg -qd "$HOME/.gnupg/shared/.github-token.gpg")"
 export GPG_TTY=$(tty)
 export GRADLE_HOME='/usr/share/java/gradle'
 export LD_LIBRARY_PATH="$HOME/opt/lib"
