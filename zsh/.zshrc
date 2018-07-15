@@ -137,6 +137,7 @@ fi
 . ~/.zplug/init.zsh
 
 if type zplug >/dev/null 2>&1; then
+	zplug "rupa/z", use:z.sh
     zplug "zsh-users/zsh-autosuggestions"
     zplug "zsh-users/zsh-syntax-highlighting", defer:2
     if ! zplug check --verbose; then
