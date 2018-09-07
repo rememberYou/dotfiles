@@ -163,7 +163,7 @@ bindsym $mod+t scratchpad show
 ### Others ###
 
 # Passwords.
-bindsym $mod+p exec ~/bin/pass-rofi
+bindsym $mod+p exec ~/bin/rofi-pass
 
 # Brightness.
 # Uses the Backlight Utility that's right for you, mine may not work
