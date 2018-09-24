@@ -1,0 +1,148 @@
+#!/bin/sh
+#
+# This script will import your OTP from andOTP and export them to your
+# YubiKey.
+#
+# To use this script, make sure you have plugged in your YubiKey key
+# and pass the andOTP backup as an argument to this script.
+#
+# Example of use: ./andotp2yubi -f otp_account.json
+#
+# NOTE: if this is the first time you insert your YubiKey, execute the
+# following commands (replace `trizen` with your package manager):
+#
+#   trizen -S yubikey-manager acsccid
+#   sudo systemctl enable pcscd.service
+#   sudo systemctl start pcscd.service
+
+# Main variables.
+FILENAME=
+IS_GPG=0
+TMP_FILENAME="/tmp/$FILENAME"
+
+# Kills the program.
+die() {
+    printf '%s\n' "$1" >&2
+    exit 1
+}
+
+# Generates temporary directory.
+gen_tmp() {
+    BASENAME=$(basename "$FILENAME")
+    cp $FILENAME "/tmp/$BASENAME"
+}
+
+# Tells if the file is in GPG format.
+is_gpg() {
+    [[ $1 =~ gpg$ ]]
+}
+
+# Tells if the file is in JSON format.
+is_json() {
+    [[ $1 =~ json$ ]]
+}
+
+# Resets all OATH data and inserts the OATH data from the specified
+# JSON files.
+otp_to_yubi() {
+    echo "y" | ykman oath reset
+
+    if is_gpg $FILENAME; then
+	BASENAME=$(basename "$FILENAME")
+	TMP_FILENAME=${BASENAME%.gpg}
+	IS_GPG=1
+	gpg --batch --yes --output $TMP_FILENAME --decrypt $FILENAME
+    fi
+
+    if [ $IS_GPG -eq 0 ]; then
+	TMP_FILENAME=${FILENAME}
+    fi
+
+    if is_json $TMP_FILENAME; then
+
+	if [ $IS_GPG -eq 0 ]; then
+	    gen_tmp
+	fi
+
+	SECRET="empty"
+	i="0"
+
+	echo -e "\nExporting OATH data to YubiKey..."
+
+	while [ -n "$SECRET" ]; do
+	    SECRET="$(cat $TMP_FILENAME | python3 -c "import sys,json; print(json.load(sys.stdin)[$i]['secret'])" 2> /dev/null)"
+	    LABEL="$(cat $TMP_FILENAME | python3 -c "import sys,json; print(json.load(sys.stdin)[$i]['label'])" 2> /dev/null)"
+
+	    echo ""
+	    echo -e " Label: $LABEL\nSecret: $SECRET"
+
+	    ykman oath add $LABEL $SECRET
+	    let "i++"
+
+	    # Exit on CTRL-C
+	    test $? -gt 128
+	done
+
+	printout
+	exit 1
+    fi
+}
+
+# Deletes temporary filename on exit.
+printout() {
+    if [ $IS_GPG -eq 1 ]; then
+	rm -rf $TMP_FILENAME
+    else
+	BASENAME=$(basename "$FILENAME")
+	rm -rf "/tmp/$BASENAME"
+    fi
+}
+
+# Usage info.
+show_help() {
+    cat << EOF
+Usage: ${0##*/} [-h] [-f INPUTFILE] [FILE]...
+Imports your OTP from andOTP and export them to your YubiKey
+    -f INPUTFILE  specify the JSON andOTP backup file
+    -h            display this help and exit
+EOF
+}
+
+while :; do
+    case $1 in
+        -h|-\?|--help)
+            show_help
+            exit
+            ;;
+        -f|--file)
+            if [ "$2" ]; then
+                FILENAME=$2
+                shift
+            else
+                die 'ERROR: "--file" requires a non-empty option argument.'
+            fi
+            ;;
+        --file=?*)
+            FILENAME=${1#*=}
+            ;;
+        --file=)
+        die 'ERROR: "--file" requires a non-empty option argument.'
+        ;;
+        --)
+            shift
+            break
+            ;;
+        -?*)
+            printf 'WARN: Unknown option (ignored): %s\n' "$1" >&2
+            ;;
+        *)
+            break
+    esac
+
+    shift
+done
+
+if [ "$FILENAME" ]; then
+    otp_to_yubi
+    trap printout INT
+fi
