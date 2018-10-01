@@ -43,3 +43,7 @@ export XKB_DEFAULT_OPTIONS=caps:escape
 export XKB_DEFAULT_VARIANT=intl
 
 export PATH="$HOME/.gem/ruby/2.4.0/bin:$PATH"
+# Start graphical server if i3 is not already running.
+if [ "$(tty)" = "/dev/tty1" ]; then
+    pgrep -x i3 || exec startx
+fi
