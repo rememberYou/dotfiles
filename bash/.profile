@@ -35,10 +35,6 @@ export NO_AT_BRIDGE=1
 export PYTHONSTARTUP="$HOME/.pythonrc"
 export ZSH=$HOME/.oh-my-zsh
 
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-
 mkdir -p "$XDG_CACHE_HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_HOME"
 
 export XKB_DEFAULT_LAYOUT=us_qwerty-fr
