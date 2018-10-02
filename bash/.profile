@@ -18,7 +18,6 @@ export TERMINAL='termite'
 export JAVA_HOME='/usr/lib/jvm/default-runtime'
 export JDK_HOME='/usr/lib/jvm/default'
 
-export AUR_MAINTAINER='rememberYou'
 export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
 export CCACHE_PATH='/usr/bin'
 export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
