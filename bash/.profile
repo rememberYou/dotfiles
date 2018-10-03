@@ -60,7 +60,6 @@ fi
 export XDG_CACHE_DIR="$HOME/.cache"
 export XDG_CONFIG_DIR="$HOME/.config"
 export XDG_DATA_DIR="$HOME/.local/share"
-
 mkdir -p "$XDG_CACHE_DIR" "$XDG_CONFIG_DIR" "$XDG_DATA_DIR"
 
 # Path to the oh-my-zsh configuration.
