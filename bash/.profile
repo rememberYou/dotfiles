@@ -37,8 +37,9 @@ export NO_AT_BRIDGE=1
 export PASSWORD_STORE_GENERATED_LENGTH=50
 
 # Allows you to use $HOME/bin's bash scripts anywhere.
-if [ -d "$HOME/bin" ]; then
-    export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/bin"
+if [ ! -d "$HOME/bin" ]; then
+    mkdir -p "$PATH"
 fi
 
 # Loads the specified modules and other codes when Python starts.
