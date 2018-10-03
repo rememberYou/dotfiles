@@ -50,6 +50,12 @@ export SHELL=${SHELL:-/bin/bash}
 # Use termite as default terminal.
 export TERMINAL="termite"
 
+# Add temporary files according to the user.
+export TMPDIR="/tmp/$USER"
+if [ ! -d "$TMPDIR" ]; then
+    mkdir -m 700 "$TMPDIR"
+fi
+
 # Create extra folders for XDG.
 export XDG_CACHE_DIR="$HOME/.cache"
 export XDG_CONFIG_DIR="$HOME/.config"
