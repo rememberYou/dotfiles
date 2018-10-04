@@ -15,11 +15,3 @@ shopt -s histreedit              # give the opportunity to re-edit a failed hist
 shopt -s histverify              # show before executing history commands.
 shopt -s lithist                 # multi-line commands are saved to the history with embedded new lines.
 shopt -s no_empty_cmd_completion # avoid completion on an empty line.
-
-
-# ----------------------------------------
-
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
-
-PS1='[\u@\h \W]\$ '
