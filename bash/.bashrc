@@ -2,6 +2,8 @@
 #
 # Executed by bash(1) for interactive non-login shells.
 
+. ~/.profile
+
 export HISTFILE="$HOME/.local/share/bash_history"
 
 shopt -s autocd                  # If command is a path, cd into it.
