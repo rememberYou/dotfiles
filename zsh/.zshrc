@@ -48,9 +48,11 @@ unsetopt flow_control         # Output flow control via start/stop characters is
 unsetopt hist_beep            # No bell on error in history.
 unsetopt hup                  # No hup signal at shell exit.
 
+# Aliases
+# ----------------------------------------
 
-# zsh
-alias zshconfig="emacsclient ~/.zshrc"
+# ZSH config
+alias zshcfg="emacsclient ~/.zshrc"
 
 # Sources
 # ----------------------------------------
