@@ -25,6 +25,7 @@ List of files:
  systemd         ➔ systemd units
  termite         ➔ keyboard-centric VTE-based terminal
  x11             ➔ X11 settings
+ ssh             ➔ SSH settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
 
