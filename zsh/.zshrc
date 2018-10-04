@@ -4,12 +4,7 @@ ZSH_THEME="geoffgarside"
 
 # ----------------------------------------
 
-HISTCONTROL='ignorespace:erasedups'
 HISTFILE="$HOME/.local/share/zsh_history"
-HISTFILESIZE=1000
-HISTIGNORE='exit'
-HISTSIZE=10000
-SAVEHIST=10000
 
 setopt always_to_end          # move the cursor to the end of the word after each completion.
 setopt auto_cd                # if command is a path, cd into it.

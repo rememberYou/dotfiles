@@ -23,6 +23,15 @@ export GPGKEY
 GPG_TTY="$(tty)"
 export GPG_TTY
 
+# Manage the storage history of the commands.
+export HISTCONTROL='ignorespace:erasedups'
+# Increase the history file size.
+export HISTFILESIZE=1000
+# Ignore the archiving of the following commands.
+export HISTIGNORE='exit:poweroff:reboot:shutdown'
+# Increase the history size.
+export HISTSIZE=10000
+
 # Related to Java.
 export JAVA_HOME="/usr/lib/jvm/default-runtime"
 export JDK_HOME="/usr/lib/jvm/default"
@@ -44,6 +53,9 @@ fi
 
 # Loads the specified modules and other codes when Python starts.
 export PYTHONSTARTUP="$HOME/.pythonrc"
+
+# Increase the history save size.
+export SAVEHIST=10000
 
 # Tell the Shell used by default.
 export SHELL=${SHELL:-/bin/bash}

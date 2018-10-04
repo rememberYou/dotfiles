@@ -1,10 +1,6 @@
 # Executed by bash(1) for interactive non-login shells.
 
-HISTCONTROL='ignorespace:erasedups'
 HISTFILE="$HOME/.local/share/bash_history"
-HISTFILESIZE=1000
-HISTIGNORE='exit'
-HISTSIZE=10000
 
 shopt -s autocd                  # if command is a path, cd into it.
 shopt -s checkjobs               # lists the status of any stopped and running jobs before exiting an interactive shell.
