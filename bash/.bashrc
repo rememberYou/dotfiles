@@ -2,7 +2,7 @@
 #
 # Executed by bash(1) for interactive non-login shells.
 
-HISTFILE="$HOME/.local/share/bash_history"
+export HISTFILE="$HOME/.local/share/bash_history"
 
 shopt -s autocd                  # If command is a path, cd into it.
 shopt -s checkjobs               # List the status of any stopped and running jobs before exiting an interactive shell.

@@ -4,7 +4,6 @@ ZSH_THEME="geoffgarside"
 
 # ----------------------------------------
 
-HISTFILE="$HOME/.local/share/zsh_history"
 
 setopt always_to_end          # move the cursor to the end of the word after each completion.
 setopt auto_cd                # if command is a path, cd into it.
@@ -34,6 +33,7 @@ setopt posix_builtins         # allow builtin to execute shell builtin commands.
 setopt prompt_subst           # parameter expansion, command substitution and arithmetic expansion are performed in prompts.
 setopt pushd_ignore_dups      # no duplicates in dir stack.
 setopt pushd_silent           # no dir stack after pushd or popd.
+export HISTFILE="$HOME/.local/share/zsh_history"
 setopt pushd_to_home          # `pushd` = `pushd $HOME`
 setopt rc_quotes              # allow the character sequence `''' to signify a single quote within singly quoted strings.
 setopt rm_star_silent         # do not query the user before executing `rm *' or `rm path/*'.
