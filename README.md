@@ -20,6 +20,7 @@ List of files:
  mpd             ➔ music player daemon
  neofetch        ➔ CLI system information tool
  newsboat        ➔ RSS/Atom feed reader for text terminals
+ ncmpcpp         ➔ mpd client
  polybar         ➔ status bars
  ranger          ➔ console file manager with VI key bindings
  sway            ➔ i3-compatible Wayland compositor
