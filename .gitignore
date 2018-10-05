@@ -1,3 +1,4 @@
+*.log
 __pycache__
 ranger/.config/ranger/bookmarks
 ranger/.config/ranger/history
