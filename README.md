@@ -10,6 +10,7 @@
 List of files:
 
 ```
+ alacritty       ➔ cross-platform, GPU-accelerated terminal emulator
  bash            ➔ bash settings, aliases, and custom prompts
  bin             ➔ various useful scripts (borg, rofi, etc)
  dunst           ➔ lightweight replacement for the notification-daemons
@@ -25,7 +26,6 @@ List of files:
  ranger          ➔ console file manager with VI key bindings
  sway            ➔ i3-compatible Wayland compositor
  systemd         ➔ systemd units
- termite         ➔ keyboard-centric VTE-based terminal
  x11             ➔ X11 settings
  ssh             ➔ SSH settings
  zsh             ➔ zshell settings, aliases, and custom prompts
