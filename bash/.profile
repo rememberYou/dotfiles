@@ -60,8 +60,8 @@ export SAVEHIST=10000
 # Tell the Shell used by default.
 export SHELL=${SHELL:-/bin/bash}
 
-# Use termite as default terminal.
-export TERMINAL="termite"
+# Use kitty as default terminal.
+export TERMINAL="alacritty"
 
 # Add temporary files according to the user.
 export TMPDIR="/tmp/$USER"

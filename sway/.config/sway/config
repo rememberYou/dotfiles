@@ -9,8 +9,8 @@ set $left h
 set $down j
 set $up k
 set $right l
-# Set termite as main terminal.
-set $term termite
+# Set alacritty as main terminal.
+set $term alacritty
 # Set rofi as dmenu replacement.
 set $menu rofi
 # Set chromium as main browser.
