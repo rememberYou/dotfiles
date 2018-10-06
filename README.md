@@ -113,6 +113,9 @@ are available: [here](https://github.com/rememberYou/.emacs.d/).
 Here is a list of tasks I plan to do in my spare time to improve this
 configuration:
 
+*  Refactoring my `alacritty` configuration.
+*  Refactoring my `compton` configuration.
+*  Refactoring my `i3` configuration.
 *  Refactoring my `sway` configuration.
 
 ## Contributions
