@@ -13,6 +13,7 @@ List of files:
  alacritty       ➔ cross-platform, GPU-accelerated terminal emulator
  bash            ➔ bash settings, aliases, and custom prompts
  bin             ➔ various useful scripts (borg, rofi, etc)
+ compton         ➔ compositor for X11
  dunst           ➔ lightweight replacement for the notification-daemons
  git             ➔ global git config and aliases
  gnupg           ➔ allows you to encrypt and sign your data and communication
