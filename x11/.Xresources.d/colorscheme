@@ -1,8 +1,10 @@
 ! base16 rememberYou
 
-*.foreground:   #d8dee9
 *.background:   #2e3440
+*.foreground:   #d8dee9
+
 *.cursorColor:  #d8dee9
+
 *.color0:       #3b4252
 *.color1:       #bf616a
 *.color2:       #a3be8C
