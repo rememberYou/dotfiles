@@ -2,19 +2,19 @@
 rofi.combi-modi:      window,drun,ssh
 
 ! Basic configuration
-rofi.width:           100
-rofi.padding:         10
-rofi.font:            Source Code Pro 13
+rofi.font:            DejaVu Sans Mono 16
 rofi.hide-scrollbar:  true
-rofi.location:        1
 rofi.lines:           8
 rofi.line-padding:    2
+rofi.location:        1
+rofi.padding:         10
 rofi.separator-style: none
+rofi.width:           100
 
 ! Property Name       BG       Border   Separator
 rofi.color-window:    #18181a, #18181a, #282c34
 
 ! Property Name       BG       FG       BG-alt   Head-BG  Head-FG
-rofi.color-normal:    #18181a, #abb2bf, #18181a, #18181a, #81a2be
 rofi.color-active:    #18181a, #61afef, #18181a, #18181a, #b5bd68
+rofi.color-normal:    #18181a, #abb2bf, #18181a, #18181a, #81a2be
 rofi.color-urgent:    #18181a, #e06c75, #18181a, #18181a, #cc6666
