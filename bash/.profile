@@ -70,10 +70,10 @@ if [ ! -d "$TMPDIR" ]; then
 fi
 
 # Create extra folders for XDG.
-export XDG_CACHE_DIR="$HOME/.cache"
-export XDG_CONFIG_DIR="$HOME/.config"
-export XDG_DATA_DIR="$HOME/.local/share"
-mkdir -p "$XDG_CACHE_DIR" "$XDG_CONFIG_DIR" "$XDG_DATA_DIR"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_DIRS="$HOME/.local/share"
+mkdir -p "$XDG_CACHE_HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_DIRS"
 
 # Path to the oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
