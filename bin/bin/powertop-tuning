@@ -1,0 +1,69 @@
+#!/bin/bash
+#
+# Powertop is a tool provided by Intel to enable various powersaving
+# modes in userspace, kernel and hardware. It allow you a better
+# autonomy for your battery.
+#
+# This script allows you to convert the settings parameters suggested
+# by Powertop for /etc/tmpfiles.d using the system.d syntax, in order
+# to make these parameters persistent.
+#
+# Before using this script, it is necessary that you generate an error
+# report and store the suggestions in a temporary file:
+#
+# ```
+# trizen -S powertop
+# powertop -r powerreport.html
+# awk -F '</?td ?>' '/tune/ { print $4 }' powerreport.html > tunables
+# ```
+#
+# Based on this file, here is how to use this script:
+# `sudo ./powertop-tuning tunables > /etc/tmpfiles.d/power-savings.conf`
+
+cleanup() {
+    echo $1 | tr -d "';"
+}
+
+die() {
+    printf '%s\n' "$1" >&2
+    exit 1
+}
+
+main() {
+    while read _ arg _ dev; do
+	if [ "$arg" != "" ]; then	
+	    echo w $(cleanup $dev) - - - - $(cleanup $arg)
+	fi
+    done < "$@"
+}
+
+show_help() {
+    cat << EOF
+Usage: ${0##*/} [-h] [FILE]...
+Convert Powertop settings for system.d
+    -h  display this help and exit
+EOF
+}
+
+while :; do
+    case $1 in
+        -h|-\?|--help)
+            show_help
+            exit
+            ;;
+        --)
+            shift
+            break
+            ;;
+        -?*)
+            printf 'WARN: Unknown option (ignored): %s\n' "$1" >&2
+            ;;
+        *)
+            break
+    esac
+
+    shift
+done
+
+main "$@"
+trap printout INT
