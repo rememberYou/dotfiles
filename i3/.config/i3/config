@@ -2,70 +2,77 @@
 
 # Set font for window titles.
 font pango:Terminus 9
+
 # Set window key.
 set $mod Mod4
+
 # Set navigation keys.
-set $left h
 set $down j
-set $up k
+set $left h
 set $right l
-# Set alacritty as main terminal.
-set $term alacritty
-# Set rofi as dmenu replacement.
-set $menu rofi
+set $up k
+
 # Set chromium as main browser.
 set $browser chromium
+# Set the locker.
+set $locker i3lock-fancy -t "If you touch this computer be prepared for the consequences" -- scrot
+# Set rofi as dmenu replacement.
+set $menu rofi
+# Set alacritty as main terminal.
+set $term alacritty
 
 ### Settings ###
 
-# Set default border style for new windows
-new_window pixel 1
-new_float pixel 1
 # Drag floating windows with $mod+mouse.
 floating_modifier $mod
-# Hide window borders adjacent to the screen edges.
-hide_edge_borders both
-# Switch back to the prior workspace when repeating a workspace.
-workspace_auto_back_and_forth yes
 # The window takes the focus when an event occurs.
 focus_on_window_activation focus
+# Hide window borders adjacent to the screen edges.
+hide_edge_borders both
+# Set default border style for new windows.
+new_float pixel 1
+new_window pixel 1
+# Switch back to the prior workspace when repeating a workspace.
+workspace_auto_back_and_forth yes
 
 ### Key bindings ###
 
 # Start a terminal.
 bindsym $mod+Return exec $term
-# Start a terminal with ranger.
 bindsym $mod+Shift+r exec $term -e "ranger"
 # Start rofi.
 bindsym $mod+d exec $menu -show "drun"
 bindsym $mod+Shift+d exec $menu -show "window"
 bindsym $mod+Shift+f exec $menu -show find -modi find:~/.local/share/rofi/finder.sh
 bindsym $mod+Shift+w exec ~/bin/rofi-xrandr
-# Kill focused window with $mod+shift+q.
+# Kill focused window.
 bindsym $mod+Shift+q kill
 # Reload the configuration file.
 bindsym $mod+Shift+c reload
+
 # Move your focus around with $mod+hjkl or $mod+arrow.
-bindsym $mod+$left focus left
 bindsym $mod+$down focus down
-bindsym $mod+$up focus up
+bindsym $mod+$left focus left
 bindsym $mod+$right focus right
-bindsym $mod+Left focus left
+bindsym $mod+$up focus up
 bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left focus left
 bindsym $mod+Right focus right
+bindsym $mod+Up focus up
+
+# Move the focused window.
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Up move up
+
 bindsym $mod+g focus next
 bindsym $mod+Shift+g focus prev
-# _move_ the focused window with the same, but add Shift.
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-# Few more
+
 bindsym $mod+Mod1+h workspace prev_on_output
 bindsym $mod+Mod1+l workspace next_on_output
 bindsym $mod+Mod1+Left workspace prev_on_output
@@ -74,8 +81,6 @@ bindsym $mod+Mod1+Right workspace next_on_output
 ### Workspaces ###
 
 # Global variables for workspaces.
-# To use these icons don't forget to install ttf-font-awesome.
-# Feel free to use some others: http://fontawesome.io/cheatsheet/
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
@@ -112,22 +117,19 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 
 # Assign applications to their own workspace.
-assign [class="URxvt"]         → $ws1
-assign [class="Chromium"]      → $ws2
-assign [class="Emacs"]         → $ws3
-assign [class="Gimp"]          → $ws6
-assign [class="VirtualBox"]    → $ws7
-assign [class="TeamViewer"]    → $ws7
+assign [class="alacritty"]      → $ws1
+assign [class="Chromium"]       → $ws2
+assign [class="Emacs"]          → $ws3
+assign [class="Gimp"]           → $ws6
+assign [class="GravitDesigner"] → $ws6
 
 for_window [class="Spotify"] move to workspace $ws4
-for_window [class="Skype Preview"] move to workspace ws5
+for_window [class="Skype"] move to workspace $ws5
 for_window [class="chromium"] border none
 
 ### Layout stuff ###
 
-# You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
-# respectively.
+# Split horizontal and vertical.
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
@@ -148,9 +150,6 @@ bindsym $mod+space focus mode_toggle
 # Move focus to the parent container.
 bindsym $mod+a focus parent
 
-# Cycle through border styles with $mod+b
-# bindsym $mod+b border toggle
-
 ### Scratchpad ###
 
 # Move the currently focused window to the scratchpad.
@@ -162,48 +161,47 @@ bindsym $mod+t scratchpad show
 
 ### Others ###
 
-# Passwords.
+# Get a password with rofi from pass.
 bindsym $mod+p exec ~/bin/rofi-pass
+# Get an OTP with rofi from YubiKey.
+bindsym $mod+y exec ~/bin/rofi-yubi
 
-# Brightness.
-# Uses the Backlight Utility that's right for you, mine may not work
-# with your system.
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+# Manage the brightness.
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
-# Media player.
-bindsym XF86AudioPlay exec playerctl play-pause
+# Manage the media player.
 bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 
-# Volume/Microphone Keys.
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') -5%
-bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks |awk '/* index:/{print $3}') toggle
-bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
+# Manage the audio volume.
+bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
 
-# Power mode.
-set $locker 'xtrlock'
+# Manage the microphone.
+bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 
 ### Different menu ###
 
 # Power.
-set $mode_power "System lock (l), logout (e), suspend (s), reboot (r), shutdown (Shift+s)"
-mode $mode_power {
-    # Lock the screen.
-    bindsym l exec $locker, mode "default"
+set $mode_power "Logout (e), system lock (l), reboot (r), suspend (s), shutdown (Shift+s)"
+mode $mode_power {    
     # Logout the current session.
     bindsym e exec i3-msg exit, mode "default"
-    # Suspend the current session.
-    bindsym s exec $locker && systemctl suspend, mode "default"
+    # Lock the screen.
+    bindsym l exec $locker, mode "default"
     # Reboot the computer.
     bindsym r exec systemctl reboot, mode "default"
+    # Suspend the current session.
+    bindsym s exec $locker && systemctl suspend, mode "default"
     # Shutdown the computer.
     bindsym Shift+s exec systemctl poweroff -i, mode "default"
 
     # Return to default mode.
-    bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym Return mode "default"
 }
 
 # Set power mode.
@@ -212,20 +210,20 @@ bindsym $mod+Shift+p mode $mode_power
 # Resizing container.
 set $mode_resize "(h) left, (j) up, (k) down, (l) right"
 mode $mode_resize {
-    bindsym $left resize grow width 10 px or 10 ppt
     bindsym $down resize grow height 10 px or 10 ppt
-    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $left resize grow width 10 px or 10 ppt
     bindsym $right resize shrink width 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
 
     # Ditto, with arrow keys.
-    bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
 
     # Return to default mode.
-    bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym Return mode "default"
 }
 
 # Resize move.
@@ -238,8 +236,8 @@ mode $mode_screenshot {
     bindsym f exec scrot -u ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
 
     # Return to default mode
-    bindsym Return mode "default"
     bindsym Escape mode "default"
+    bindsym Return mode "default"
 }
 
 # Set screenshot mode
@@ -271,16 +269,19 @@ smart_gaps on
 
 ### Startup programs. ###
 
-exec --no-startup-id compton -f -bCG --backend glx --vsync opengl-swc
 exec --no-startup-id caffeine
+exec --no-startup-id compton --config ~/.config/compton.conf
 exec --no-startup-id dunst
 exec --no-startup-id emacs --daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id razercfg -r 3
 exec --no-startup-id redshift-gtk -l `whereami.py`
 exec --no-startup-id syncthing -no-browser
-exec --no-startup-id udiskie --tray --use-udisks2
 exec --no-startup-id xbindkeys
+
+exec --no-startup-id [ ! -s ~/.mpd/pid ] && mpd
+
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-center `wallpaper.py`
+
 exec startup i3
