@@ -4,6 +4,8 @@
 
 ZSH_THEME="geoffgarside"
 
+. ~/.profile
+
 # ----------------------------------------
 
 export HISTFILE="$HOME/.local/share/zsh_history"
