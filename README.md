@@ -20,6 +20,7 @@ List of files:
  i3              ➔ dynamic tiling window manager for X11 inspired by wmii
  mbsync          ➔ capable of synchronizing mail on IMAP server with local Maildir folder
  mpd             ➔ music player daemon
+ mpv             ➔ media player based on MPlayer and the now unmaintained mplayer2
  ncmpcpp         ➔ mpd client
  neofetch        ➔ CLI system information tool
  newsboat        ➔ RSS/Atom feed reader for text terminals
