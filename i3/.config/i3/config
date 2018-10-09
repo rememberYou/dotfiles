@@ -267,7 +267,7 @@ gaps inner 6
 gaps outer 6
 smart_gaps on
 
-### Startup programs. ###
+### Startup programs ###
 
 exec --no-startup-id caffeine
 exec --no-startup-id compton --config ~/.config/compton.conf
