@@ -4,5 +4,10 @@ ranger/.config/ranger/bookmarks
 ranger/.config/ranger/history
 ranger/.config/ranger/plugins/
 ranger/.config/ranger/tagged
+mpd/.config/mpd/database
+mpd/.config/mpd/mpd.log
+mpd/.config/mpd/playlists
+mpd/.config/mpd/state
+mpd/.config/mpd/sticker.sql
 newsboat/.newsboat/history.*
 newsboat/.newsboat/cache.*
