@@ -1,5 +1,5 @@
 ! Set the modi to combine in combi mode.
-rofi.combi-modi:      window,drun,ssh
+rofi.combi-modi:      drun,ssh,window
 
 ! Basic configuration
 rofi.font:            DejaVu Sans Mono 16
