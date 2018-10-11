@@ -4,7 +4,7 @@
 # Not read by bash(1), if ~/.bash_profile or ~/.bash_login exists.
 
 # Cache directory for Ccache.
-export CCACHE_DIR="$XDG_CACHE_DIR/ccache"
+export CCACHE_DIR="$HOME/ccache"
 # Tells Ccache to only use compilers in this directory.
 export CCACHE_PATH="/usr/bin"
 
@@ -68,12 +68,6 @@ export TMPDIR="/tmp/$USER"
 if [ ! -d "$TMPDIR" ]; then
     mkdir -m 700 "$TMPDIR"
 fi
-
-# Create extra folders for XDG.
-export XDG_CACHE_HOME="$HOME/.cache"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_DIRS="$HOME/.local/share"
-mkdir -p "$XDG_CACHE_HOME" "$XDG_CONFIG_HOME" "$XDG_DATA_DIRS"
 
 # Path to the oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
