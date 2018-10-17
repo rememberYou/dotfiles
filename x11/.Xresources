@@ -1,13 +1,11 @@
-! To update X apps configuration : xrdb -merge ~/.Xresources
-
 ! Colorscheme
 #include ".Xresources.d/colorscheme"
 
-! Emacs settings
-#include ".Xresources.d/emacs"
-
 ! Font settings
 #include ".Xresources.d/fonts"
+
+! GNU Emacs settings
+#include ".Xresources.d/emacs"
 
 ! Rofi settings
 #include ".Xresources.d/rofi"
