@@ -1,20 +1,41 @@
-#!/bin/bash
+#!/bin/sh
 #
-# Imports various system-wide snippets, most importantly,
-# "/etc/X11/xinit/xinitrc.d/50-systemd-user.sh". Of course you can do that
-# directly from your own xinitrc, but if you source the files in /etc/X11, then
-# you automatically get any updates Arch distributes.
-for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
-    if [ -x "$f" ]; then
-	. "$f"
-    fi
-done
+# Executed by startx (run your window manager from here)
+# shellcheck disable=SC1090
 
-if [ -f "$HOME/.Xresources" ]; then
-    xrdb -merge "$HOME/.Xresources"
+# Imports various system-wide snippets.
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh; do	
+	[ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
-setxkbmap us_qwerty-fr
-start-pulseaudio-x11 &
+cd ~ || exit
 
-exec i3
+# Set the brightness.
+xbacklight -set 40
+
+# Turn off the bell.
+xset -b
+
+# Load global profiles.
+[ -f /etc/profile ] && . /etc/profile
+[ -f ~/.profile ] && . ~/.profile
+
+# Inform .xprofile about the session type.
+export DESKTOP_SESSION=i3;
+
+# Load specific X11 profiles.
+[ -f /etc/xprofile ] && . /etc/xprofile
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+# Load X11 resources.
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+
+setxkbmap us_qwerty-fr
+
+# Start graphical server if there is not already a session running on TTY1.
+if [ "$(tty)" = "/dev/tty1" ]; then
+    pgrep -x i3 || exec ssh-agent i3
+fi
