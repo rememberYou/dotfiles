@@ -9,6 +9,7 @@ rofi.line-padding:    2
 rofi.location:        1
 rofi.padding:         10
 rofi.separator-style: none
+rofi.terminal:        alacritty
 rofi.width:           100
 
 ! Property Name       BG       Border   Separator
