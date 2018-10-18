@@ -4,7 +4,7 @@
 
 . ~/.profile
 
-export HISTFILE="$HOME/.local/share/bash_history"
+HISTFILE="$HOME/.local/share/bash_history"
 
 shopt -s autocd                  # If command is a path, cd into it.
 shopt -s checkjobs               # List the status of any stopped and running jobs before exiting an interactive shell.
