@@ -12,7 +12,7 @@ List of files:
 ```
  alacritty       ➔ cross-platform, GPU-accelerated terminal emulator
  bash            ➔ bash settings, aliases, and custom prompts
- bin             ➔ various useful scripts (borg, rofi, etc)
+ bin             ➔ various useful scripts (e.g. borg, rofi, etc.)
  compton         ➔ compositor for X11
  dunst           ➔ lightweight replacement for the notification-daemons
  git             ➔ global git config and aliases
@@ -27,6 +27,7 @@ List of files:
  newsboat        ➔ RSS/Atom feed reader for text terminals
  polybar         ➔ status bars
  ranger          ➔ console file manager with VI key bindings
+ shell           ➔ common to all shells (e.g. aliases, environment variables, etc.)
  ssh             ➔ SSH settings
  sway            ➔ i3-compatible Wayland compositor
  systemd         ➔ systemd units
