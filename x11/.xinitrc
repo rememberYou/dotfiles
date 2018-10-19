@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Executed by startx (run your window manager from here)
+# Executed by startx (run your window manager from here).
 # shellcheck disable=SC1090
 # shellcheck disable=SC1091
 
