@@ -232,8 +232,8 @@ bindsym $mod+r mode $mode_resize
 # Screenshot mode.
 set $mode_screenshot "Screen (a) full screen, (f) focused"
 mode $mode_screenshot {
-    bindsym a exec scrot ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
-    bindsym f exec scrot -u ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
+    bindsym a exec maim -st 9999999 | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
+    bindsym f exec maim -s ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
 
     # Return to default mode
     bindsym Escape mode "default"
@@ -263,6 +263,7 @@ set $red    #ff5137
 set $white  #dddcff
 
 ### i3-gaps ###
+
 gaps inner 6
 gaps outer 6
 smart_gaps on
