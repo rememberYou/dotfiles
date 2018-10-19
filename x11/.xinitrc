@@ -23,9 +23,6 @@ xset -b
 [ -f /etc/profile ] && . /etc/profile
 [ -f ~/.profile ] && . ~/.profile
 
-# Inform .xprofile about the session type.
-export DESKTOP_SESSION=i3;
-
 # Load specific X11 profiles.
 [ -f /etc/xprofile ] && . /etc/xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
