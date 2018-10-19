@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# X11-specific login script (after ~/.profile).
+
+have() { type "$1" > /dev/null 2>&1; }
+
+if have emacs; then
+    emacs --daemon &
+fi
+
+if have mpd; then
+    [ ! -s ~/.config/mpd/pid ] && mpd &
+fi
+
+if have syncthing; then
+    syncthing -no-browser &
+fi
+
+if have xbindkeys; then
+    xbindkeys &
+fi
