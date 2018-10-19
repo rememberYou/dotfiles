@@ -4,7 +4,7 @@
 
 ZSH_THEME="geoffgarside"
 
-. ~/.profile
+. ~/.aliases.sh
 
 # ----------------------------------------
 
