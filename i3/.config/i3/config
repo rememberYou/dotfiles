@@ -195,7 +195,7 @@ mode $mode_power {
     # Reboot the computer.
     bindsym r exec systemctl reboot, mode "default"
     # Suspend the current session.
-    bindsym s exec $locker && systemctl suspend, mode "default"
+    bindsym s exec systemctl suspend, mode "default"
     # Shutdown the computer.
     bindsym Shift+s exec systemctl poweroff -i, mode "default"
 
