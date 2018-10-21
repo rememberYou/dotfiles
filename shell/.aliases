@@ -2,9 +2,13 @@
 
 unalias -a
 
+have() { type "$1" > /dev/null 2>&1; }
+
 # Convertions
-alias doc2pdf="libreoffice --headless --convert-to pdf *.docx"
-alias odt2pdf="libreoffice --headless --convert-to pdf *.odt"
+if have libreoffice-fresh; then
+    alias doc2pdf="libreoffice --headless --convert-to pdf *.docx"
+    alias odt2pdf="libreoffice --headless --convert-to pdf *.odt"
+fi
 
 # Battery
 alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "state|to\ full|percentage"'
@@ -13,8 +17,10 @@ alias bat='upower -i /org/freedesktop/UPower/devices/battery_BAT0| grep -E "stat
 alias ls='ls --color=auto'
 
 # Docker
-alias dke="docker exec -it $1 sh"
-alias dkr="docker run -d -P --name $1 $2"
+if have docker; then
+    alias dke="docker exec -it $1 sh"
+    alias dkr="docker run -d -P --name $1 $2"
+fi
 
 # Emoji
 alias cpangel="xclip -selection clipboard \$HOME/Documents/Emojis/angel"
@@ -25,7 +31,10 @@ alias cpsad="xclip -selection clipboard \$HOME/Documents/Emojis/sad"
 alias cpsmile="xclip -selection clipboard \$HOME/Documents/Emojis/smile"
 
 # GNU Emacs
-alias ec="emacsclient -a '' -t"
+if have emacs; then
+    alias ec="emacsclient -a '' -t"
+fi
+
 alias moc="mu cfind --format=org-contact"
 
 # GPG
@@ -58,17 +67,20 @@ alias mymakepkg="makepkg -sirc"
 
 # systemctl
 alias services="systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled"
-
 # top
 alias top_mem="top -b -o +%MEM | head -n 22"
 alias top_cpu="top -b -o +%MEM | head -n 22"
 
 # Traduction
-alias de="trans --brief :de"
-alias en="trans --brief :en"
-alias fr="trans --brief :fr"
-alias it="trans --brief :it"
-alias nl="trans --brief :nl"
+if have trans; then
+    alias de="trans --brief :de"
+    alias en="trans --brief :en"
+    alias fr="trans --brief :fr"
+    alias it="trans --brief :it"
+    alias nl="trans --brief :nl"
+fi
 
 # youtube-dl
-alias yeam="youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/%(title)s.%(ext)s'"
+if have youtube-dl; then    
+    alias yeam="youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/%(title)s.%(ext)s'"
+fi
