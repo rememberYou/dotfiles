@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Avoid weird aliases on public shell servers.
 unalias -a
 
 have() { type "$1" > /dev/null 2>&1; }
