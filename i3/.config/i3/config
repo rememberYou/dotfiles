@@ -15,7 +15,7 @@ set $up k
 # Set chromium as main browser.
 set $browser chromium
 # Set the locker.
-set $locker i3lock-fancy -t "If you touch this computer be prepared for the consequences" -- scrot
+set $locker "betterlockscreen -l dim -t \\"Don't try, you will regret it.\\"", mode "default"
 # Set rofi as dmenu replacement.
 set $menu rofi
 # Set alacritty as main terminal.
