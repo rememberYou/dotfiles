@@ -1,14 +1,19 @@
-#!/bin/bash
+#!/bin/sh
 #
 # ~/.environ - sh/bash global environment
 
 # Cache directory for Ccache.
-export CCACHE_DIR="$HOME/ccache"
+export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
 # Tells Ccache to only use compilers in this directory.
 export CCACHE_PATH="/usr/bin"
 
 # Use emacsclient as default text editor.
 export EDITOR="emacsclient -a '' -t"
+
+# Set identity and locale.
+export EMAIL="terencio.agozzino@gmail.com"
+export NAME="Terencio Agozzino"
+export TZ="Europe/Brussels"
 
 # Useful to inform Polybar of GitHub's token.
 GITHUB_ACCESS_TOKEN="$(gpg -qd "$HOME/.gnupg/shared/.github-token.gpg")"
@@ -34,9 +39,6 @@ export HISTSIZE=10000
 # Related to Java.
 export JAVA_HOME="/usr/lib/jvm/default-runtime"
 export JDK_HOME="/usr/lib/jvm/default"
-
-# Prevent `less` from storing the history.
-export LESSHISTFILE="-"
 
 # Disable warning for GTK-based applications.
 export NO_AT_BRIDGE=1
@@ -65,15 +67,15 @@ if [ ! -d "$TMPDIR" ]; then
     mkdir -m 700 "$TMPDIR"
 fi
 
-# http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
+# Relocation of files.
+export LESSHISTFILE="$XDG_CACHE_HOME/less.history"
+export MYSQL_HISTFILE="$XDG_CACHE_HOME/mysql.history"
+export thumbnail_dir="$XDG_CACHE_HOME/thumbnails/neofetch"
+export WINEPREFIX="$XDG_DATA_HOME/wine"
+export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
 
+# http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 test "$XDG_CACHE_HOME"  || XDG_CACHE_HOME="$HOME/.cache"
 test "$XDG_CONFIG_HOME" || XDG_CONFIG_HOME="$HOME/.config"
 test "$XDG_DATA_HOME"   || XDG_DATA_HOME="$HOME/.local/share"
 test "$XDG_RUNTIME_DIR" || XDG_RUNTIME_DIR="$XDG_CACHE_HOME"
-
-# identity, locale
-
-export NAME="Terencio Agozzino"
-export EMAIL="terencio.agozzino@gmail.com"
-ezxport TZ="Europe/Brussels"
