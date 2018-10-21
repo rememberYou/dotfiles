@@ -230,12 +230,13 @@ mode $mode_resize {
 bindsym $mod+r mode $mode_resize
 
 # Screenshot mode.
-set $mode_screenshot "Screen (a) full screen, (f) focused"
+set $mode_screenshot "Screenshot: clipboard (c), full screen (f), region/window (w)"
 mode $mode_screenshot {
-    bindsym a exec maim -st 9999999 | convert - \( +clone -background black -shadow 80x3+5+5 \) +swap -background none -layers merge +repage ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
-    bindsym f exec maim -s ~/Pictures/Screenshots/$(date +"%Y-%m-%d_%H:%M:%S.png"), mode "default"
+    bindsym c exec --no-startup-id maim -s -f png -m 10 | xclip -selection clipboard -t image/png, mode "default"
+    bindsym f exec --no-startup-id maim -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+    bindsym w exec --no-startup-id maim -s -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
 
-    # Return to default mode
+    # Return to default mode.
     bindsym Escape mode "default"
     bindsym Return mode "default"
 }
