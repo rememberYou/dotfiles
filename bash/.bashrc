@@ -2,7 +2,7 @@
 #
 # Executed by bash(1) for interactive non-login shells.
 
-[ -f ~/.aliases.sh ] && . ~/.aliases.sh
+[ -f ~/.aliases ] && . ~/.aliases
 
 HISTFILE="$HOME/.local/share/bash_history"
 
