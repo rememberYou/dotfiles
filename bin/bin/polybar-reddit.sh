@@ -15,8 +15,14 @@
 # separate GPG file.
 
 # Replace this path by yours.
-reddit_gpg="/home/$USER/.gnupg/shared/.reddit-json.gpg"
-url="https://www.reddit.com/message/unread/.json?feed=$(gpg -qd "$reddit_gpg")"
+
+if [ ! -z "$GNUPGHOME" ]; then
+    REDDIT_GPG="$GNUPGHOME/shared/.reddit-json.gpg"
+else
+    REDDIT_GPG="/home/$USER/.gnupg/shared/.reddit-json.gpg"
+fi
+
+url="https://www.reddit.com/message/unread/.json?feed=$(gpg -qd "$REDDIT_GPG")"
 unread=$(curl -sf "$url" | jq '.["data"]["children"] | length')
 
 case "$unread" in
