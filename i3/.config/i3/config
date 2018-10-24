@@ -278,6 +278,6 @@ exec --no-startup-id razercfg -r 4
 exec --no-startup-id redshift-gtk -l `whereami.py`
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --bg-center `wallpaper.py`
+exec_always --no-startup-id feh --no-fehbg --bg-center `wallpaper.py`
 
 exec startup i3
