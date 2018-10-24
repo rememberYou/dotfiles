@@ -19,7 +19,7 @@ List of files:
  gnupg           ➔ allows you to encrypt and sign your data and communication
  htop            ➔ interactive process viewer
  i3              ➔ dynamic tiling window manager for X11 inspired by wmii
- mbsync          ➔ capable of synchronizing mail on IMAP server with local Maildir folder
+ isync           ➔ capable of synchronizing mail on IMAP server with local Maildir folder
  mpd             ➔ music player daemon
  mpv             ➔ media player based on MPlayer and the now unmaintained mplayer2
  ncmpcpp         ➔ mpd client
