@@ -1,9 +1,29 @@
 #!/bin/bash
+#
+# NOTE: I tend to avoid cluttering up my home unnecessarily. That's
+# why I use the PASSWORD_STORE_DIR environment variable to change the
+# location of my passwords.
 
 set -e
-target=$(find ~/.password-store/ | sed -re "s/\\.gpg$//" |
-	     sed -re "s/^.*\\/.password-store\\///" |
-	     rofi -dmenu -width 30 -location 0 -i -nb \#FF004F)
-gopass -c "$target"
-time=$(gopass config cliptimeout | awk 'NR==1 {print $2}')
+
+have() { type "$1" > /dev/null 2>&1; }
+
+if [ ! -z "$PASSWORD_STORE_DIR" ]; then
+    target=$(find "$PASSWORD_STORE_DIR" | sed -re "s/\\.gpg$//" |		 
+		 sed -re "s/\\home\\/someone\\/.local\\/share\\/password-store\\///" |
+		 rofi -dmenu -width 30 -location 0 -i -nb \#FF004F)
+else
+    target=$(find ~/.password-store/ | sed -re "s/\\.gpg$//" |
+		 sed -re "s/^.*\\/.password-store\\///" |
+		 rofi -dmenu -width 30 -location 0 -i -nb \#FF004F)
+fi
+
+if have gopass; then
+    gopass -c "$target"
+    time=$(gopass config cliptimeout | awk 'NR==1 {print $2}')
+else
+    pass -c "$target"
+    time=5
+fi
+
 notify-send -u critical -t $(("$time" * 1000)) "Password in clipboard" "Your $target password is currently in your clipboard."
