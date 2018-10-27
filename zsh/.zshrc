@@ -59,25 +59,20 @@ alias zshcfg="emacsclient ~/.zshrc"
 # Sources
 # ----------------------------------------
 
-. $ZSH/oh-my-zsh.sh
+plugins=(    
+    z
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
-if ! [ -d "$HOME/.zplug" ]; then
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+. ~/.config/oh-my-zsh/oh-my-zsh.sh
+
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-autosuggestions ]; then
+    git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 fi
 
-. ~/.zplug/init.zsh
-
-if type zplug >/dev/null 2>&1; then
-	zplug "rupa/z", use:z.sh
-    zplug "zsh-users/zsh-autosuggestions"
-    zplug "zsh-users/zsh-syntax-highlighting", defer:2
-    if ! zplug check --verbose; then
-	print - "Install? [y/N]: "
-	if read -s; then
-	    zplug install;
-	fi
-    fi
-    zplug load
+if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
