@@ -26,6 +26,7 @@ List of files:
  neofetch        ➔ CLI system information tool
  newsboat        ➔ RSS/Atom feed reader for text terminals
  polybar         ➔ status bars
+ python          ➔ specific to Python
  ranger          ➔ console file manager with VI key bindings
  sh              ➔ common to all shells (e.g. aliases, environment variables, etc.)
  ssh             ➔ SSH settings
