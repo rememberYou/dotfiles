@@ -1,0 +1,4 @@
+Host *
+  AddKeysToAgent yes
+  IdentityFile ~/.local/share/ssh/id_rsa
+  UserKnownHostsFile ~/.local/share/ssh/known_hosts
