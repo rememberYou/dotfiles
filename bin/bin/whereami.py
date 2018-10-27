@@ -7,11 +7,16 @@
 # Another cool feature of this script is that it allows you to easily
 # publish the configuration of your windows manager to GitHub without
 # revealing your location.
+#
+# WARNING: if you use this script for the first time without Internet access
+# the location will be wrong.
 
 import json
+import os
 import urllib.request
 
-URL = 'http://ipinfo.io/json'
+DEST = os.environ["HOME"] + "/.local/share/localization"
+URL = "http://ipinfo.io/json"
 
 def is_internet():
     """Tells if there is Internet access.
@@ -26,6 +31,16 @@ def is_internet():
     except urllib.error.URLError:
         return False
 
+def get_default(path):
+    """Gets the default location.
+
+    Returns:
+        str: The default location stored in a file.
+
+    """
+    with open(path, 'r') as path_file:
+        return path_file.read().replace('\n', '')
+
 def get_location():
     """Gets your location according to the WiFi signals.
 
@@ -38,18 +53,20 @@ def get_location():
     except urllib.error.URLError:
         return None
 
-def get_default(path):
-    """Gets the default location.
-
-    Returns:
-        str: The default location stored in a file.
-
-    """
-    with open(path, 'r') as f:
-        return f.read().replace('\n', '')
-
+def update_location(dest, location):
+    """Update the localization file."""
+    open(dest, 'w').close()
+    with open(dest, "a") as dest_file:
+        dest_file.write(location)
+        
 if __name__ == '__main__':
+    if not os.path.isfile(DEST):
+        with open(DEST, "w") as dest_file:
+            dest_file.write("50.816427:4.335961")
+            
     if is_internet():
-        print(get_location()['loc'].replace(',', ':'))
-    else:
-        print(get_default("/home/someone/.localization"))
+        location = get_location()["loc"].replace(',', ':')
+        update_location(DEST, location)
+    elif os.path.isfile(DEST):
+        location = get_default(DEST)
+    print(location)
