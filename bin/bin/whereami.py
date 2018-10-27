@@ -11,7 +11,7 @@
 import json
 import urllib.request
 
-url = 'http://ipinfo.io/json'
+URL = 'http://ipinfo.io/json'
 
 def is_internet():
     """Tells if there is Internet access.
@@ -21,7 +21,7 @@ def is_internet():
 
     """
     try:
-        urllib.request.urlopen(url, timeout=1)
+        urllib.request.urlopen(URL, timeout=1)
         return True
     except urllib.error.URLError:
         return False
@@ -34,7 +34,7 @@ def get_location():
 
     """
     try:
-        return json.load(urllib.request.urlopen(url))
+        return json.load(urllib.request.urlopen(URL))
     except urllib.error.URLError:
         return None
 
@@ -52,4 +52,4 @@ if __name__ == '__main__':
     if is_internet():
         print(get_location()['loc'].replace(',', ':'))
     else:
-        print(get_default("/home/someone/Sync/shared/localization"))
+        print(get_default("/home/someone/.localization"))
