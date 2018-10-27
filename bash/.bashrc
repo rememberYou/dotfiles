@@ -2,7 +2,7 @@
 #
 # Executed by bash(1) for interactive non-login shells.
 
-[ -f ~/.aliases ] && . ~/.aliases
+[ -f "$XDG_CONFIG_HOME/sh/aliases" ] && . "$XDG_CONFIG_HOME/sh/aliases"
 
 HISTFILE="$HOME/.local/share/bash_history"
 
