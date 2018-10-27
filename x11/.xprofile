@@ -4,6 +4,14 @@
 
 have() { type "$1" > /dev/null 2>&1; }
 
+if have compton; then
+    if [ -f ~/.config/compton/compton.conf ]; then
+	compton --config ~/.config/compton/compton.conf &
+    else
+	compton &
+    fi
+fi
+
 if have emacs; then
     emacs --daemon &
 fi
