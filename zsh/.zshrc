@@ -6,9 +6,7 @@ ZSH_THEME="geoffgarside"
 
 [ -f "$XDG_CONFIG_HOME/sh/aliases" ] && . "$XDG_CONFIG_HOME/sh/aliases"
 
-# ----------------------------------------
-
-export HISTFILE="$HOME/.local/share/zsh_history"
+export HISTFILE="$XDG_DATA_HOME/zsh_history"
 
 setopt always_to_end          # Move the cursor to the end of the word after each completion.
 setopt auto_cd                # If command is a path, cd into it.
@@ -50,20 +48,9 @@ unsetopt flow_control         # Output flow control via start/stop characters is
 unsetopt hist_beep            # No bell on error in history.
 unsetopt hup                  # No hup signal at shell exit.
 
-# Aliases
-# ----------------------------------------
-
-# ZSH config
 alias zshcfg="emacsclient ~/.zshrc"
 
-# Sources
-# ----------------------------------------
-
-plugins=(    
-    z
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-)
+plugins=(z zsh-autosuggestions zsh-syntax-highlighting)
 
 . ~/.config/oh-my-zsh/oh-my-zsh.sh
 
@@ -76,8 +63,6 @@ if [ ! -d $ZSH_CUSTOM/plugins/zsh-syntax-highlighting ]; then
 fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
-
-# ----------------------------------------
 
 # Add only functional commands to the history
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
