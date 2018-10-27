@@ -4,7 +4,7 @@
 
 ZSH_THEME="geoffgarside"
 
-. ~/.aliases
+[ -f "$XDG_CONFIG_HOME/sh/aliases" ] && . "$XDG_CONFIG_HOME/sh/aliases"
 
 # ----------------------------------------
 

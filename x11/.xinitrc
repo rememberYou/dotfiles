@@ -22,14 +22,14 @@ xset -b
 
 # Load global profiles.
 [ -f /etc/profile ] && . /etc/profile
-[ -f ~/.profile ] && . ~/.profile
+[ -f ~/.config/sh/profile ] && . ~/.config/sh/profile
 
 # Load specific X11 profiles.
 [ -f /etc/xprofile ] && . /etc/xprofile
-[ -f ~/.xprofile ] && . ~/.xprofile
+[ -f "$XDG_CONFIG_HOME/X11/xprofile" ] && . "$XDG_CONFIG_HOME/X11/xprofile"
 
 # Load X11 resources.
-[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+[ -f "$XDG_CONFIG_HOME/X11/Xresources" ] && xrdb -merge "$XDG_CONFIG_HOME/X11/Xresources"
 
 setxkbmap us_qwerty-fr
 

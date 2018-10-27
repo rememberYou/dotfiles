@@ -1,9 +1,10 @@
 #!/bin/sh
 #
-# ~/.environ - sh/bash global environment
+# ~/.config/sh/environ - sh/bash global environment
 
-# Cache directory for Ccache.
-export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
+# Load XDG specifications.
+[ -f ~/.config/sh/xdg ] && . ~/.config/sh/xdg
+
 # Tells Ccache to only use compilers in this directory.
 export CCACHE_PATH="/usr/bin"
 
@@ -16,7 +17,7 @@ export NAME="Terencio Agozzino"
 export TZ="Europe/Brussels"
 
 # Useful to inform Polybar of GitHub's token.
-GITHUB_ACCESS_TOKEN="$(gpg -qd "$HOME/.gnupg/shared/.github-token.gpg")"
+GITHUB_ACCESS_TOKEN="$(gpg -qd "$GNUPGHOME/shared/.github-token.gpg")"
 export GITHUB_ACCESS_TOKEN
 
 # Identify the private key.
@@ -52,9 +53,6 @@ if [ ! -d "$HOME/bin" ]; then
     mkdir -p "$PATH"
 fi
 
-# Loads the specified modules and other codes when Python starts.
-export PYTHONSTARTUP="$HOME/.pythonrc"
-
 # Increase the history save size.
 export SAVEHIST=10000
 
@@ -66,16 +64,3 @@ export TMPDIR="/tmp/$USER"
 if [ ! -d "$TMPDIR" ]; then
     mkdir -m 700 "$TMPDIR"
 fi
-
-# Relocation of files.
-export LESSHISTFILE="$XDG_CACHE_HOME/less.history"
-export MYSQL_HISTFILE="$XDG_CACHE_HOME/mysql.history"
-export thumbnail_dir="$XDG_CACHE_HOME/thumbnails/neofetch"
-export WINEPREFIX="$XDG_DATA_HOME/wine"
-export XAUTHORITY="$XDG_RUNTIME_DIR/Xauthority"
-
-# http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
-test "$XDG_CACHE_HOME"  || XDG_CACHE_HOME="$HOME/.cache"
-test "$XDG_CONFIG_HOME" || XDG_CONFIG_HOME="$HOME/.config"
-test "$XDG_DATA_HOME"   || XDG_DATA_HOME="$HOME/.local/share"
-test "$XDG_RUNTIME_DIR" || XDG_RUNTIME_DIR="$XDG_CACHE_HOME"
