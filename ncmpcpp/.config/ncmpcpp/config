@@ -1,3 +1,4 @@
+lyrics_directory = "~/.local/share/lyrics"
 mpd_host = "remembersong@localhost"
 mpd_music_dir = ~/Music
 mpd_port = 6600
