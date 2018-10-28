@@ -131,7 +131,7 @@ label-unmounted-foreground = ${colors.red}
 
 [module/github]
 type = custom/script
-exec = ~/bin/polybar-github.sh
+exec = ~/.local/bin/polybar-github.sh
 interval = 60
 
 
@@ -146,7 +146,7 @@ interval = 60
 type = custom/script
 interval = 10
 format = <label>
-exec = ~/bin/polybar-mail.sh
+exec = ~/.local/bin/polybar-mail.sh
 
 
 [module/memory]
@@ -159,7 +159,7 @@ label                    = %percentage_used%%
 
 [module/reddit]
 type = custom/script
-exec = ~/bin/polybar-reddit.sh
+exec = ~/.local/bin/polybar-reddit.sh
 interval = 10
 
 

@@ -44,7 +44,7 @@ bindsym $mod+Shift+r exec $term -e "ranger"
 bindsym $mod+d exec $menu -show "drun"
 bindsym $mod+Shift+d exec $menu -show "window"
 bindsym $mod+Shift+f exec $menu -show find -modi find:~/.local/share/rofi/finder.sh
-bindsym $mod+Shift+w exec ~/bin/rofi-xrandr
+bindsym $mod+Shift+w exec ~/.local/bin/rofi-xrandr
 # Kill focused window.
 bindsym $mod+Shift+q kill
 # Reload the configuration file.
@@ -162,9 +162,9 @@ bindsym $mod+t scratchpad show
 ### Others ###
 
 # Get a password with rofi from pass.
-bindsym $mod+p exec ~/bin/rofi-pass
+bindsym $mod+p exec ~/.local/bin/rofi-pass
 # Get an OTP with rofi from YubiKey.
-bindsym $mod+y exec ~/bin/rofi-yubi
+bindsym $mod+y exec ~/.local/bin/rofi-yubi
 
 # Manage the brightness.
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
