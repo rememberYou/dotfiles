@@ -230,11 +230,11 @@ mode $mode_resize {
 bindsym $mod+r mode $mode_resize
 
 # Screenshot mode.
-set $mode_screenshot "Clipboard (c), full screen (f), region/window (w)"
+set $mode_screenshot "Clipboard (c), full screen (f), region/window (r)"
 mode $mode_screenshot {
     bindsym c exec --no-startup-id maim -s -f png -m 10 | xclip -selection clipboard -t image/png, mode "default"
     bindsym f exec --no-startup-id maim -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
-    bindsym w exec --no-startup-id maim -s -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+    bindsym r exec --no-startup-id maim -s -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
 
     # Return to default mode.
     bindsym Escape mode "default"
