@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# This script automatically synchronizes the RSS Feeds of newsboat which uses
+# `notify-send` to display the number of new articles.
+#
+# To do this, set the `notify-program` variables in ~/.newsboat/config and don't
+# forget to make a cron to automate the execution of this script.
+#
+# NOTE: `notify-send` needs access to the session bus and doesn't care about
+# your $DISPLAY. That why, your cron won't works if `pam_systemd` doesn't do
+# this yet. To be able to receive notifications from crontab, this script
+# settings `XDG_RUNTIME_DIR` instead.
+
+export XDG_RUNTIME_DIR="/run/user/$UID"
+newsboat -x reload

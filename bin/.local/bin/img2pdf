@@ -1,0 +1,66 @@
+#!/bin/bash
+#
+# This script will convert your images in PDF format.
+#
+# Examples of use:
+# ./img2pdf foo.png bar.png
+# ./img2pdf foo.png bar.png --override
+# ./img2pdf *
+
+OVERRIDE=0
+REMOVE=0
+
+die() {
+    printf '%s\n' "$1" >&2
+    exit 1
+}
+
+convert_to_pdf() {
+    echo $OVERRIDE
+    # for img in "$@"; do
+    # 	extension=".${img##*.}"
+    # 	if [[ $extension =~ .*\.(jpg|jpeg|png) ]]; then
+    # 	    filename="${img##*/}"
+    # 	    basename="${filename%${extension}}"
+    # 	    echo "Convert the file: $img"
+    # 	    inkscape --without-gui --export-pdf="$basename.pdf" "$img" --export-area-drawing
+    # 	fi
+    # done
+}
+
+show_help() {
+    cat << EOF
+Usage: ${0##*/} [-h] [-f INPUTFILE] [FILE]...
+Convert your images to PDF.
+    -o OVERRIDE  specifies the rewriting of PDF images
+    -r REMOVE    specifies the deletion of old filess
+    -h           display this help and exit
+EOF
+}
+
+while :; do
+    case $1 in
+        -h|-\?|--help)
+            show_help
+            exit
+            ;;
+	-o|--override)
+            OVERRIDE==$((OVERRIDE= + 1))
+            ;;
+        --)
+            shift
+            break
+            ;;
+        -?*)
+            printf 'WARN: Unknown option (ignored): %s\n' "$1" >&2
+            ;;
+        *)
+
+            break
+    esac
+
+    shift
+done
+
+convert_to_pdf "$@"
+trap printout INT
