@@ -103,6 +103,7 @@ type                     = internal/xbacklight
 format-prefix            = " "
 format-prefix-foreground = ${colors.yellow}
 label                    = %percentage%%
+output                   = eDP1
 
 
 [module/cpu]
