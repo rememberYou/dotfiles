@@ -17,9 +17,9 @@
 # Replace this path by yours.
 
 if [ ! -z "$GNUPGHOME" ]; then
-    REDDIT_GPG="$GNUPGHOME/shared/.reddit-json.gpg"
+    REDDIT_GPG="$GNUPGHOME/shared/reddit-json.gpg"
 else
-    REDDIT_GPG="/home/$USER/.gnupg/shared/.reddit-json.gpg"
+    REDDIT_GPG="/home/$USER/.gnupg/shared/reddit-json.gpg"
 fi
 
 url="https://www.reddit.com/message/unread/.json?feed=$(gpg -qd "$REDDIT_GPG")"

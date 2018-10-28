@@ -17,9 +17,9 @@
 # Replace the path below with yours.
 
 if [ ! -z "$GNUPGHOME" ]; then    
-    TOKEN="$GNUPGHOME/shared/.github-token.gpg"
+    TOKEN="$GNUPGHOME/shared/github-token.gpg"
 else
-    TOKEN="/home/$USER/.gnupg/shared/.github-token.gpg"
+    TOKEN="/home/$USER/.gnupg/shared/github-token.gpg"
 fi
 
 url="https://api.github.com/notifications?access_token=$(gpg -qd "$TOKEN")"
