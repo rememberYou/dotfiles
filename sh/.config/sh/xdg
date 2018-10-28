@@ -3,15 +3,10 @@
 # ~/.config/sh/xdg - XDG Base Directory Specification
 
 # http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html 
-test "$XDG_CACHE_HOME"  || XDG_CACHE_HOME="$HOME/.cache"
-test "$XDG_CONFIG_HOME" || XDG_CONFIG_HOME="$HOME/.config"
-test "$XDG_DATA_HOME"   || XDG_DATA_HOME="$HOME/.local/share"
-test "$XDG_RUNTIME_DIR" || XDG_RUNTIME_DIR="$XDG_CACHE_HOME"
-
-# Alias respecting programs.
-alias electrum="electrum --dir $XDG_CONFIG_HOME/electrum"
-alias mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
-alias ssh="ssh -F $XDG_CONFIG_HOME/ssh/config"
+test "$XDG_CACHE_HOME"  || export XDG_CACHE_HOME="$HOME/.cache"
+test "$XDG_CONFIG_HOME" || export XDG_CONFIG_HOME="$HOME/.config"
+test "$XDG_DATA_HOME"   || export XDG_DATA_HOME="$HOME/.local/share"
+test "$XDG_RUNTIME_DIR" || export XDG_RUNTIME_DIR="$XDG_CACHE_HOME"
 
 # Environment variables respecting programs.
 export CARGO_HOME="$XDG_DATA_HOME/cargo"

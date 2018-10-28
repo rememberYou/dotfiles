@@ -6,6 +6,7 @@
 # shellcheck disable=SC2174
 
 # Load environment variables.
+
 [ -f ~/.config/sh/environ ] && . ~/.config/sh/environ
 
 # Tell the Shell used by default.
