@@ -20,6 +20,8 @@ xbacklight -set 40
 # Turn off the bell.
 xset -b
 
+[ -f ~/.config/sh/environ ] && . ~/.config/sh/environ
+
 # Load global profiles.
 [ -f /etc/profile ] && . /etc/profile
 [ -f ~/.config/sh/profile ] && . ~/.config/sh/profile
