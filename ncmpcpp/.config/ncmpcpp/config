@@ -1,4 +1,5 @@
 lyrics_directory = "~/.local/share/lyrics"
+ncmpcpp_directory = "~/.config/ncmpcpp"
 mpd_host = "remembersong@localhost"
 mpd_music_dir = ~/Music
 mpd_port = 6600
