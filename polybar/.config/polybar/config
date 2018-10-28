@@ -34,7 +34,7 @@ font-5              = "Noto Sans Symbols 2:size=5;1"
 
 modules-left        = i3
 modules-center      = date
-modules-right       = mail reddit github battery volume backlight cpu temperature memory filesystem wireless-network
+modules-right       = mail reddit github battery pulseaudio backlight cpu temperature memory filesystem wireless-network
 
 tray-position       = right
 tray-padding        = 5
@@ -178,8 +178,9 @@ ramp-2                = 
 ramp-foreground       = ${colors.cyan}
 
 
-[module/volume]
-type                     = internal/volume
+[module/pulseaudio]
+type                     = internal/pulseaudio
+sink                     = alsa_output.pci-0000_00_1f.3.analog-stereo
 format-volume            = <ramp-volume> <label-volume>
 format-muted             = 🔇 <label-muted>
 label-muted              = Muted
