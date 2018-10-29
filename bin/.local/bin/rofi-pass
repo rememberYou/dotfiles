@@ -26,4 +26,5 @@ else
     time=5
 fi
 
-notify-send -u critical -t $(("$time" * 1000)) "Password in clipboard" "Your $target password is currently in your clipboard."
+notify-send -u critical -t $(("$time" * 1000)) "Password in clipboard" \
+	    "Your $target password is currently in your clipboard."
