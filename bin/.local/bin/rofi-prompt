@@ -4,7 +4,7 @@
 # using dmenu.
 #
 # Example:
-# `./prompt-rofi "Do you want to shutdown?" "shutdown -h now"`
+# `./rofi-prompt "Do you want to shutdown?" "shutdown -h now"`
 
 [ $(echo -e "No\nYes" | rofi -dmenu -width 30 -lines 2 -location 0 -i -p "$1") \
 == "Yes" ] && $2
