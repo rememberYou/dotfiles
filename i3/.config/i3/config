@@ -163,6 +163,8 @@ bindsym $mod+t scratchpad show
 
 # Get a password with rofi from pass.
 bindsym $mod+p exec ~/.local/bin/rofi-pass
+# Get an emoji from emoji picker
+bindsym $mod+u exec ~/.local/bin/rofi-emojis
 # Get an OTP with rofi from YubiKey.
 bindsym $mod+y exec ~/.local/bin/rofi-yubi
 
