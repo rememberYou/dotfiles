@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Allows you to select an emoji from an emoji picker using rofi.
 
