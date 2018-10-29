@@ -17,7 +17,7 @@ export NAME="Terencio Agozzino"
 export TZ="Europe/Brussels"
 
 # Useful to inform Polybar of GitHub's token.
-GITHUB_ACCESS_TOKEN="$(gpg -qd "$GNUPGHOME/shared/.github-token.gpg")"
+GITHUB_ACCESS_TOKEN="$(gpg -qd "$GNUPGHOME/shared/github-token.gpg")"
 export GITHUB_ACCESS_TOKEN
 
 # Identify the private key.
