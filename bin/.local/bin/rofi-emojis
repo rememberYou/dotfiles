@@ -4,8 +4,8 @@
 
 DIR="$HOME/.cache"
 FILE="$DIR/emojis.txt"
+VER='12.0'
 URL="https://www.unicode.org/Public/emoji/${VER}/emoji-test.txt"
-VER='11.0'
 
 get_emojis() {
     if [ ! -r $FILE ]; then
@@ -17,7 +17,9 @@ get_emojis() {
 }
 
 is_started() { pgrep -x "$1" > /dev/null 2>&1; }
-  
+
+get_emojis
+
 emoji=$(cat "$FILE" | rofi -dmenu -width 30 -location 0 -i)
 emoji_icon=$(echo $emoji | cut -d ' ' -f1)
 $(echo -n "$emoji_icon" | xsel -bi)
@@ -26,5 +28,3 @@ if is_started dunst; then
     notify-send -t 5000 "Emoji in clipboard" \
 		"$(xclip -o -selection clipboard) is currently in your clipboard."
 fi
-
-get_emojis
