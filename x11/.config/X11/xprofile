@@ -25,5 +25,5 @@ if have syncthing; then
 fi
 
 if have xbindkeys; then
-    xbindkeys &
+    xbindkeys -f "$XDG_CONFIG_HOME/X11/xbindkeysrc" &
 fi
