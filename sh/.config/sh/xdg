@@ -3,9 +3,11 @@
 # ~/.config/sh/xdg - XDG Base Directory Specification
 
 # http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html 
+test "$XDG_BIN_HOME"    || export XDG_BIN_HOME="$HOME/.local/bin"
 test "$XDG_CACHE_HOME"  || export XDG_CACHE_HOME="$HOME/.cache"
 test "$XDG_CONFIG_HOME" || export XDG_CONFIG_HOME="$HOME/.config"
 test "$XDG_DATA_HOME"   || export XDG_DATA_HOME="$HOME/.local/share"
+test "$XDG_LIB_HOME"    || export XDG_LIB_HOME="$HOME/.local/lib"
 test "$XDG_RUNTIME_DIR" || export XDG_RUNTIME_DIR="$XDG_CACHE_HOME"
 
 # Environment variables respecting programs.

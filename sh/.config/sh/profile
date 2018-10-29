@@ -6,7 +6,6 @@
 # shellcheck disable=SC2174
 
 # Load environment variables.
-
 [ -f ~/.config/sh/environ ] && . ~/.config/sh/environ
 
 # Tell the Shell used by default.
@@ -16,9 +15,11 @@ export SHELL=${SHELL:-/bin/bash}
 export ZSH=$XDG_CONFIG_HOME/oh-my-zsh
 
 # Create the XDG folders if it's not done yet.
+test -d "$XDG_BIN_HOME"    || mkdir -p -m 0700 "$XDG_BIN_HOME"
 test -d "$XDG_CACHE_HOME"  || mkdir -p -m 0700 "$XDG_CACHE_HOME"
 test -d "$XDG_CONFIG_HOME" || mkdir -p -m 0700 "$XDG_CONFIG_HOME"
 test -d "$XDG_DATA_HOME"   || mkdir -p -m 0700 "$XDG_DATA_HOME"
+test -d "$XDG_LIB_HOME"    || mkdir -p -m 0700 "$XDG_LIB_HOME"
 
 if [ "$BASH" ] && [ -f ~/.bashrc ]; then
     . ~/.bashrc
