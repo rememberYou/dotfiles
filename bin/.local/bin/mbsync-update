@@ -8,4 +8,4 @@
 # settings `XDG_RUNTIME_DIR` instead.
 
 export XDG_RUNTIME_DIR="/run/user/$UID"
-mbsync -a
+mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc -a
