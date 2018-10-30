@@ -38,6 +38,24 @@ List of files:
 
 However, it is still possible to access my [old dotfiles](https://github.com/rememberYou/old-dotfiles) that I no longer use, in
 case they can help you.
+## Structure
+
+I structured my dotfiles so that the user's home is as clean as
+possible in accordance with the [XDG base directory
+specification](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
+
+In other words, this means that the following environment variables
+are defined:
+
+| Variable          | Location             |
+| ----------------- | -------------------- |
+| `XDG_BIN_HOME`    | `~/.local/bin`       |
+| `XDG_CACHE_HOME`  | `~/.cache`           |
+| `XDG_CONFIG_HOME` | `~/.config`          |
+| `XDG_DATA_HOME`   | `~/.local/share`     |
+| `XDG_LIB_HOME`    | `~/.local/lib`       |
+
+**NOTE:** `XDG_BIN_HOME` and `XDG_LIB_HOME` are non-standard.
 
 ## Quick preview
 
