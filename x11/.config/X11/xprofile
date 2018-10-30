@@ -28,6 +28,10 @@ if have syncthing; then
     syncthing -no-browser &
 fi
 
+if have unclutter; then
+    unclutter --ignore-scrolling --jitter 50 &
+fi
+
 if have xbindkeys; then
     xbindkeys -f "$XDG_CONFIG_HOME/X11/xbindkeysrc" &
 fi
