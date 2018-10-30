@@ -29,14 +29,6 @@ if have docker; then
     alias dkr="docker run -d -P --name $1 $2"
 fi
 
-# Emoji
-alias cpangel="xclip -selection clipboard \$HOME/Documents/Emojis/angel"
-alias cpheart="xclip -selection clipboard \$HOME/Documents/Emojis/heart"
-alias cpkiss="xclip -selection clipboard \$HOME/Documents/Emojis/kiss"
-alias cpumbrella="xclip -selection clipboard \$HOME/Documents/Emojis/umbrella"
-alias cpsad="xclip -selection clipboard \$HOME/Documents/Emojis/sad"
-alias cpsmile="xclip -selection clipboard \$HOME/Documents/Emojis/smile"
-
 # GNU Emacs
 if have emacs; then
     alias ec="emacsclient -a '' -t"
