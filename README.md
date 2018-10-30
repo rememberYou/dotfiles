@@ -7,6 +7,14 @@
 
 ---
 
+These dotfiles allow me to make my daily life easier by saving me time
+and easily meeting my needs.
+
+I try to keep these dotfiles tidy and up to date. I invite you to take
+a look at it to get different ideas for your dotfiles and why not
+leave comments, suggestions, questions and bug reports if something
+seems odd to you.
+
 List of files:
 
 ```
@@ -36,8 +44,10 @@ List of files:
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
 
-However, it is still possible to access my [old dotfiles](https://github.com/rememberYou/old-dotfiles) that I no longer use, in
-case they can help you.
+**NOTE:** it is still possible to access my [old
+dotfiles](https://github.com/rememberYou/old-dotfiles) that I no
+longer use, in case they can help you.
+
 ## Structure
 
 I structured my dotfiles so that the user's home is as clean as
@@ -127,8 +137,8 @@ chmod +x stowsym.sh
 ./stowsym.sh -d
 ```
 
-Easy, isn't it? For those who want to find my Emacs configuration files, they
-are available: [here](https://github.com/rememberYou/.emacs.d/).
+Easy, isn't it? For those who want to find my GNU Emacs configuration
+files, they are available: [here](https://github.com/rememberYou/.emacs.d/).
 
 ## TODO
 
