@@ -6,7 +6,7 @@
 
 # Imports various system-wide snippets.
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
-    for f in /etc/X11/xinit/xinitrc.d/?*.sh; do	
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
 	[ -x "$f" ] && . "$f"
     done
     unset f
@@ -25,10 +25,6 @@ xset -b
 # Load global profiles.
 [ -f /etc/profile ] && . /etc/profile
 [ -f ~/.config/sh/profile ] && . ~/.config/sh/profile
-
-# Load specific X11 profiles.
-[ -f /etc/xprofile ] && . /etc/xprofile
-[ -f "$XDG_CONFIG_HOME/X11/xprofile" ] && . "$XDG_CONFIG_HOME/X11/xprofile"
 
 # Load X11 resources.
 [ -f "$XDG_CONFIG_HOME/X11/Xresources" ] && xrdb -merge "$XDG_CONFIG_HOME/X11/Xresources"
