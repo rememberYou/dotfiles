@@ -11,5 +11,4 @@
 # this yet. To be able to receive notifications from crontab, this script
 # settings `XDG_RUNTIME_DIR` instead.
 
-export XDG_RUNTIME_DIR="/run/user/$UID"
 newsboat -x reload
