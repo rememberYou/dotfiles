@@ -29,7 +29,7 @@ if have syncthing; then
 fi
 
 if have unclutter; then
-    unclutter --ignore-scrolling --jitter 50 &
+    unclutter --ignore-scrolling --jitter 2 &
 fi
 
 if have xbindkeys; then
