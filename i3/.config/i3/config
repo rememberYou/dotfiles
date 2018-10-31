@@ -189,7 +189,7 @@ bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 
 # Power.
 set $mode_power "Logout (e), system lock (l), reboot (r), suspend (s), shutdown (Shift+s)"
-mode $mode_power {    
+mode $mode_power {
     # Logout the current session.
     bindsym e exec i3-msg exit, mode "default"
     # Lock the screen.
@@ -273,12 +273,4 @@ smart_gaps on
 
 ### Startup programs ###
 
-exec --no-startup-id caffeine
-exec --no-startup-id nm-applet
-exec --no-startup-id razercfg -r 4
-exec --no-startup-id redshift-gtk -l `whereami.py`
-
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id feh --no-fehbg --bg-center `wallpaper.py`
-
-exec startup i3
+exec --no-startup-id [ -f $XDG_BIN_HOME/autostart.sh ] && . "$XDG_BIN_HOME/autostart.sh"
