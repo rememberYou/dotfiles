@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# X11-specific login script (after ~/.profile).
+# Started by i3 to launch programs.
 
 have() { type "$1" > /dev/null 2>&1; }
 
