@@ -1,10 +1,13 @@
 auto-reload yes
 browser chromium
+cache-file ~/.cache/newsboat/cache.db
+cookie-cache ~/.cache/newsboat/cookies.txt
+error-log ~/.local/share/newsboat/error.log
 external-url-viewer "urlview"
 max-items 100
 reload-time 10
 reload-threads 2
-save-path ~/.newsboat/bookmarks.txt
+save-path ~/.local/share/newsboat/saved
 show-read-feeds no
 text-width 80
 
