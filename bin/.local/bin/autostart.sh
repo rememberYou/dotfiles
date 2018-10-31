@@ -37,7 +37,7 @@ if have mpd; then
 fi
 
 if have polybar; then
-    [ -f "$XDG_CONFIG_HOME/polybar/launch.sh" ] && . "$XDG_CONFIG_HOME/polybar/launch.sh"
+    [ -f "$XDG_CONFIG_HOME/polybar/launch.sh" ] && . "$XDG_CONFIG_HOME/polybar/launch.sh" &
 fi
 
 if have razercfg; then
@@ -45,7 +45,7 @@ if have razercfg; then
 fi
 
 if have redshift-gtk; then
-    redshift-gtk -l `whereami.py`
+    redshift-gtk -l `whereami.py` &
 fi
 
 if have syncthing; then
