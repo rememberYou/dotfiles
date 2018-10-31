@@ -8,6 +8,7 @@ have() { type "$1" > /dev/null 2>&1; }
 # Alias respecting programs.
 alias electrum="electrum --dir $XDG_CONFIG_HOME/electrum"
 alias mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
+alias newsboat="newsboat -u $XDG_DATA_HOME/newsboat/urls"
 alias ssh="ssh -F $XDG_CONFIG_HOME/ssh/config"
 alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
 
