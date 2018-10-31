@@ -16,7 +16,7 @@ articlelist-title-format "—[%T]——(%u unread, %t total)——%>——(%U)�
 datetime-format "%b %d %H:%M"
 
 notify-format "%d new articles"
-notify-program "~/bin/newsboat-notify"
+notify-program "/usr/bin/notify-send"
 
 bind-key G end
 bind-key S save
