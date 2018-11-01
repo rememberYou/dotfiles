@@ -140,12 +140,29 @@ chmod +x stowsym.sh
 Easy, isn't it? For those who want to find my GNU Emacs configuration
 files, they are available: [here](https://github.com/rememberYou/.emacs.d/).
 
+For the configuration of `zsh` and `bash`, you will need to create two
+symbolic aliases:
+
+```bash
+ln -s ~/.config/bash/.bashrc ~
+ln -s ~/.config/zsh/.zshenv ~
+```
+
+The reasons for this are that `bash` and `zsh` do not allow the
+possibility to follow the specifications of the XDG base directory.
+
+**NOTE:** the `.zshrc` file (resp. `.bashrc`) cannot be renamed to
+`zshrc` (resp. `bashrc`) except for a few system manipulations, which
+is not what I recommend.
+
 ## TODO
 
 Here is a list of tasks I plan to do in my spare time to improve this
 configuration:
 
-*  Refactoring my `sway` configuration.
+*  Refactoring my [sway](https://github.com/swaywm/sway/) configuration.
+*  Make a configuration for [qutebrowser](https://github.com/qutebrowser/qutebrowser).
+*  Make a configuration for [tmux](https://github.com/tmux/tmux/).
 
 ## Contributions
 
