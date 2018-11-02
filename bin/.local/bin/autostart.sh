@@ -4,10 +4,6 @@
 
 have() { type "$1" > /dev/null 2>&1; }
 
-if have caffeine; then
-    caffeine &
-fi
-
 if have compton; then
     if [ -f "$XDG_CONFIG_HOME/compton/compton.conf" ]; then
 	compton --config "$XDG_CONFIG_HOME/compton/compton.conf" &
