@@ -40,6 +40,7 @@ List of files:
  ssh             ➔ SSH settings
  sway            ➔ i3-compatible Wayland compositor
  systemd         ➔ systemd units
+ tmux            ➔ terminal multiplexer
  x11             ➔ X11 settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
