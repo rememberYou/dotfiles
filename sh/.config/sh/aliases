@@ -11,6 +11,7 @@ alias mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
 alias newsboat="newsboat -u $XDG_DATA_HOME/newsboat/urls"
 alias ssh="ssh -F $XDG_CONFIG_HOME/ssh/config"
 alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
+alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
 
 # Convertions
 if have libreoffice-fresh; then
