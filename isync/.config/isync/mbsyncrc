@@ -1,3 +1,19 @@
+# To use this configuration file, you will need to:
+#
+# 1. Save your gmail password in a file which you will encrypt with GPG:
+# `gpg -c mbsyncpass && rm mbsyncpass`
+#
+# 2. Change the "PassCmd" field to indicate the path to your previously
+# created encrypted file containing your Gmail password.
+#
+# 3. Change the "User" field to indicate your Gmail username.
+#
+# 4. Create the root folder to store your emails.
+# `mkdir -p ~/Maildir/gmail`
+
+Create Slave
+SyncState *
+
 IMAPAccount gmail
 Host imap.gmail.com
 User terencio.agozzino
@@ -14,11 +30,34 @@ MaildirStore gmail-local
 Path ~/Maildir/gmail/
 Inbox ~/Maildir/gmail/INBOX
 
-Channel gmail
+Channel gmail-all
+Master :gmail-remote:"[Gmail]/All Mail"
+Slave :gmail-local:"All Mail"
+
+Channel gmail-draft
+Master :gmail-remote:"[Gmail]/Drafts"
+Slave :gmail-local:"Drafts"
+
+Channel gmail-inbox
 Master :gmail-remote:
 Slave :gmail-local:
-Patterns "INBOX" "All Mail" "Deleted Items" "Drafts" "Important" "Sent Mail" "Starred"
-Create Slave
-Sync All
-Expunge Both
-SyncState *
+Patterns "INBOX"
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:"Sent"
+
+Channel gmail-starred
+Master :gmail-remote:"[Gmail]/Starred"
+Slave :gmail-local:"Starred"
+
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/Trash"
+Slave :gmail-local:"Trash"
+
+Group gmail
+Channel gmail-all
+Channel gmail-draft
+Channel gmail-sent
+Channel gmail-starred
+Channel gmail-trash
