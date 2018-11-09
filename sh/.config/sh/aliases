@@ -52,12 +52,8 @@ alias gpgR="gpg-connect-agent reloadagent /bye"
 alias xelatex="xelatex --shell-escape"
 
 # Navigation
-alias gD="cd ~/Downloads/"
-alias gde="cd ~/Desktop/"
-alias gdo="cd ~/Documents"
-alias gp="cd ~/Pictures/"
-alias gw="cd ~/Pictures/Wallpapers/2560x1440/"
-alias gW="cd ~/Pictures/Wallpapers/"
+alias g="cd $XDG_DATA_HOME/git/"
+alias q="cd $XDG_DATA_HOME/qemu/"
 
 # nmcli
 alias list_wifi="nmcli device wifi list"
