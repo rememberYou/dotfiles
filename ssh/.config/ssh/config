@@ -1,4 +1,18 @@
 Host *
-  AddKeysToAgent yes
-  IdentityFile ~/.local/share/ssh/id_rsa
-  UserKnownHostsFile ~/.local/share/ssh/known_hosts
+    AddKeysToAgent yes
+    UserKnownHostsFile ~/.local/share/ssh/known_hosts
+
+Host bitbucket bitbucket.org
+    Hostname bitbucket.org
+    IdentityFile ~/.local/share/ssh/keys/bitbucket
+    User git
+
+Host git github.com
+    Hostname github.com
+    IdentityFile ~/.local/share/ssh/keys/github
+    User git
+
+Host gitlab gitlab.com
+    Hostname gitlab.com
+    IdentityFile ~/.local/share/ssh/keys/gitlab
+    User git
