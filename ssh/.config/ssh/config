@@ -7,7 +7,7 @@ Host bitbucket bitbucket.org
     IdentityFile ~/.local/share/ssh/keys/bitbucket
     User git
 
-Host git github.com
+Host github github.com
     Hostname github.com
     IdentityFile ~/.local/share/ssh/keys/github
     User git
