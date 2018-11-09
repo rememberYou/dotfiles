@@ -64,5 +64,5 @@ fi
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=11'
 
-# Add only functional commands to the history
+# Add only functional commands to the history.
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
