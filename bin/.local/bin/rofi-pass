@@ -9,18 +9,18 @@ set -e
 have() { type "$1" > /dev/null 2>&1; }
 
 if [ ! -z "$PASSWORD_STORE_DIR" ]; then
-    target=$(find "$PASSWORD_STORE_DIR" | sed -re "s/\\.gpg$//" |		 
-		 sed -re "s/\\home\\/someone\\/.local\\/share\\/password-store\\///" |
-		 rofi -dmenu -width 30 -location 0 -i -nb \#FF004F)
+    pw_store=$(find "$PASSWORD_STORE_DIR")
 else
-    target=$(find ~/.password-store/ | sed -re "s/\\.gpg$//" |
-		 sed -re "s/^.*\\/.password-store\\///" |
-		 rofi -dmenu -width 30 -location 0 -i -nb \#FF004F)
+    pw_store=$(find ~/.password-store/)
 fi
+
+target=$(echo "$pw_store" | awk -F / -v OFS=/ '/\.gpg$/ { print $( NF -1 ),
+	     substr($NF, 1, length( $NF ) -4 ) }' |
+	     rofi -dmenu -width 30 -location 0 -i -nb \#FF004F)
 
 if have gopass; then
     gopass -c "$target"
-    time=$(gopass config cliptimeout | awk 'NR==1 {print $2}')
+    time=$(gopass config cliptimeout | awk 'NR == 1 { print $2 }')
 else
     pass -c "$target"
     time=5
