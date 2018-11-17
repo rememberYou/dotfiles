@@ -4,4 +4,6 @@ After=network.target network-online.target dbus.socket
 
 [Service]
 Type=oneshot
-ExecStart=/usr/.local/bin/mbsync -Va
+ExecStart=/usr/bin/mbsync -c /home/someone/.config/isync/mbsyncrc -a
+StandardOutput=syslog
+StandardError=syslog
