@@ -1,4 +1,5 @@
 *.log
+*.wants
 __pycache__
 ranger/.config/ranger/plugins/
 mpd/.config/mpd/database
