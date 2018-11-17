@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This script retrieves unread messages from your Reddit account using a JSON
 # link.
