@@ -1,0 +1,9 @@
+[Unit]
+Description=RSS/Atom feed synchronization service
+After=network.target network-online.target dbus.socket
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/newsboat -u /home/someone/.config/newsboat/urls -x reload
+StandardOutput=syslog
+StandardError=syslog

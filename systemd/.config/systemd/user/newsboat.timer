@@ -1,0 +1,10 @@
+[Unit]
+Description=Newsboat synchronization timer
+
+[Timer]
+OnCalendar=*:0/30
+Persistent=true
+Unit=newsboat.service
+
+[Install]
+WantedBy=timers.target
