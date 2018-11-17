@@ -1,6 +1,0 @@
-#!/bin/bash
-#
-# Don't forget to include `notify-program "~/bin/newsboat-notify"` in your
-# newsboat configuration file.
-
-notify-send "Newsboat" "$1"
