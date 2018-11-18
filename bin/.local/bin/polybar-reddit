@@ -8,8 +8,8 @@
 #
 # To get your Reddit token:
 # 1. Go to "https://www.reddit.com/prefs/feeds/"
-# 2. Click "your inbox" > "unread messages" > "JSON" and copy the
-# token in the navigation bar.
+# 2. Click "your inbox" > "unread messages" > "JSON" and copy the token
+# following of your username, in the navigation bar (<token>&user=<username>).
 #
 # NOTE: `polybar-reddit` can also be used outside of polybar by replacing the
 # following line: echo -e "%{F#cb4b16} %{F-}$unread"
