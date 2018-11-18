@@ -1,10 +1,12 @@
 [Unit]
 Description=Mailbox synchronization service
-Wants=network-online.target
-After=network-online.target
+Wants=network-online.target gpg-agent.socket
+After=network.target network-online.target dbus.socket gpg-agent.socket
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/mbsync -c /home/someone/.config/isync/mbsyncrc -a
+ExecStart=mbsync -c /home/someone/.config/isync/mbsyncrc -Va
+ExecStartPost=/usr/bin/emacs --daemon
+ExecStop=/usr/bin/emacsclient -e "(progn (mu4e-update-index) (kill-emacs))"
 StandardOutput=syslog
 StandardError=syslog
