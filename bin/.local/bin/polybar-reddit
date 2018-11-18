@@ -6,6 +6,11 @@
 # To use this script, make sure you have the following dependencies installed:
 # `curl`, `jq`, `ttf-font-awesome`.
 #
+# To get your Reddit token:
+# 1. Go to "https://www.reddit.com/prefs/feeds/"
+# 2. Click "your inbox" > "unread messages" > "JSON" and copy the
+# token in the navigation bar.
+#
 # NOTE: `polybar-reddit` can also be used outside of polybar by replacing the
 # following line: echo -e "%{F#cb4b16} %{F-}$unread"
 # by: echo " $unread"
