@@ -1,5 +1,6 @@
 Host *
     AddKeysToAgent yes
+    IdentityAgent SSH_AUTH_SOCK
     UserKnownHostsFile ~/.local/share/ssh/known_hosts
 
 Host bitbucket bitbucket.org
