@@ -1,6 +1,7 @@
 [Unit]
 Description=Mailbox synchronization service
-After=network.target network-online.target dbus.socket
+Wants=network-online.target
+After=network-online.target
 
 [Service]
 Type=oneshot
