@@ -2,8 +2,8 @@
 Description=Mailbox synchronization timer
 
 [Timer]
-OnCalendar=*:0/2
-Persistent=true
+OnBootSec=2m
+OnUnitActiveSec=1m
 Unit=mbsync.service
 
 [Install]
