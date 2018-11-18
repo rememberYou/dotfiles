@@ -17,8 +17,9 @@ seems odd to you.
 
 Finally, this repository has
 [wiki](https://github.com/rememberYou/dotfiles/wiki/) pages to better
-understand some of the choices I have made and the questions you will
-have about these dotfiles. Feel free to visit them ☺
+understand some of the choices I have made and allow me to answer any
+questions you may have have about these dotfiles. Feel free to visit
+them ☺
 
 List of files:
 
