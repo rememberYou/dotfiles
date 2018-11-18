@@ -15,7 +15,7 @@
 # by: echo " $numfiles"
 
 # Replace the path below with yours.
-MAIL_PATH="~/Maildir/gmail/INBOX/new/*"
+MAIL_PATH="/home/$USER/Maildir/gmail/INBOX/new/*"
 
 shopt -s nullglob
 
