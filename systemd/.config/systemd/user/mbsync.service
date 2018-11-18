@@ -6,7 +6,6 @@ After=network.target network-online.target dbus.socket gpg-agent.socket
 [Service]
 Type=oneshot
 ExecStart=mbsync -c /home/someone/.config/isync/mbsyncrc -Va
-ExecStartPost=/usr/bin/emacs --daemon
-ExecStop=/usr/bin/emacsclient -e "(progn (mu4e-update-index) (kill-emacs))"
+Environment=MU_HOME="%C/mu"
 StandardOutput=syslog
 StandardError=syslog
