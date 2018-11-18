@@ -158,12 +158,12 @@ is not what I recommend.
 
 ## Go further
 
-this repository has
+This repository has
 [wiki](https://github.com/rememberYou/dotfiles/wiki/) pages to better
 understand some of the choices I have made and the questions you will
 have about these dotfiles.
 
-if you have any specific questions you can find me on
+If you have any specific questions you can find me on
 [IRC](https://webchat.freenode.net/) (`/q rememberYou`)
 
 ## TODO
