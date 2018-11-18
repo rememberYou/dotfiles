@@ -156,6 +156,16 @@ possibility to follow the specifications of the XDG base directory.
 `zshrc` (resp. `bashrc`) except for a few system manipulations, which
 is not what I recommend.
 
+## Go further
+
+this repository has
+[wiki](https://github.com/rememberYou/dotfiles/wiki/) pages to better
+understand some of the choices I have made and the questions you will
+have about these dotfiles.
+
+if you have any specific questions you can find me on
+[IRC](https://webchat.freenode.net/) (`/q rememberYou`)
+
 ## TODO
 
 Here is a list of tasks I plan to do in my spare time to improve this
