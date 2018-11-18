@@ -173,7 +173,6 @@ configuration:
 
 *  Refactoring my [sway](https://github.com/swaywm/sway/) configuration.
 *  Make a configuration for [qutebrowser](https://github.com/qutebrowser/qutebrowser).
-*  Make a configuration for [tmux](https://github.com/tmux/tmux/).
 
 ## Contributions
 
