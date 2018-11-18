@@ -15,6 +15,11 @@ a look at it to get different ideas for your dotfiles and why not
 leave comments, suggestions, questions and bug reports if something
 seems odd to you.
 
+Finally, this repository has
+[wiki](https://github.com/rememberYou/dotfiles/wiki/) pages to better
+understand some of the choices I have made and the questions you will
+have about these dotfiles. Feel free to visit them ☺
+
 List of files:
 
 ```
@@ -155,16 +160,6 @@ possibility to follow the specifications of the XDG base directory.
 **NOTE:** the `.zshrc` file (resp. `.bashrc`) cannot be renamed to
 `zshrc` (resp. `bashrc`) except for a few system manipulations, which
 is not what I recommend.
-
-## Go further
-
-This repository has
-[wiki](https://github.com/rememberYou/dotfiles/wiki/) pages to better
-understand some of the choices I have made and the questions you will
-have about these dotfiles.
-
-If you have any specific questions you can find me on
-[IRC](https://webchat.freenode.net/) (`/q rememberYou`)
 
 ## TODO
 
