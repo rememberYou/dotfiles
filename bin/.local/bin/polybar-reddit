@@ -20,7 +20,6 @@
 # separate GPG file.
 
 # Replace this path by yours.
-
 if [ ! -z "$GNUPGHOME" ]; then
     REDDIT_GPG="$GNUPGHOME/shared/reddit-json.gpg"
 else
