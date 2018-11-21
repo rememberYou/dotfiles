@@ -166,7 +166,7 @@ interval = 10
 
 [module/temperature]
 type                  = internal/temperature
-warn-temperature      = 60
+warn-temperature      = 70
 format                = <ramp> <label>
 format-warn           = <ramp> <label-warn>
 label                 = %temperature-c%
