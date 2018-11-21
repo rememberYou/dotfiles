@@ -4,6 +4,12 @@
 # shellcheck disable=SC1090
 # shellcheck disable=SC1091
 
+# Tell the state of the battery.
+bat_state() {
+    upower -i /org/freedesktop/UPower/devices/battery_BAT0 \
+	| grep state | awk '{ print $2 }'
+}
+
 # Import various system-wide snippets.
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
     for f in /etc/X11/xinit/xinitrc.d/?*.sh; do
@@ -14,8 +20,12 @@ fi
 
 cd ~ || exit
 
-# Set the brightness.
-xbacklight -set 40
+# Set the brightness according to the battery state.
+if [ "$(bat_state)" = "discharging" ]; then
+    xbacklight -set 40
+else
+    xbacklight -set 60
+fi
 
 # Turn off the bell.
 xset -b
