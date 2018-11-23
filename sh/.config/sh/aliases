@@ -46,6 +46,10 @@ fi
 # GNU Emacs
 if have emacs; then
     alias ec="emacsclient -a '' -t"
+
+    # Share aliases with the Eshell of GNU Emacs.
+    alias | sed 's/^alias //' | sed -E "s/^([^=]+)='(.+?)'$/\1=\2/" | sed "s/'\\\\''/'/g" |
+	sed "s/'\\\\$/'/;" | sed -E 's/^([^=]+)=(.+)$/alias \1 \2/' > ~/.emacs.d/eshell/alias
 fi
 
 alias moc="mu cfind --format=org-contact"
