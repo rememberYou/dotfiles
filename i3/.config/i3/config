@@ -113,11 +113,12 @@ bindsym $mod+Shift+6 move container to workspace $ws6
 bindsym $mod+Shift+7 move container to workspace $ws7
 
 # Assign applications to their own workspace.
-assign [class="Alacritty"]      → $ws1
-assign [class="Chromium"]       → $ws2
-assign [class="Emacs"]          → $ws3
-assign [class="Gimp"]           → $ws6
-assign [class="GravitDesigner"] → $ws6
+assign [class="^Alacritty$"]          → $ws1
+assign [class="^qutebrowser$"]        → $ws2
+assign [class="^Chromium$"]           → $ws2
+assign [class="^Emacs$"]              → $ws3
+assign [class="^Gimp$"]               → $ws6
+assign [class="^GravitDesigner$"]     → $ws6
 
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class="Skype"] move to workspace $ws5
