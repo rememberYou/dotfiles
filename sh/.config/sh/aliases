@@ -74,7 +74,7 @@ alias services="systemctl list-unit-files | grep enabled && systemctl --user lis
 
 # top
 alias top_mem="top -b -o +%MEM | head -n 22"
-alias top_cpu="top -b -o +%MEM | head -n 22"
+alias top_cpu="top -b -o +%CPU | head -n 22"
 
 # Traduction
 if have trans; then
