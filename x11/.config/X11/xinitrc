@@ -23,6 +23,7 @@ cd ~ || exit
 # Set the brightness according to the battery state.
 if [ "$(bat_state)" = "discharging" ]; then
     xbacklight -set 40
+    pactl set-sink-mute "$(pacmd list-sinks | awk '/* index:/{print $3}')" toggle
 else
     xbacklight -set 60
 fi
