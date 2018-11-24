@@ -43,15 +43,6 @@ if have docker; then
     alias dkr="docker run -d -P --name $1 $2"
 fi
 
-# GNU Emacs
-if have emacs; then
-    alias ec="emacsclient -a '' -t"
-
-    # Share aliases with the Eshell of GNU Emacs.
-    alias | sed 's/^alias //' | sed -E "s/^([^=]+)='(.+?)'$/\1=\2/" | sed "s/'\\\\''/'/g" |
-	sed "s/'\\\\$/'/;" | sed -E 's/^([^=]+)=(.+)$/alias \1 \2/' > ~/.emacs.d/eshell/alias
-fi
-
 alias moc="mu cfind --format=org-contact"
 
 # GPG
@@ -97,4 +88,15 @@ fi
 # youtube-dl
 if have youtube-dl; then
     alias yeam="youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/%(title)s.%(ext)s'"
+fi
+
+
+# GNU Emacs
+if have emacs; then
+    alias ec="emacsclient -a '' -t"
+
+    # Share aliases with the Eshell of GNU Emacs (Must be the last line of code
+    # in your file).
+    alias | sed 's/^alias //' | sed -E "s/^([^=]+)='(.+?)'$/\1=\2/" | sed "s/'\\\\''/'/g" |
+	sed "s/'\\\\$/'/;" | sed -E 's/^([^=]+)=(.+)$/alias \1 \2/' > ~/.emacs.d/eshell/alias
 fi
