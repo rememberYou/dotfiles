@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Allows rofi to display a message labeled with $1 to perform the $2 command
-# using dmenu.
+# Allows rofi to display a message labeled with $1 to perform the $2
+# command using dmenu.
 #
 # Example:
 # `./rofi-prompt "Do you want to shutdown?" "shutdown -h now"`
