@@ -59,6 +59,7 @@ alias gpgR="gpg-connect-agent reloadagent /bye"
 alias xelatex="xelatex --shell-escape"
 
 # Navigation
+alias d="cd $XDG_DATA_HOME/docker/"
 alias g="cd $XDG_DATA_HOME/git/"
 alias q="cd $XDG_DATA_HOME/qemu/"
 
