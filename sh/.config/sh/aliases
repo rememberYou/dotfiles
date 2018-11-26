@@ -75,6 +75,9 @@ alias list_wifi="nmcli device wifi list"
 alias inpac="pacman -Qmq | sort"
 alias mymakepkg="makepkg -sirc"
 
+# qutebrowser
+alias qutebrowser="rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser"
+
 # systemctl
 alias services="systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled"
 
