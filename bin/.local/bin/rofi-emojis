@@ -22,7 +22,7 @@ is_started() { pgrep -x "$1" > /dev/null 2>&1; }
 
 get_emojis
 
-emoji=$(cat "$FILE" | rofi -dmenu -width 30 -location 0 -i)
+emoji=$(cat "$FILE" | rofi -dmenu -location 0 -width 30 -no-custom -i -p "🐈 Emoji Manager")
 emoji_icon=$(echo $emoji | cut -d ' ' -f1)
 $(echo -n "$emoji_icon" | xsel -bi)
 
