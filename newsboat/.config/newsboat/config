@@ -1,5 +1,5 @@
 auto-reload yes
-browser chromium
+browser qutebrowser
 cache-file ~/.cache/newsboat/cache.db
 cookie-cache ~/.cache/newsboat/cookies.txt
 error-log ~/.local/share/newsboat/error.log
