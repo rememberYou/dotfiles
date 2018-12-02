@@ -1,42 +1,34 @@
 [global]
-    monitor = 0
+    # Related to custom configuration
+    browser = /usr/bin/qutebrowser
+    dmenu = /usr/bin/rofi -p dunst:
     follow = mouse
-    geometry = "300x15-30+50"
-    indicate_hidden = yes
-    shrink = no
-    transparency = 0
-    notification_height = 0
-    separator_height = 2
-    padding = 10
-    horizontal_padding = 10
-    frame_width = 1
-    frame_color = "#18181a"
-    separator_color = frame
-    sort = yes
-    idle_threshold = 0
-    font = DejaVu Sans Mono 8
-    line_height = 0
-    markup = full
-    format = "<b>%s %p</b>\n%b"
-    alignment = left
-    show_age_threshold = 60
-    word_wrap = yes
-    ignore_newline = no
-    stack_duplicates = true
     hide_duplicate_count = true
-    show_indicators = yes
+    history_length = 15
+    markup = full
+    monitor = 0
+    separator_color = frame
+    show_age_threshold = 60
+    word_wrap = true
+
+    # Related to fonts and colors
+    font = DejaVu Sans Mono 8
+    format = "<b><span foreground="#b1a7ba">%s</span> %p</b>\n%b"
+    frame_color = "#18181a"
+
+    # Related to position
+    alignment = left
+    frame_width = 1
+    geometry = "300x15-30+50"
+    horizontal_padding = 10
+    line_height = 0
+    padding = 10
+    separator_height = 2
+
+    # Related to icons
+    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
     icon_position = left
     max_icon_size = 32
-    icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
-    sticky_history = yes
-    history_length = 15
-    dmenu = /usr/bin/rofi -p dunst:
-    browser = /usr/bin/chromium -new-tab
-    always_run_script = true
-    title = Dunst
-    class = Dunst
-    startup_notification = false
-    force_xinerama = false
 
 [experimental]
     per_monitor_dpi = false
@@ -48,17 +40,16 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#18181a"
-    foreground = "#f5f5f5"
+    background = "#0c0610"
+    foreground = "#b1a7ba"
     timeout = 10
 
 [urgency_normal]
-    background = "#18181a"
-    foreground = "#f5f5f5"
+    background = "#0c0610"
+    foreground = "#b1a7ba"
     timeout = 10
 
 [urgency_critical]
-    background = "#ab4642"
-    foreground = "#f5f5f5"
-    frame_color = "#ab4642"
-    timeout = 0
+    background = "#0c0610"
+    foreground = "#b1a7ba"
+    timeout = 10
