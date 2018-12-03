@@ -4,7 +4,7 @@
 [global]
     # Related to the custom configuration
     browser = /usr/bin/qutebrowser
-    dmenu = /usr/bin/rofi -p dunst:
+    dmenu = /usr/bin/rofi -dmenu -p dunst:
     follow = mouse
     hide_duplicate_count = true
     history_length = 15
