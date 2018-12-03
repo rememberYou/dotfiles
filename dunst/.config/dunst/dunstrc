@@ -2,7 +2,7 @@
     per_monitor_dpi = false
 
 [global]
-    # Related to custom configuration
+    # Related to the custom configuration
     browser = /usr/bin/qutebrowser
     dmenu = /usr/bin/rofi -p dunst:
     follow = mouse
@@ -12,7 +12,7 @@
     show_age_threshold = 60
     word_wrap = true
 
-    # Related to fonts and colors
+    # Related to the fonts and colors
     font = DejaVu Sans Mono 8
     format = "<b><span foreground="#adc8d7">%s</span> %p</b>\n%b"
     frame_color = "#18181a"
@@ -24,7 +24,7 @@
     padding = 20
     separator_height = 2
 
-    # Related to icons
+    # Related to the icons
     icon_path = /usr/share/icons/Adwaita/16x16/status/:/usr/share/icons/Adwaita/16x16/devices/
     icon_position = left
     max_icon_size = 40
