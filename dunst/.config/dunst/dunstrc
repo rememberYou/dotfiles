@@ -14,13 +14,14 @@
 
     # Related to the fonts and colors
     font = DejaVu Sans Mono 8
-    format = "<b><span foreground="#adc8d7">%s</span> %p</b>\n%b"
-    frame_color = "#18181a"
+    format = "<b>%s %p</b>\n%b"
+    frame_color = "#5e81ac"
+    separator_color = frame
 
     frame_width = 1
     geometry = "400x50-30+58"
     horizontal_padding = 20
-    line_height = 0
+    line_height = 5
     padding = 20
     separator_height = 2
 
@@ -36,16 +37,17 @@
     history = ctrl+grave
 
 [urgency_critical]
-    background = "#0a171e"
-    foreground = "#adc8d7"
+    background = "#2e3440"
+    foreground = "#d8dee9"
+    frame_color = "#bf616a"
     timeout = 10
 
 [urgency_low]
-    background = "#0a171e"
-    foreground = "#adc8d7"
+    background = "#2e3440"
+    foreground = "#d8dee9"
     timeout = 10
 
 [urgency_normal]
-    background = "#0a171e"
-    foreground = "#adc8d7"
+    background = "#2e3440"
+    foreground = "#ffffff"
     timeout = 10
