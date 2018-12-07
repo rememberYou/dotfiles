@@ -1,6 +1,12 @@
 #!/bin/bash
 
 set -e
+
+if [ -z "$(ykman list)" ]; then
+    rofi -width 30 -location 0 -i -p "👣 OTP Manager" -nb \#FF004F -e "👣 No YubiKey detected!"
+    exit 1
+fi
+
 target=$(ykman oath list | rofi -dmenu -width 30 -location 0 -i -p "👣 OTP Manager" -nb \#FF004F)
 ykman oath code "$target" | cut -d " " -f3 | xclip -selection "clipboard"
 notify-send -t 5000 "OTP in clipboard" "Your $target OTP is currently in your clipboard."
