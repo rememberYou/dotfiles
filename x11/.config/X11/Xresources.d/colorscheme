@@ -1,21 +1,37 @@
-*.background:   #2e3440
-*.foreground:   #d8dee9
+#define nord0 #2e3440
+#define nord1 #3b4252
+#define nord2 #434c5e
+#define nord3 #4c566a
+#define nord4 #d8dee9
+#define nord5 #e5e9f0
+#define nord6 #eceff4
+#define nord7 #8fbcbb
+#define nord8 #88c0d0
+#define nord9 #81a1c1
+#define nord10 #5e81ac
+#define nord11 #bf616a
+#define nord12 #d08770
+#define nord13 #ebcb8b
+#define nord14 #a3be8c
+#define nord15 #b48ead
 
-*.cursorColor:  #d8dee9
+*.background:   nord0
+*.cursorColor:  nord0
+*.foreground:   nord4
 
-*.color0:       #3b4252
-*.color1:       #bf616a
-*.color2:       #a3be8c
-*.color3:       #ebcb8b
-*.color4:       #81a1c1
-*.color5:       #b48ead
-*.color6:       #88c0d0
-*.color7:       #e5e9f0
-*.color8:       #4c566a
-*.color9:       #bf616a
-*.color10:      #a3be8c
-*.color11:      #ebcb8b
-*.color12:      #81a1c1
-*.color13:      #b48ead
-*.color14:      #8fbcbb
-*.color15:      #eceff4
+*.color0: nord1
+*.color1: nord11
+*.color2: nord14
+*.color3: nord13
+*.color4: nord9
+*.color5: nord15
+*.color6: nord8
+*.color7: nord5
+*.color8: nord3
+*.color9: nord11
+*.color10: nord14
+*.color11: nord13
+*.color12: nord9
+*.color13: nord15
+*.color14: nord7
+*.color15: nord6
