@@ -6,6 +6,3 @@
 
 ! GNU Emacs settings
 #include "Xresources.d/emacs"
-
-! Rofi settings
-#include "Xresources.d/rofi"

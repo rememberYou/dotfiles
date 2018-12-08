@@ -43,6 +43,7 @@ List of files:
  python          ➔ specific to Python
  qutebrowser     ➔ keyboard-focused browser with a minimal GUI
  ranger          ➔ console file manager with VI key bindings
+ rofi            ➔ window switcher, application launcher, ssh dialog and dmenu replacement
  sh              ➔ common to all shells (e.g. aliases, environment variables, etc.)
  ssh             ➔ SSH settings
  sway            ➔ i3-compatible Wayland compositor

@@ -1,0 +1,12 @@
+configuration {
+    font: "DejaVu Sans Mono 16";
+    hide-scrollbar: true;
+    lines: 8;
+    padding: 80;
+    modi: "drun,run";
+    separator-style: "solid";
+    show-icons: true;
+    show-match: false;
+    theme: ".local/share/rofi/nord";
+    width: 30;
+}
