@@ -70,7 +70,7 @@ gen_options 'dual'
 gen_options 'clone'
 
 # Call menu
-SEL=$(gen_entries | rofi -dmenu -location 0 -width 30 -i -p "💻 Screen Manager" | awk '{print $1}')
+SEL=$(gen_entries | rofi -dmenu-i -p "💻 Screen Manager" | awk '{print $1}')
 
 # Call xrandr
 $(${COMMANDS[${SEL::-1}]})

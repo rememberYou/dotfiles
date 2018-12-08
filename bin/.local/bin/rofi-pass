@@ -16,7 +16,7 @@ fi
 
 target=$(echo "$pw_store" | awk -F / -v OFS=/ '/\.gpg$/ { print $( NF -1 ),
 	     substr($NF, 1, length( $NF ) -4 ) }' |
-	     rofi -dmenu -location 0 -width 30 -no-custom -i -p "🔐 Password Manager" -nb \#FF004F)
+	     rofi -dmenu -no-custom -i -p "🔐 Password Manager" -nb \#FF004F)
 if have gopass; then
     gopass -c "$target"
     time=$(gopass config cliptimeout | awk 'NR == 1 { print $2 }')

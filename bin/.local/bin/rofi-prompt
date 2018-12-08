@@ -6,5 +6,5 @@
 # Example:
 # `./rofi-prompt "Do you want to shutdown?" "shutdown -h now"`
 
-[ $(echo -e "No\nYes" | rofi -dmenu -width 30 -lines 2 -location 0 -i -p "$1") \
+[ $(echo -e "No\nYes" | rofi -dmenu -lines 2 -i -p "$1") \
 == "Yes" ] && $2
