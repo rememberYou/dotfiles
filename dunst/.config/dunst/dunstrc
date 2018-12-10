@@ -18,6 +18,7 @@
     frame_color = "#5e81ac"
     separator_color = frame
 
+    # Related to the geometry
     frame_width = 1
     geometry = "400x50-30+58"
     horizontal_padding = 20
