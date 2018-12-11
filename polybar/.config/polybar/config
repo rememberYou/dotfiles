@@ -1,15 +1,15 @@
 [colors]
-black   = ${xrdb:background:#000000}
-blue    = ${xrdb:color4:#268bd2}
-cyan    = ${xrdb:color6:#2aa198}
-green   = ${xrdb:color2:#859900}
-grey    = ${xrdb:color14:#93a1a1}
-magenta = ${xrdb:color5:#d33682}
-orange  = ${xrdb:color9:#cb4b16}
-purple  = ${xrdb:color13:#6c71c4}
-red     = ${xrdb:color1:#dc322f}
-yellow  = ${xrdb:color3:#b58900}
-white   = ${xrdb:color7:#eee8d5}
+black = ${xrdb:background:#2e3440}
+blue = ${xrdb:color4:#d8dee9}
+cyan = ${xrdb:color6:#eceff4}
+green = ${xrdb:color2:#434c5e}
+grey = ${xrdb:color14:#a3be8c}
+magenta = ${xrdb:color5:#e5e9f0}
+orange = ${xrdb:color9:#81a1c1}
+purple = ${xrdb:color13:#ebcb8b}
+red = ${xrdb:color1:#3b4252}
+yellow = ${xrdb:color3:#4c566a}
+white = ${xrdb:color7:#8fbcbb}
 
 
 [bar/top]
