@@ -114,11 +114,12 @@ label                    = %percentage%%
 
 
 [module/date]
-type              = internal/date
-date              = %a %d %b %Y
-time              = "%H:%M:%S"
-label             = %date% %time%
-label-foreground  = ${root.foreground}
+type = internal/date
+date = %a %d %b %Y
+format = %{A1:notify-send "$(cal)":} <label> %{A}
+label =  %date% %time%
+label-foreground = ${root.foreground}
+time = %H:%M:%S
 
 
 [module/filesystem]
