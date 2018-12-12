@@ -138,3 +138,6 @@ shell:
     - --login
 
 tabspaces: 4
+
+visual_bell:
+  duration: 0
