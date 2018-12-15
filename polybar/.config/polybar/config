@@ -8,8 +8,8 @@ magenta = ${xrdb:color5:#e5e9f0}
 orange = ${xrdb:color9:#81a1c1}
 purple = ${xrdb:color13:#ebcb8b}
 red = ${xrdb:color1:#3b4252}
-yellow = ${xrdb:color3:#4c566a}
 white = ${xrdb:color7:#8fbcbb}
+yellow = ${xrdb:color3:#4c566a}
 
 
 [bar/top]
