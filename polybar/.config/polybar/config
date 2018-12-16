@@ -13,32 +13,34 @@ yellow = ${xrdb:color3:#4c566a}
 
 
 [bar/top]
-monitor             = DP1
-monitor-fallback    = eDP1
-dpi                 = ${xrdb:Xft.dpi}
-height              = 25
-padding-left        = 1
-padding-right       = 1
-module-margin-left  = 1
+; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor =
+monitor-fallback =
+dpi = ${xrdb:Xft.dpi}
+height = 25
+padding-left = 1
+padding-right = 1
+module-margin-left = 1
 module-margin-right = 1
 
-background          = ${colors.black}
-foreground          = ${colors.white}
+background = ${colors.black}
+border-color = ${colors.green}
+foreground = ${colors.white}
 
-font-0              = "Tamzen:size=15;0"
-font-1 		    = "Font Awesome 5 Free:style=Regular:pixelsize=5;0"
-font-2		    = "Font Awesome 5 Free:style=Solid:pixelsize=5;0"
-font-3 		    = "Font Awesome 5 Brands:style=Regular:pixelsize=5;0"
-font-4              = "Wuncon Siji:pixelsize=13;0"
-font-5              = "Noto Sans Symbols 2:size=5;1"
+font-0 = "Tamzen:size=15;0"
+font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=5;0"
+font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=5;0"
+font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=5;0"
+font-4 = "Wuncon Siji:pixelsize=13;0"
+font-5 = "Noto Sans Symbols 2:size=5;1"
 
-modules-left        = i3
-modules-center      = date
-modules-right       = mail reddit github battery pulseaudio backlight cpu temperature memory filesystem wireless-network
+modules-left = i3
+modules-center = date
+modules-right = mail reddit github battery pulseaudio backlight cpu temperature memory filesystem wireless-network
 
-tray-position       = right
-tray-padding        = 5
-tray-maxsize        = 18
+tray-position = right
+tray-padding = 5
+tray-maxsize = 18
 
 
 [module/i3]
@@ -86,7 +88,7 @@ format-charging               = <animation-charging> <label-charging>
 format-discharging            = <ramp-capacity> <label-discharging>
 
 format-full-prefix            = " "
-format-full-prefix-foreground = ${colors.green}
+format-full-prefix-foreground = ${colors.grey}
 
 ramp-capacity-0               = 
 ramp-capacity-1               = 
@@ -96,22 +98,22 @@ ramp-capacity-foreground      = ${colors.red}
 animation-charging-0          = 
 animation-charging-1          = 
 animation-charging-2          = 
-animation-charging-foreground = ${colors.green}
+animation-charging-foreground = ${colors.grey}
 
 [module/backlight]
 type                     = internal/xbacklight
 format-prefix            = " "
 format-prefix-foreground = ${colors.yellow}
 label                    = %percentage%%
-output                   = eDP1
+
+# output                   = ${bar/top.monitor}
 
 
 [module/cpu]
-type                     = internal/cpu
-format-prefix            = " "
-format-prefix-foreground = ${colors.grey}
-label                    = %percentage%%
-
+type = internal/cpu
+format-prefix = " "
+format-prefix-foreground = ${colors.cyan}
+label = %{A1:notify-send "$(ps axch -o cmd\:15,%cpu --sort=-%cpu | head)":}%percentage%%%{A}
 
 [module/date]
 type = internal/date
@@ -123,25 +125,21 @@ time = %H:%M:%S
 
 
 [module/filesystem]
-type                       = internal/fs
-interval                   = 25
-mount-0                    = /
-label-mounted              = %{F#859900}%mountpoint%%{F-} %percentage_used%%
-label-unmounted            = %mountpoint% not mounted
+type = internal/fs
+interval = 25
+mount-0  = /
+label-mounted = %{F#859900}%mountpoint%%{F-} %percentage_used%%
+label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.red}
 
 
 [module/github]
-type = custom/script
-exec = ~/.local/bin/polybar-github
-interval = 60
-
-
-# [module/github]
-# type = internal/github
-# token = ${env:GITHUB_ACCESS_TOKEN}
-# empty-notifications = false
-# interval = 10
+type = internal/github
+token = ${env:GITHUB_ACCESS_TOKEN}
+empty-notifications = true
+interval = 30
+format-prefix = " "
+label = "%notifications%"
 
 
 [module/mail]
@@ -153,10 +151,10 @@ exec = ~/.local/bin/polybar-mail
 
 [module/memory]
 type                     = internal/memory
-interval                 = 2
-format-prefix            = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.green}
-label                    = %percentage_used%%
+interval = 2
+label = %{A1:notify-send "$(ps axch -o cmd\:15,%mem --sort=-%mem | head)":}%percentage_used%%%{A}
 
 
 [module/reddit]
@@ -166,69 +164,69 @@ interval = 10
 
 
 [module/temperature]
-type                  = internal/temperature
-warn-temperature      = 70
-format                = <ramp> <label>
-format-warn           = <ramp> <label-warn>
-label                 = %temperature-c%
-label-warn            = %temperature-c%
+type = internal/temperature
+warn-temperature = 70
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+label = %temperature-c%
+label-warn = %temperature-c%
 label-warn-foreground = ${colors.red}
-ramp-0                = 
-ramp-1                = 
-ramp-2                = 
-ramp-foreground       = ${colors.cyan}
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.cyan}
 
 
 [module/pulseaudio]
-type                     = internal/pulseaudio
-sink                     = alsa_output.pci-0000_00_1f.3.analog-stereo
-format-volume            = <ramp-volume> <label-volume>
-format-muted             = 🔇 <label-muted>
-label-muted              = Muted
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+format-muted = 🔇 <label-muted>
+format-muted-foreground = ${colors.red}
+format-volume = <ramp-volume> <label-volume>
 format-volume-foreground = ${colors.white}
-label-volume-foreground  = ${root.foreground}
-format-muted-foreground  = ${colors.red}
-label-muted-foreground   = ${root.foreground}
+label-muted = Muted
+label-muted-foreground = ${root.foreground}
+label-volume-foreground = ${root.foreground}
 ramp-volume-0 = 🔈
 ramp-volume-1 = 🔉
 ramp-volume-2 = 🔊
 
 
 [module/wired-network]
-type                           = internal/network
-interface                      = enp0s31f6
-interval                       = 3.0
-accumulate-stats               = true
+type = internal/network
+interface = enp0s31f6
+interval = 3.0
+accumulate-stats = true
 
-format-connected               =  <label-connected>
-format-connected-foreground    = ${colors.cyan}
-label-connected                = %ifname%
-label-connected-foreground     = ${root.foreground}
+format-connected =  <label-connected>
+format-connected-foreground = ${colors.cyan}
+label-connected = %ifname%
+label-connected-foreground = ${root.foreground}
 
-format-disconnected            =  <label-disconnected>
+format-disconnected =  <label-disconnected>
 format-disconnected-foreground = ${colors.red}
-label-disconnected             = disconnected
+label-disconnected = disconnected
 label-disconnected-foreground  = ${root.foreground}
 
 
 [module/wireless-network]
-type                           = internal/network
-interface                      = wlp4s0
-interval                       = 3.0
-accumulate-stats               = true
+type = internal/network
+interface = wlp4s0
+interval = 3.0
+accumulate-stats = true
 
-format-connected               = <ramp-signal> <label-connected>
-format-connected-foreground    = ${colors.cyan}
-label-connected                = %essid%
-label-connected-foreground     = ${root.foreground}
+format-connected = <ramp-signal> <label-connected>
+format-connected-foreground = ${colors.cyan}
+label-connected = %essid%
+label-connected-foreground = ${root.foreground}
 
-format-disconnected            =  <label-disconnected>
+format-disconnected =  <label-disconnected>
 format-disconnected-foreground = ${colors.red}
-label-disconnected             = disconnected
-label-disconnected-foreground  = ${root.foreground}
+label-disconnected = disconnected
+label-disconnected-foreground = ${root.foreground}
 
-ramp-signal-0                  = 
-ramp-signal-1                  = 
-ramp-signal-2                  = 
-ramp-signal-3                  = 
-ramp-signal-4                  = 
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
