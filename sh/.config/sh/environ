@@ -30,12 +30,12 @@ export GPG_TTY
 
 # Manage the storage history of the commands.
 export HISTCONTROL='ignorespace:erasedups'
-# Increase the history file size.
-export HISTFILESIZE=1000
+# Number of lines to store in an active session.
+export HISTFILESIZE=100000
 # Ignore the archiving of the following commands.
-export HISTIGNORE='exit:poweroff:reboot:shutdown'
-# Increase the history size.
-export HISTSIZE=10000
+export HISTIGNORE='bg:clear::fg:exit:halt:history:jobs:poweroff:pwd:reboot:shutdown'
+# Number of lines to store in history file after session end.
+export HISTSIZE=100000
 
 # Related to Java.
 export JAVA_HOME="/usr/lib/jvm/default-runtime"
