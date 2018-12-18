@@ -28,12 +28,17 @@ export GPGKEY
 GPG_TTY="$(tty)"
 export GPG_TTY
 
-# Manage the storage history of the commands.
-export HISTCONTROL='ignorespace:erasedups'
+# Don't save lines which begin with a <space> character and eliminate duplication.
+export HISTCONTROL="ignorespace:erasedups"
 # Number of lines to store in an active session.
 export HISTFILESIZE=100000
 # Ignore the archiving of the following commands.
-export HISTIGNORE='bg:cd:clear:fg:exit:halt:history:jobs:ls:poweroff:ps:pwd:reboot:shutdown'
+HISTIGNORE_BASE="[bf]g:cd:cd ~:cd ..:..:date:exit:halt:* --help:* help:history"
+HISTIGNORE_BASE="$HISTIGNORE_BASE:jobs:l:ls:ls -?:ls -??::pwd:reboot:shutdown"
+# Ignore common local commands.
+HISTIGNORE_LOCAL="o:oo"
+# Export combined HISTIGNORE.
+export HISTIGNORE=${HISTIGNORE}:${HISTIGNORE_BASE}:${HISTIGNORE_LOCAL}
 # Number of lines to store in history file after session end.
 export HISTSIZE=$HISTFILESIZE
 
