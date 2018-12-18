@@ -33,9 +33,9 @@ export HISTCONTROL='ignorespace:erasedups'
 # Number of lines to store in an active session.
 export HISTFILESIZE=100000
 # Ignore the archiving of the following commands.
-export HISTIGNORE='bg:clear::fg:exit:halt:history:jobs:poweroff:pwd:reboot:shutdown'
+export HISTIGNORE='bg:cd:clear:fg:exit:halt:history:jobs:ls:poweroff:ps:pwd:reboot:shutdown'
 # Number of lines to store in history file after session end.
-export HISTSIZE=100000
+export HISTSIZE=$HISTFILESIZE
 
 # Related to Java.
 export JAVA_HOME="/usr/lib/jvm/default-runtime"
