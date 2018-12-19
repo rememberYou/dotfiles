@@ -20,6 +20,9 @@ fi
 
 cd ~ || exit
 
+# Mute the microphone.
+pulseaudio-ctl mute-input
+
 # Set the brightness according to the battery state.
 if [ "$(bat_state)" = "discharging" ]; then
     xbacklight -set 20
