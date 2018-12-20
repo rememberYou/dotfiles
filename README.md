@@ -170,7 +170,6 @@ Here is a list of tasks I plan to do in my spare time to improve this
 configuration:
 
 *  Refactoring my [sway](https://github.com/swaywm/sway/) configuration.
-*  Make a configuration for [qutebrowser](https://github.com/qutebrowser/qutebrowser).
 
 ## Contributions
 
