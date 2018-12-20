@@ -45,4 +45,4 @@
 	name = Terencio Agozzino
 	email = terencio.agozzino@gmail.com
 [web]
-	browser = chromium
+	browser = qutebrowser
