@@ -15,7 +15,10 @@ config.bind('j', 'run-with-count 2 scroll down')
 config.bind('k', 'run-with-count 2 scroll up')
 config.bind('l', 'run-with-count 2 scroll right')
 
+config.bind(';m', 'hint links spawn mpv {hint-url}')
+
 config.bind(',d', 'spawn youtube-dl -o ~/Videos/%(title)s.%(ext)s {url}')
+config.bind(',m', 'spawn mpv {url}')
 config.bind(',P', 'spawn --userscript qutepass.py')
 config.bind(',pp', 'spawn --userscript qutepass.py --password-only')
 config.bind(',pu', 'spawn --userscript qutepass.py --username-only')
