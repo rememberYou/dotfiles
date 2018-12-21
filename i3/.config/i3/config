@@ -37,8 +37,8 @@ workspace_auto_back_and_forth yes
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+r exec $term -e "ranger"
 # Start rofi.
-bindsym $mod+d exec $menu -location 0 -width 30 -show "drun" -display-drun "🍦 Application Manager"
-bindsym $mod+Shift+d exec $menu -location 0 -width 30 -show "window" -display-window " Window Manager"
+bindsym $mod+d exec $menu -location 0 -width 30 -show "drun" -display-drun "🍦 Application Manager:"
+bindsym $mod+Shift+d exec $menu -location 0 -width 30 -show "window" -display-window " Window Manager:"
 bindsym $mod+Shift+f exec ~/.local/bin/rofi-finder
 bindsym $mod+Shift+w exec ~/.local/bin/rofi-xrandr
 # Kill focused window.
