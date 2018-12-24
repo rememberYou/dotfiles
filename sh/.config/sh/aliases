@@ -18,17 +18,17 @@ gen() {
 have() { type "$1" > /dev/null 2>&1; }
 
 # Alias respecting programs.
-alias electrum="electrum --dir $XDG_CONFIG_HOME/electrum"
-alias mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
-alias newsboat="newsboat -u $XDG_CONFIG_HOME/newsboat/urls"
-alias ssh="ssh -F $XDG_CONFIG_HOME/ssh/config"
-alias startx="startx $XDG_CONFIG_HOME/X11/xinitrc"
-alias tmux="tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf"
+alias electrum='electrum --dir $XDG_CONFIG_HOME/electrum'
+alias mbsync='mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc'
+alias newsboat='newsboat -u $XDG_CONFIG_HOME/newsboat/urls'
+alias ssh='ssh -F $XDG_CONFIG_HOME/ssh/config'
+alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
+alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 
 # Convertions
 if have libreoffice-fresh; then
-    alias doc2pdf="libreoffice --headless --convert-to pdf *.docx"
-    alias odt2pdf="libreoffice --headless --convert-to pdf *.odt"
+    alias doc2pdf='libreoffice --headless --convert-to pdf *.docx'
+    alias odt2pdf='libreoffice --headless --convert-to pdf *.odt'
 fi
 
 # Battery
@@ -39,11 +39,11 @@ alias ls='ls --color=auto'
 
 # Docker
 if have docker; then
-    alias dke="docker exec -it $1 sh"
-    alias dkr="docker run -d -P --name $1 $2"
+    alias dke='docker exec -it'
+    alias dkr='docker run -d -P --name'
 fi
 
-alias moc="mu cfind --format=org-contact"
+alias moc='mu cfind --format=org-contact'
 
 # GNU Emacs
 if have emacs; then
@@ -51,49 +51,61 @@ if have emacs; then
 fi
 
 # GPG
-alias gpgC="gpg --recipient \$GPGKEY --encrypt"
-alias gpgDP="gpg --delete-keys"
-alias gpgDS="gpg --delete-secret-keys"
-alias gpgE="gpg --edit-key"
-alias gpgG="gpg --full-generate-key"
-alias gpgLP="gpg --list-keys"
-alias gpgLS="gpg -K"
-alias gpgR="gpg-connect-agent reloadagent /bye"
+alias gpgC='gpg --recipient \$GPGKEY --encrypt'
+alias gpgDP='gpg --delete-keys'
+alias gpgDS='gpg --delete-secret-keys'
+alias gpgE='gpg --edit-key'
+alias gpgG='gpg --full-generate-key'
+alias gpgLP='gpg --list-keys'
+alias gpgLS='gpg -K'
+alias gpgR='gpg-connect-agent reloadagent /bye'
 
 # LaTeX
-alias xelatex="xelatex --shell-escape"
+alias xelatex='xelatex --shell-escape'
 
 # Navigation
-alias d="cd $XDG_DATA_HOME/docker/"
-alias g="cd $XDG_DATA_HOME/git/"
-alias q="cd $XDG_DATA_HOME/qemu/"
+alias d='cd $XDG_DATA_HOME/docker/'
+alias g='cd $XDG_DATA_HOME/git/'
+alias q='cd $XDG_DATA_HOME/qemu/'
 
 # nmcli
-alias list_wifi="nmcli device wifi list"
+alias list_wifi='nmcli device wifi list'
 
 # pacman
-alias inpac="pacman -Qmq | sort"
-alias mymakepkg="makepkg -sirc"
+alias inpac='pacman -Qmq | sort'
+alias mymakepkg='makepkg -sirc'
 
 # qutebrowser
-alias qutebrowser="rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser"
+alias qutebrowser='rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser'
+
+# NNN
+alias n='nnn'
 
 # systemctl
-alias services="systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled"
+alias services='systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled'
 
 # top
-alias top_cpu="top -b -o +%CPU | head -n 22"
+alias top_cpu='top -b -o +%CPU | head -n 22'
+alias top_mem='top -b -o +%MEM | head -n 22'
+
+# tmux
+alias ta='tmux attach -t'
+alias tad='tmux attach -d -t'
+alias tk='tmux kill-session -t'
+alias tka='tmux kill-server'
+alias tl='tmux list-sessions'
+alias ts='tmux new-session -s'
 
 # Traduction
 if have trans; then
-    alias de="trans --brief :de"
-    alias en="trans --brief :en"
-    alias fr="trans --brief :fr"
-    alias it="trans --brief :it"
-    alias nl="trans --brief :nl"
+    alias de='trans --brief :de'
+    alias en='trans --brief :en'
+    alias fr='trans --brief :fr'
+    alias it='trans --brief :it'
+    alias nl='trans --brief :nl'
 fi
 
 # youtube-dl
 if have youtube-dl; then
-    alias yeam="youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o '~/Music/%(title)s.%(ext)s'"
+    alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/Music/%(title)s.%(ext)s"'
 fi
