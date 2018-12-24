@@ -82,7 +82,6 @@ alias qutebrowser="rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser"
 alias services="systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled"
 
 # top
-alias top_mem="top -b -o +%MEM | head -n 22"
 alias top_cpu="top -b -o +%CPU | head -n 22"
 
 # Traduction
