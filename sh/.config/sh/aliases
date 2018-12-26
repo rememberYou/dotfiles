@@ -7,7 +7,7 @@ unalias -a
 
 # Generate an SSH key dynamically in the correct directory.
 gen() {
-    if [ ! -z "$1" ]; then
+    if [ -z "$1" ]; then
 	ssh-keygen -t rsa -b 4096 -C $EMAIL -f "$XDG_DATA_HOME/ssh/keys/$1"
     else
 	echo "You must provide a file name"
