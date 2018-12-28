@@ -1,3 +1,4 @@
+# Related to the custom configuration
 auto-reload yes
 browser qutebrowser
 cache-file ~/.cache/newsboat/cache.db
@@ -5,19 +6,15 @@ cookie-cache ~/.cache/newsboat/cookies.txt
 error-log ~/.local/share/newsboat/error.log
 external-url-viewer "urlview"
 max-items 100
+notify-format "%d new articles"
+notify-program "/usr/bin/notify-send"
 reload-threads 2
 reload-time 10
 save-path ~/.local/share/newsboat/saved
 show-read-feeds no
 text-width 80
 
-articlelist-title-format "—[%T]——(%u unread, %t total)——%>——(%U)—"
-datetime-format "%b %d %H:%M"
-feedlist-title-format "—[%u feeds with new articles]——%>——(%N %V)—"
-
-notify-format "%d new articles"
-notify-program "/usr/bin/notify-send"
-
+# Related to the key bindings
 bind-key G end
 bind-key S save
 bind-key g home
@@ -29,14 +26,19 @@ bind-key s sort
 bind-key ^F pagedown
 bind-key ^B pageup
 
+# Related to the title formats of the dialog boxes
+articlelist-title-format "—[%T]——(%u unread, %t total)——%>——(%U)—"
+datetime-format "%b %d %H:%M"
+feedlist-title-format "—[%u feeds with new articles]——%>——(%N %V)—"
+
+# Related to the colors
 color article white black
 color info green default
 color listnormal_unread white default
 color listfocus green black
 color listfocus_unread black green standout bold
 
-highlight feedlist "^ *[0-9]+ *N " color156 default
-highlight articlelist "^ *[0-9]+ *N " color156 default
+# Related to the highlighted text
 highlight article "^(Feed|Title|Author|Link|Date|Linux):.*" color5 default
 highlight article "^Links:" color74 default underline
 highlight article "\\[[0-9][0-9]*\\]" color72 default bold
@@ -45,3 +47,5 @@ highlight article "\\[embedded flash: [0-9][0-9]*\\]" color72 default bold
 highlight article ":.*\\(link\\)$" color74 default
 highlight article ":.*\\(image\\)$" color74 default
 highlight article ":.*\\(embedded flash\\)$" color74 default
+highlight articlelist "^ *[0-9]+ *N " color156 default
+highlight feedlist "^ *[0-9]+ *N " color156 default
