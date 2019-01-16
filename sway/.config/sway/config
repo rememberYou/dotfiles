@@ -118,14 +118,20 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 
 # Assign applications to their own workspace.
 assign [class="alacritty"]      → $ws1
-assign [class="Chromium"]       → $ws2
+assign [class="^qutebrowser$"]  → $ws2
 assign [class="Emacs"]          → $ws3
 assign [class="Gimp"]           → $ws6
 assign [class="GravitDesigner"] → $ws6
+assign [class="qemu-system-*"]  → $ws7
 
+for_window [class=.*] focus
+
+# Fix some bug applications.
 for_window [class="Spotify"] move to workspace $ws4
+for_window [class="Spotify"] focus
+
 for_window [class="Skype"] move to workspace $ws5
-for_window [class="chromium"] border none
+for_window [class="Skype"] focus
 
 ### Layout stuff ###
 
@@ -187,7 +193,7 @@ bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 
 # Power.
 set $mode_power "Logout (e), system lock (l), reboot (r), suspend (s), shutdown (Shift+s)"
-mode $mode_power {    
+mode $mode_power {
     # Logout the current session.
     bindsym e exec i3-msg exit, mode "default"
     # Lock the screen.
