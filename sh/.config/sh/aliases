@@ -26,7 +26,7 @@ alias startx='startx $XDG_CONFIG_HOME/X11/xinitrc'
 alias tmux='tmux -f $XDG_CONFIG_HOME/tmux/tmux.conf'
 
 # Convertions
-if have libreoffice-fresh; then
+if have libreoffice; then
     alias doc2pdf='libreoffice --headless --convert-to pdf *.docx'
     alias odt2pdf='libreoffice --headless --convert-to pdf *.odt'
 fi
