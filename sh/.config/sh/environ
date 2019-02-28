@@ -58,7 +58,7 @@ export PATH="$PATH:$HOME/.local/bin"
 # Increase the history save size.
 export SAVEHIST=10000
 
-# Use kitty as default terminal.
+# Use alacritty as default terminal.
 export TERMINAL="alacritty"
 
 # Add temporary files according to the user.
