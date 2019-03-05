@@ -92,7 +92,7 @@ workspace $ws3 output DP1
 workspace $ws4 output DP1
 workspace $ws5 output DP1
 workspace $ws6 output DP1
-workspace $ws7 output eDP1
+workspace $ws7 output DP1
 
 # Switch to workspaces.
 bindsym $mod+1 workspace $ws1
