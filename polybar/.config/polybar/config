@@ -82,7 +82,7 @@ label-urgent-padding       = 1
 type                          = internal/battery
 battery                       = BAT0
 adapter                       = AC
-full-at                       = 95
+full-at                       = 94
 
 format-charging               = <animation-charging> <label-charging>
 format-discharging            = <ramp-capacity> <label-discharging>
