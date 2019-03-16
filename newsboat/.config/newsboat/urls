@@ -14,7 +14,7 @@ https://feedex.net/feed/news.ycombinator.com/rss "hack" "~Hack: Hacker News"
 # Tech
 https://www.reddit.com/r/archlinux.rss "tech" "~Tech: Arch Linux (Reddit)"
 https://www.reddit.com/r/Backup.rss "tech" "~Tech: Backup"
-https://sircmpwn.github.io/feed.xml "tech" "~Tech: Drew DeVault's Blog"
+https://drewdevault.com/feed.xml "tech" "~Tech: Drew DeVault's Blog"
 https://www.reddit.com/r/i3wm.rss "tech" "~Tech: i3wm (Reddit)"
 https://www.reddit.com/r/linux.rss "tech" "~Tech: Linux (Reddit)"
 https://www.reddit.com/r/swaywm.rss "tech" "~Tech: swaywm (Reddit)"
