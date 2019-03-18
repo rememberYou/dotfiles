@@ -17,6 +17,7 @@ def interval_wall(wallpapers, seconds):
         if len(wallpapers) == 0:
             wallpapers = glob.glob(FOLDER_WALL + "*")
 
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Set random wallpapers")
     parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
