@@ -1,16 +1,4 @@
-[colors]
-black = ${xrdb:background:#2e3440}
-blue = ${xrdb:color4:#d8dee9}
-cyan = ${xrdb:color6:#eceff4}
-green = ${xrdb:color2:#434c5e}
-grey = ${xrdb:color14:#a3be8c}
-magenta = ${xrdb:color5:#e5e9f0}
-orange = ${xrdb:color9:#81a1c1}
-purple = ${xrdb:color13:#ebcb8b}
-red = ${xrdb:color1:#3b4252}
-white = ${xrdb:color7:#8fbcbb}
-yellow = ${xrdb:color3:#4c566a}
-
+include-file = ~/.config/polybar/colors.ini
 
 [bar/top]
 ; Use $ xrandr -q | grep " connected" | cut -d ' ' -f1
@@ -23,9 +11,9 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 1
 
-background = ${colors.black}
-border-color = ${colors.green}
-foreground = ${colors.white}
+background = ${color.black}
+border-color = ${color.green}
+foreground = ${color.white}
 
 font-0 = "Tamzen:size=15;0"
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=5;0"
@@ -42,191 +30,17 @@ tray-position = right
 tray-padding = 5
 tray-maxsize = 18
 
-
-[module/i3]
-type            = internal/i3
-index-sort      = true
-enable-scroll   = false
-
-ws-icon-0       = 1: ;
-ws-icon-1       = 2: ;
-ws-icon-2       = 3: ;
-ws-icon-3       = 4: ;
-ws-icon-4       = 5: ;
-ws-icon-5       = 6: ;
-ws-icon-6       = 7: ;
-ws-icon-default = 
-
-label-mode-background      = ${root.background}
-
-label-focused              = %icon%
-label-focused-background   = ${root.background}
-label-focused-foreground   = ${colors.yellow}
-label-focused-padding      = 1
-
-label-unfocused            = %icon%
-label-unfocused-background = ${root.background}
-label-unfocused-foreground = ${root.foreground}
-label-unfocused-padding    = 1
-
-label-visible              = %icon%
-label-visible-padding      = 1
-
-label-urgent               = %icon%
-label-urgent-background    = ${root.background}
-label-urgent-foreground    = ${colors.red}
-label-urgent-padding       = 1
-
-
-[module/battery]
-type                          = internal/battery
-battery                       = BAT0
-adapter                       = AC
-full-at                       = 94
-
-format-charging               = <animation-charging> <label-charging>
-format-discharging            = <ramp-capacity> <label-discharging>
-
-format-full-prefix            = " "
-format-full-prefix-foreground = ${colors.grey}
-
-ramp-capacity-0               = 
-ramp-capacity-1               = 
-ramp-capacity-2               = 
-ramp-capacity-foreground      = ${colors.red}
-
-animation-charging-0          = 
-animation-charging-1          = 
-animation-charging-2          = 
-animation-charging-foreground = ${colors.grey}
-
-[module/backlight]
-type                     = internal/xbacklight
-format-prefix            = " "
-format-prefix-foreground = ${colors.yellow}
-label                    = %percentage%%
-
-# output                   = ${bar/top.monitor}
-
-
-[module/cpu]
-type = internal/cpu
-format-prefix = " "
-format-prefix-foreground = ${colors.cyan}
-label = %{A1:notify-send "$(ps axch -o cmd\:15,%cpu --sort=-%cpu | head)":}%percentage%%%{A}
-
-[module/date]
-type = internal/date
-date = %a %d %b %Y
-format = %{A1:notify-send "$(cal)":} <label> %{A}
-label =  %date% %time%
-label-foreground = ${root.foreground}
-time = %H:%M:%S
-
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-mount-0  = /
-label-mounted = %{F#859900}%mountpoint%%{F-} %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.red}
-
-
-[module/github]
-type = internal/github
-token = ${env:GITHUB_ACCESS_TOKEN}
-empty-notifications = true
-interval = 30
-format-prefix = " "
-label = "%notifications%"
-
-
-[module/mail]
-type = custom/script
-interval = 10
-format = <label>
-exec = ~/.local/bin/polybar-mail
-
-
-[module/memory]
-type                     = internal/memory
-format-prefix = " "
-format-prefix-foreground = ${colors.green}
-interval = 2
-label = %{A1:notify-send "$(ps axch -o cmd\:15,%mem --sort=-%mem | head)":}%percentage_used%%%{A}
-
-
-[module/reddit]
-type = custom/script
-exec = ~/.local/bin/polybar-reddit
-interval = 10
-
-
-[module/temperature]
-type = internal/temperature
-warn-temperature = 70
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.red}
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.cyan}
-
-
-[module/pulseaudio]
-type = internal/pulseaudio
-sink = alsa_output.pci-0000_00_1f.3.analog-stereo
-format-muted = 🔇 <label-muted>
-format-muted-foreground = ${colors.red}
-format-volume = <ramp-volume> <label-volume>
-format-volume-foreground = ${colors.white}
-label-muted = Muted
-label-muted-foreground = ${root.foreground}
-label-volume-foreground = ${root.foreground}
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
-
-
-[module/wired-network]
-type = internal/network
-interface = enp0s31f6
-interval = 3.0
-accumulate-stats = true
-
-format-connected =  <label-connected>
-format-connected-foreground = ${colors.cyan}
-label-connected = %ifname%
-label-connected-foreground = ${root.foreground}
-
-format-disconnected =  <label-disconnected>
-format-disconnected-foreground = ${colors.red}
-label-disconnected = disconnected
-label-disconnected-foreground  = ${root.foreground}
-
-
-[module/wireless-network]
-type = internal/network
-interface = wlp4s0
-interval = 3.0
-accumulate-stats = true
-
-format-connected = <ramp-signal> <label-connected>
-format-connected-foreground = ${colors.cyan}
-label-connected = %essid%
-label-connected-foreground = ${root.foreground}
-
-format-disconnected =  <label-disconnected>
-format-disconnected-foreground = ${colors.red}
-label-disconnected = disconnected
-label-disconnected-foreground = ${root.foreground}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+include-file = ~/.config/polybar/modules/backlight.ini
+include-file = ~/.config/polybar/modules/battery.ini
+include-file = ~/.config/polybar/modules/cpu.ini
+include-file = ~/.config/polybar/modules/date.ini
+include-file = ~/.config/polybar/modules/filesystem.ini
+include-file = ~/.config/polybar/modules/github.ini
+include-file = ~/.config/polybar/modules/i3.ini
+include-file = ~/.config/polybar/modules/mail.ini
+include-file = ~/.config/polybar/modules/memory.ini
+include-file = ~/.config/polybar/modules/pulseaudio.ini
+include-file = ~/.config/polybar/modules/reddit.ini
+include-file = ~/.config/polybar/modules/temperature.ini
+include-file = ~/.config/polybar/modules/wired-network.ini
+include-file = ~/.config/polybar/modules/wireless-network.ini
