@@ -8,9 +8,9 @@ unalias -a
 # Generate an SSH key dynamically in the correct directory.
 gen() {
     if [ "$1" ]; then
-	ssh-keygen -t rsa -b 4096 -C "$EMAIL" -f "$XDG_DATA_HOME/ssh/keys/$1"
+		ssh-keygen -t rsa -b 4096 -C "$EMAIL" -f "$XDG_DATA_HOME/ssh/keys/$1"
     else
-	echo "You must provide a file name"
+		echo "You must provide a file name"
     fi
 }
 
@@ -76,7 +76,7 @@ alias inpac='pacman -Qmq | sort'
 alias mymakepkg='makepkg -sirc'
 
 # qutebrowser
-alias qutebrowser='rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser'
+# alias qutebrowser='rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser'
 
 # NNN
 alias n='nnn'
@@ -108,4 +108,17 @@ fi
 # youtube-dl
 if have youtube-dl; then
     alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/Music/%(title)s.%(ext)s"'
+fi
+
+# fc() { du -a ~/.config/* | awk '{ print $2 }' | fzy | xargs -r emacsclient; }
+# fs() {
+# 	screenshot=$(du -a ~/Pictures/Screenshots/* | awk '{ print $2 }' | fzy);
+# 	if [ ! -z "$screenshot" ]; then
+# 		feh "$screenshot";
+# 	fi
+# }
+
+# Use `arecord -l` to list recording cards or devices.
+if have ffmpeg; then
+	alias rec="ffmpeg -f alsa -i hw:0 ~/Audio/$(date '+%Y-%m-%d_%H:%M:%S').mp3"
 fi
