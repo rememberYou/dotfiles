@@ -1,0 +1,38 @@
+# Set window key.
+set $mod Mod4
+
+# Set navigation keys.
+set $down j
+set $left h
+set $right l
+set $up k
+
+# Set global variables.
+set $browser qutebrowser
+set $locker i3lock-fancy -t "If you touch this computer be prepared for the consequences" -- grim
+set $menu rofi
+set $term alacritty
+
+# Set font for window titles.
+font pango:Terminus 9
+
+# Drag floating windows with $mod+mouse.
+floating_modifier $mod
+
+# The window takes the focus when an event occurs.
+focus_on_window_activation focus
+
+# Set gaps.
+gaps inner 6
+gaps outer 6
+smart_gaps on
+
+# Hide window borders adjacent to the screen edges.
+hide_edge_borders both
+
+# Set default border style for new windows.
+new_float pixel 1
+new_window pixel 1
+
+# Switch back to the prior workspace when repeating a workspace.
+workspace_auto_back_and_forth yes

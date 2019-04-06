@@ -1,0 +1,17 @@
+# Assign applications to their own workspace.
+assign [class="^Alacritty$"]          → $ws1
+assign [class="^qutebrowser$"]        → $ws2
+assign [class="^Chromium$"]           → $ws2
+assign [class="^Emacs$"]              → $ws3
+assign [class="^Gimp$"]               → $ws6
+assign [class="^GravitDesigner$"]     → $ws6
+assign [class="qemu-system-*"]        → $ws7
+
+for_window [class=.*] focus
+
+# Fix some bug applications.
+for_window [class="Spotify"] move to workspace $ws4
+for_window [class="Spotify"] focus
+
+for_window [class="Skype"] move to workspace $ws5
+for_window [class="Skype"] focus

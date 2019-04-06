@@ -1,0 +1,49 @@
+set $mode_power "Logout (e), system lock (l), reboot (r), suspend (s), shutdown (Shift+s)"
+mode $mode_power {
+    # Logout the current session.
+    bindsym e exec i3-msg exit, mode "default"
+    # Lock the screen.
+    bindsym l exec $locker, mode "default"
+    # Reboot the computer.
+    bindsym r exec systemctl reboot, mode "default"
+    # Suspend the current session.
+    bindsym s exec $locker && systemctl suspend, mode "default"
+    # Shutdown the computer.
+    bindsym Shift+s exec systemctl poweroff -i, mode "default"
+
+    # Return to default mode.
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym $mod+Shift+p mode $mode_power
+
+set $mode_resize "(h) left, (j) up, (k) down, (l) right"
+mode $mode_resize {
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $left resize grow width 10 px or 10 ppt
+    bindsym $right resize shrink width 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+
+    # Ditto, with arrow keys.
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+
+    # Return to default mode.
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym $mod+r mode $mode_resize
+
+set $mode_screenshot "Clipboard (c), full screen (f), region/window (r)"
+mode $mode_screenshot {
+    bindsym c exec --no-startup-id maim -s -f png -m 10 | xclip -selection clipboard -t image/png, mode "default"
+    bindsym f exec --no-startup-id maim -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+    bindsym r exec --no-startup-id maim -s -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+
+    # Return to default mode.
+    bindsym Escape mode "default"
+    bindsym Return mode "default"
+}
+bindsym $mod+Shift+s mode $mode_screenshot
