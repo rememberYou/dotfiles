@@ -40,7 +40,8 @@ bindsym $mod+Shift+r exec $term -e "ranger"
 bindsym $mod+d exec $menu -location 0 -width 30 -show "drun" -display-drun "🍦 Application Manager:"
 bindsym $mod+Shift+d exec $menu -location 0 -width 30 -show "window" -display-window " Window Manager:"
 bindsym $mod+Shift+f exec ~/.local/bin/rofi-finder
-bindsym $mod+Shift+w exec ~/.local/bin/rofi-xrandr
+bindsym $mod+Shift+w exec ~/.local/bin/rofi-wifi
+bindsym $mod+Shift+x exec ~/.local/bin/rofi-xrandr
 # Kill focused window.
 bindsym $mod+Shift+q kill
 # Reload the configuration file.
@@ -193,20 +194,20 @@ bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 # Power.
 set $mode_power "Logout (e), system lock (l), reboot (r), suspend (s), shutdown (Shift+s)"
 mode $mode_power {
-    # Logout the current session.
-    bindsym e exec i3-msg exit, mode "default"
-    # Lock the screen.
-    bindsym l exec $locker, mode "default"
-    # Reboot the computer.
-    bindsym r exec systemctl reboot, mode "default"
-    # Suspend the current session.
-    bindsym s exec systemctl suspend, mode "default"
-    # Shutdown the computer.
-    bindsym Shift+s exec systemctl poweroff -i, mode "default"
+# Logout the current session.
+bindsym e exec i3-msg exit, mode "default"
+# Lock the screen.
+bindsym l exec $locker, mode "default"
+# Reboot the computer.
+bindsym r exec systemctl reboot, mode "default"
+# Suspend the current session.
+bindsym s exec systemctl suspend, mode "default"
+# Shutdown the computer.
+bindsym Shift+s exec systemctl poweroff -i, mode "default"
 
-    # Return to default mode.
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
+# Return to default mode.
+bindsym Escape mode "default"
+bindsym Return mode "default"
 }
 
 # Set power mode.
@@ -215,20 +216,20 @@ bindsym $mod+Shift+p mode $mode_power
 # Resizing container.
 set $mode_resize "(h) left, (j) up, (k) down, (l) right"
 mode $mode_resize {
-    bindsym $down resize grow height 10 px or 10 ppt
-    bindsym $left resize grow width 10 px or 10 ppt
-    bindsym $right resize shrink width 10 px or 10 ppt
-    bindsym $up resize shrink height 10 px or 10 ppt
+bindsym $down resize grow height 10 px or 10 ppt
+bindsym $left resize grow width 10 px or 10 ppt
+bindsym $right resize shrink width 10 px or 10 ppt
+bindsym $up resize shrink height 10 px or 10 ppt
 
-    # Ditto, with arrow keys.
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
+# Ditto, with arrow keys.
+bindsym Down resize grow height 10 px or 10 ppt
+bindsym Left resize shrink width 10 px or 10 ppt
+bindsym Right resize grow width 10 px or 10 ppt
+bindsym Up resize shrink height 10 px or 10 ppt
 
-    # Return to default mode.
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
+# Return to default mode.
+bindsym Escape mode "default"
+bindsym Return mode "default"
 }
 
 # Resize move.
@@ -237,13 +238,13 @@ bindsym $mod+r mode $mode_resize
 # Screenshot mode.
 set $mode_screenshot "Clipboard (c), full screen (f), region/window (r)"
 mode $mode_screenshot {
-    bindsym c exec --no-startup-id maim -s -f png -m 10 | xclip -selection clipboard -t image/png, mode "default"
-    bindsym f exec --no-startup-id maim -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
-    bindsym r exec --no-startup-id maim -s -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+bindsym c exec --no-startup-id maim -s -f png -m 10 | xclip -selection clipboard -t image/png, mode "default"
+bindsym f exec --no-startup-id maim -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+bindsym r exec --no-startup-id maim -s -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
 
-    # Return to default mode.
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
+# Return to default mode.
+bindsym Escape mode "default"
+bindsym Return mode "default"
 }
 
 # Set screenshot mode
@@ -257,16 +258,6 @@ client.focused          #eee8d5 #93a1a1    #073642 #93a1a1
 client.focused_inactive #657b83 #586e75    #eee8d5 #657b83
 client.unfocused        #073642 #002b36    #839496 #073642
 client.urgent           #cb4b16 #dc322f    #eee8d5 #dc322f
-
-### Status Bar ###
-
-# Color scheme.
-set $black  #000000
-set $cyan   #6bbed2
-set $grey   #747474
-set $orange #f1af5f
-set $red    #ff5137
-set $white  #dddcff
 
 ### i3-gaps ###
 
