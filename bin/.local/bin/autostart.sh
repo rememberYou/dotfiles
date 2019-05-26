@@ -6,14 +6,16 @@ have() { type "$1" > /dev/null 2>&1; }
 
 if have compton; then
     if [ -f "$XDG_CONFIG_HOME/compton/compton.conf" ]; then
-	compton --config "$XDG_CONFIG_HOME/compton/compton.conf" &
+        compton --config "$XDG_CONFIG_HOME/compton/compton.conf" &
     else
-	compton &
+        compton &
     fi
 fi
 
-if have dunst; then
+if pgrep i3 && have dunst; then
     dunst &
+elif pgrep sway && have mako; then
+	mako --background-color "#2e3440" --border-color "#5e81ac" --font "DejaVu Sans Mono 10" --padding 20 --default-timeout 10000 &
 fi
 
 if have emacs; then
