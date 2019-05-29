@@ -19,7 +19,7 @@ font-0 = "Tamzen:size=15;0"
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=5;0"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=5;0"
 font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=5;0"
-font-4 = "Wuncon Siji:pixelsize=13;0"
+font-4 = "Siji:pixelsize=13;0"
 font-5 = "Noto Sans Symbols 2:size=5;1"
 
 modules-left = i3
