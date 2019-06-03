@@ -15,6 +15,12 @@ config.bind('j', 'run-with-count 2 scroll down')
 config.bind('k', 'run-with-count 2 scroll up')
 config.bind('l', 'run-with-count 2 scroll right')
 
+config.bind("xE", 'open -t -- https://translate.google.com/#en/fr/{primary}')
+config.bind("xF", 'open -t -- https://translate.google.com/#fr/en/{primary}')
+
+config.bind("xjn", "set content.javascript.enabled true")
+config.bind("xjf", "set content.javascript.enabled false")
+
 config.bind(';m', 'hint links spawn mpv {hint-url}')
 
 config.bind(',d', 'spawn youtube-dl -o ~/Videos/%(title)s.%(ext)s {url}')

@@ -1,6 +1,7 @@
 *.log
 *.wants
 __pycache__
+qutebrowser/.config/private-whitelist
 mpd/.config/mpd/database
 mpd/.config/mpd/mpd.log
 mpd/.config/mpd/pid
