@@ -29,14 +29,14 @@ config.source('search_engines.py')
 config.source('themes/nord.py')
 
 js_whitelist = [
-    "*://localhost/*",
+    "*://*.youtube.com/*",
     "*://127.0.0.1/*",
+    "*://darksky.net/*"
+    "*://duckduckgo.com/*",
     "*://github.com/*",
     "*://news.ycombinator.com/*",
-    "*://duckduckgo.com/*",
-    "*://*.youtube.com/*",
     "*://translate.google.com/*",
-    "*://darksky.net/*"
+    "*://localhost/*",
 ]
 
 private_whitelist = os.path.expanduser("~/.config/qutebrowser/private-whitelist")
