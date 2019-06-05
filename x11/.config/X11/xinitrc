@@ -7,7 +7,7 @@
 # Tell the state of the battery.
 bat_state() {
     upower -i /org/freedesktop/UPower/devices/battery_BAT0 \
-	| grep state | awk '{ print $2 }'
+        | grep state | awk '{ print $2 }'
 }
 
 # Import various system-wide snippets.
