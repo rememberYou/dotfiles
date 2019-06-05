@@ -34,6 +34,9 @@ fi
 # Turn off the bell.
 xset -b
 
+# Set the key press auto-repeat for the X environment.
+xset r rate 330 25
+
 # Load sh/bash global environment.
 [ -f ~/.config/sh/environ ] && . ~/.config/sh/environ
 
