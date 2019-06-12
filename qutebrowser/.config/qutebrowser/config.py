@@ -14,7 +14,7 @@ c.keyhint.delay = 100
 c.scrolling.smooth = True
 c.tabs.background = True
 c.tabs.title.format = '{perc}{title}'
-c.url.default_page = "https://github.com/"
+c.url.default_page = "https://news.ycombinator.com/"
 
 # Load binding setting.
 config.source('bindings.py')
