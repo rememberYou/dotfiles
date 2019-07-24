@@ -12,7 +12,7 @@ c.hints.uppercase = True
 c.keyhint.delay = 100
 c.scrolling.smooth = True
 c.tabs.background = True
-c.tabs.title.format = '{perc}{title}'
+c.tabs.title.format = '{perc}{current_title}'
 c.url.default_page = "https://news.ycombinator.com/"
 
 # Load binding setting.
@@ -31,11 +31,13 @@ js_whitelist = [
     "*://*.youtube.com/*",
     "*://127.0.0.1/*",
     "*://darksky.net/*"
+    "*://deepl.com/*",
     "*://duckduckgo.com/*",
     "*://github.com/*",
-    "*://news.ycombinator.com/*",
-    "*://translate.google.com/*",
     "*://localhost/*",
+    "*://news.ycombinator.com/*",
+    "*://reddit.com/*",
+    "*://translate.google.com/*",
 ]
 
 private_whitelist = os.path.expanduser("~/.config/qutebrowser/private-whitelist")
