@@ -12,7 +12,7 @@ set $left h
 set $right l
 set $up k
 
-set $browser chromium
+set $browser qutebrowser
 set $locker "betterlockscreen -l dim -t \\"Don't try, you will regret it.\\"", mode "default"
 set $menu rofi
 set $term alacritty
