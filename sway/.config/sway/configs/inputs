@@ -1,13 +1,15 @@
 input "9456:320:Metadot_-_Das_Keyboard_Das_Keyboard" {
     xkb_layout us_qwerty-fr
     xkb_variant ,nodeadkeys
-    xkb_options grp:alt_shift_toggle
+    repeat_delay 330
+    repeat_rate 25
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout us_qwerty-fr
     xkb_variant ,nodeadkeys
-    xkb_options grp:alt_shift_toggle
+    repeat_delay 330
+    repeat_rate 25
 }
 
 input "2:7:SynPS/2_Synaptics_TouchPad" {
