@@ -57,8 +57,8 @@ bindsym $mod+u exec ~/.local/bin/rofi-emojis
 bindsym $mod+y exec ~/.local/bin/rofi-yubi
 
 # Manage the brightness.
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
 
 # Manage the media player.
 bindsym XF86AudioNext exec playerctl next
@@ -66,9 +66,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPrev exec playerctl previous
 
 # Manage the audio volume.
-bindsym XF86AudioMute exec pactl set-sink-mute $(pacmd list-sinks | awk '/* index:/{print $3}') toggle
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') -5%
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume $(pacmd list-sinks | awk '/* index:/{print $3}') +5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 # Manage the microphone.
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input

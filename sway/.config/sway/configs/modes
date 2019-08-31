@@ -1,9 +1,9 @@
 set $mode_power "Logout (e), system lock (l), reboot (r), suspend (s), shutdown (Shift+s)"
 mode $mode_power {
     # Logout the current session.
-    bindsym e exec i3-msg exit, mode "default"
+    bindsym e exec swaymsg exit, mode "default"
     # Lock the screen.
-    bindsym l exec $locker, mode "default"
+    bindsym l exec pulseaudio-ctl mute-input && $locker, mode "default"
     # Reboot the computer.
     bindsym r exec systemctl reboot, mode "default"
     # Suspend the current session.
