@@ -1,3 +1,4 @@
+include configs/sets
 include configs/settings
 include configs/outputs
 include configs/inputs

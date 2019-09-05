@@ -1,20 +1,3 @@
-set $nord0 #2e3440
-set $nord1 #3b4252
-set $nord2 #434c5e
-set $nord3 #4c566a
-set $nord4 #d8dee9
-set $nord5 #e5e9f0
-set $nord6 #eceff4
-set $nord7 #8fbcbb
-set $nord8 #88c0d0
-set $nord9 #81a1c1
-set $nord10 #5e81ac
-set $nord11 #bf616a
-set $nord12 #d08770
-set $nord13 #ebcb8b
-set $nord14 #a3be8c
-set $nord15 #b48ead
-
 bar {
     colors {
 		background $nord0

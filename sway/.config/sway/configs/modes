@@ -1,5 +1,15 @@
-set $mode_power "Logout (e), system lock (l), reboot (r), suspend (s), shutdown (Shift+s)"
-mode $mode_power {
+set $mode_power "<span foreground='$nord13'>💻</span>  \
+<span foreground='$nord4'><b>Logout</b></span> <span foreground='$nord13'>(<b>e</b>)</span> \
+<span foreground='$nord2'>—</span> \
+<span foreground='$nord4'><b>System Lock</b></span> <span foreground='$nord13'>(<b>l</b>)</span> \
+<span foreground='$nord2'>—</span> \
+<span foreground='$nord4'><b>Reboot</b></span> <span foreground='$nord13'>(<b>r</b>)</span> \
+<span foreground='$nord2'>—</span> \
+<span foreground='$nord4'><b>Suspend</b></span> <span foreground='$nord13'>(<b>s</b>)</span> \
+<span foreground='$nord2'>—</span> \
+<span foreground='$nord4'><b>Shutdown</b></span> <span foreground='$nord13'>(<b>Shift+s</b>)</span>"
+
+mode --pango_markup $mode_power {
     # Logout the current session.
     bindsym e exec swaymsg exit, mode "default"
     # Lock the screen.
@@ -17,30 +27,17 @@ mode $mode_power {
 }
 bindsym $mod+Shift+p mode $mode_power
 
-set $mode_resize "(h) left, (j) up, (k) down, (l) right"
-mode $mode_resize {
-    bindsym $down resize grow height 10 px or 10 ppt
-    bindsym $left resize grow width 10 px or 10 ppt
-    bindsym $right resize shrink width 10 px or 10 ppt
-    bindsym $up resize shrink height 10 px or 10 ppt
+set $mode_screenshot "<span foreground='$nord13'>🖼</span>  \
+<span foreground='$nord4'><b>Clipboard</b></span> <span foreground='$nord13'>(<b>c</b>)</span> \
+<span foreground='$nord2'>—</span> \
+<span foreground='$nord4'><b>Full Screen</b></span> <span foreground='$nord13'>(<b>f</b>)</span> \
+<span foreground='$nord2'>—</span> \
+<span foreground='$nord4'><b>Region</b></span> <span foreground='$nord13'>(<b>r</b>)</span>"
 
-    # Ditto, with arrow keys.
-    bindsym Down resize grow height 10 px or 10 ppt
-    bindsym Left resize shrink width 10 px or 10 ppt
-    bindsym Right resize grow width 10 px or 10 ppt
-    bindsym Up resize shrink height 10 px or 10 ppt
-
-    # Return to default mode.
-    bindsym Escape mode "default"
-    bindsym Return mode "default"
-}
-bindsym $mod+r mode $mode_resize
-
-set $mode_screenshot "Clipboard (c), full screen (f), region/window (r)"
-mode $mode_screenshot {
-    bindsym c exec --no-startup-id maim -s -f png -m 10 | xclip -selection clipboard -t image/png, mode "default"
-    bindsym f exec --no-startup-id maim -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
-    bindsym r exec --no-startup-id maim -s -f png -m 10 ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+mode --pango_markup $mode_screenshot {
+    bindsym c exec --no-startup-id grim -g "$(slurp)" - | wl-copy -t image/png, mode "default"
+    bindsym f exec --no-startup-id grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+    bindsym r exec --no-startup-id grim -g "$(slurp)" ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
 
     # Return to default mode.
     bindsym Escape mode "default"

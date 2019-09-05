@@ -1,21 +1,5 @@
-# Set window key.
-set $mod Mod4
-
-# Set navigation keys.
-set $down j
-set $left h
-set $right l
-set $up k
-
-# Set global variables.
-set $browser qutebrowser
-set $locker exec swaylock --ignore-empty-password --show-failed-attempt --indicator-caps-lock --scaling fill \
-                            -i ~/Pictures/locker.jpg
-set $menu rofi
-set $term alacritty
-
 # Set font for window titles.
-font pango:Terminus 9
+font $font
 
 # Drag floating windows with $mod+mouse.
 floating_modifier $mod
@@ -41,9 +25,10 @@ workspace_auto_back_and_forth yes
 # Hides the cursor after no activity.
 seat seat0 hide_cursor 5000
 
-
+# This will lock your screen after 300 seconds of inactivity, then turn off your displays after another 300 seconds, and turn your
+# screens back on when resumed. <It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
-    timeout 900 'swaylock --ignore-empty-password --show-failed-attempt --indicator-caps-lock --scaling fill -i ~/Pictures/locker.jpg' \
+    timeout 900 'exec $locker' \
     timeout 1000 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
-    before-sleep 'swaylock --ignore-empty-password --show-failed-attempt --indicator-caps-lock --scaling fill -i ~/Pictures/locker.jpg'
+    before-sleep 'exec $locker'
