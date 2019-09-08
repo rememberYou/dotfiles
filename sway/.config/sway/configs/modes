@@ -35,9 +35,9 @@ set $mode_screenshot "<span foreground='$nord13'>🖼</span>  \
 <span foreground='$nord4'><b>Region</b></span> <span foreground='$nord13'>(<b>r</b>)</span>"
 
 mode --pango_markup $mode_screenshot {
-    bindsym c exec --no-startup-id grim -g "$(slurp)" - | wl-copy -t image/png, mode "default"
+    bindsym c exec --no-startup-id grim -g "$(slurp -d)" - | wl-copy -t image/png, mode "default"
     bindsym f exec --no-startup-id grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
-    bindsym r exec --no-startup-id grim -g "$(slurp)" ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
+    bindsym r exec --no-startup-id grim -g "$(slurp -d)" ~/Pictures/Screenshots/$(date '+%Y-%m-%d_%H:%M:%S').png, mode "default"
 
     # Return to default mode.
     bindsym Escape mode "default"

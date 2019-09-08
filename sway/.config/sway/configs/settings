@@ -26,9 +26,12 @@ workspace_auto_back_and_forth yes
 seat seat0 hide_cursor 5000
 
 # This will lock your screen after 300 seconds of inactivity, then turn off your displays after another 300 seconds, and turn your
-# screens back on when resumed. <It will also lock your screen before your computer goes to sleep.
+# screens back on when resumed. It will also lock your screen before your computer goes to sleep.
 exec swayidle -w \
     timeout 900 'exec $locker' \
     timeout 1000 'swaymsg "output * dpms off"' \
         resume 'swaymsg "output * dpms on"' \
     before-sleep 'exec $locker'
+
+# Enable Xwayland support, which allows X11 applications to be used.
+xwayland enable

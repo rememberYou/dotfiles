@@ -18,3 +18,6 @@ bindsym $mod+space focus mode_toggle
 
 # Move focus to the parent container.
 bindsym $mod+a focus parent
+
+# Dismiss all notifications.
+bindsym Control+Shift+Space exec makoctl dismiss -a
