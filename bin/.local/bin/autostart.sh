@@ -15,7 +15,7 @@ fi
 if pgrep i3 && have dunst; then
     dunst &
 elif pgrep sway && have mako; then
-	mako --background-color "#2e3440" --border-color "#5e81ac" --font "DejaVu Sans Mono 10" --padding 20 --default-timeout 10000 &
+	mako --background-color "#2e3440" --border-color "#5e81ac" --font "Source Code Pro Medium 12" --padding 20 --default-timeout 10000 &
 fi
 
 if have emacs; then
