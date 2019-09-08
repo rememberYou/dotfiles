@@ -23,6 +23,14 @@ colors:
      white:   '0xeceff4'
      yellow:  '0xebcb8b'
 
+font:
+  normal:
+    family: Source Code Pro Medium
+  bold:
+    family: monospace
+  italic:
+    family: monospace
+
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
   - { key: C,        mods: Control|Shift,    action: Copy                }
