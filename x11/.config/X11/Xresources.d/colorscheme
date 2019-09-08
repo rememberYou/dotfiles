@@ -15,9 +15,9 @@
 #define nord14 #a3be8c
 #define nord15 #b48ead
 
-*.background:   nord0
-*.cursorColor:  nord0
-*.foreground:   nord4
+*.background: nord0
+*.cursorColor: nord0
+*.foreground: nord4
 
 *.color0: nord1
 *.color1: nord11
