@@ -110,15 +110,13 @@ if have youtube-dl; then
     alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/Music/%(title)s.%(ext)s"'
 fi
 
-# fc() { du -a ~/.config/* | awk '{ print $2 }' | fzy | xargs -r emacsclient; }
-# fs() {
-# 	screenshot=$(du -a ~/Pictures/Screenshots/* | awk '{ print $2 }' | fzy);
-# 	if [ ! -z "$screenshot" ]; then
-# 		feh "$screenshot";
-# 	fi
-# }
-
 # Use `arecord -l` to list recording cards or devices.
 if have ffmpeg; then
 	alias rec="ffmpeg -f alsa -i hw:0 ~/Audio/$(date '+%Y-%m-%d_%H:%M:%S').mp3"
 fi
+
+# color picker
+alias cpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:-'
+
+# Update Pacman mirror list.
+alias reflect='sudo reflector --latest 200 --threads 8 --verbose --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
