@@ -55,9 +55,6 @@ export PASSWORD_STORE_GENERATED_LENGTH=50
 # Allows you to use $HOME/.local/bin's bash scripts anywhere.
 export PATH="$PATH:$HOME/.local/bin"
 
-# Allows high DPI display.
-export QT_SCALE_FACTOR=1.1
-
 # Increase the history save size.
 export SAVEHIST=10000
 
