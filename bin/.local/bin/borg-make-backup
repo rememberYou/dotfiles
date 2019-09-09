@@ -1,0 +1,80 @@
+#!/bin/bash
+#
+# I'm using Borg which is a deduplicating backup program with optional
+# compression and authenticated encryption for my daily backups.
+#
+# SEE: https://borgbackup.readthedocs.io/en/stable/
+#
+# This script provides myself to backup my home directory to my HDD with
+# my USB Flash Drive that contains the key to permit it.
+#
+# With that configuration, you need both devices to create, read, update, delete
+# the data.
+#
+# SEE: https://luka.strizic.info/post/Local-BorgBackup-automation-with-udev/
+#
+# To use this script, don't forget to install `borg` and `udev` packages, and
+# modify the directories, passwords with your own.
+# Also, this script using symlink devices to allow the execution of the script
+# only if both devices are connected.
+#
+# For that, write rules in your /etc/udev/rules.d/ and check that the
+# backup-disk and backup-key symlinks appears in your /dev/ when you connect
+# your HDD and USB Flash Drive.
+
+BACKUP_DISK="/dev/backup-disk"
+
+if [ ! -b $BACKUP_DISK ]; then
+    echo "Connect the HDD to make your backups."
+    exit 1
+fi
+
+trap 'notify-send -u "critical" "❌ Backup interrupted" "The creation of the backup failed.">&2; exit 2' INT TERM
+REPOSITORY="/run/media/$USER/181E9F1E1E9EF44A/borg"
+
+# Path to the AES-CTR-256 encryption key.
+export BORG_KEYS_DIR="$HOME/.config/borg/keys/"
+# Password to unlock the AES-CTR-256 encryption key.
+export BORG_PASSCOMMAND="pass show backup/borg"
+
+ARCHIVE="{user}-{now:%Y-%m-%d}"
+TARGET="$HOME"
+# Fast, but low compression ratio.
+COMPRESSION="lz4"
+
+time_spent () {
+  hours=$(($1 / (60 * 60)))
+  seconds_left=$(($1 - (hours * (60 * 60))))
+
+  minutes=$((seconds_left / 60))
+  seconds_left=$((seconds_left - (minutes * 60)))
+
+  echo "${hours}h ${minutes}m ${seconds_left}s"
+}
+
+notify-send "💾 Backup started" "This can lead to a decrease in performance"
+borg create --stats                                       \
+     --compression "$COMPRESSION"                         \
+     --exclude '/home/*/.cache/*'                         \
+     --exclude '/home/*/.config/*'                        \
+     --exclude '/home/*/.dotfiles/*'                      \
+     --exclude '/home/*/.emacs.d/*'                       \
+     --exclude '/home/*/.local/*'                         \
+     --exclude '/home/*/Maildir/*'                        \
+     --exclude '/home/*/Public/*'                         \
+     --exclude '/home/*/snap/*'                           \
+     --exclude '/home/*/.pki/*'                           \
+     --exclude '*.pyc'                                    \
+     "$REPOSITORY::$ARCHIVE"                              \
+     "$TARGET"
+notify-send "✅ Backup completed" "Duration: $(time_spent $SECONDS)"
+
+notify-send "⛑️ Checking backups" "Checking the consistency of the backup."
+borg check --last=1 "$REPOSITORY"
+notify-send "✅ Checking completed" "The backup is consistent."
+
+notify-send "🔪 Pruning repository" "Pruning the maintenance of backups."
+borg prune --keep-daily 3 --keep-weekly 1 --keep-monthly 1 "$REPOSITORY"
+notify-send "✅ Pruning completed" "All backups are okay."
+
+exit 0
