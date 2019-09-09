@@ -1,9 +1,3 @@
 bar {
-    colors {
-		background $nord0
-		focused_workspace $nord0 $nord0 $nord4
-		inactive_workspace $nord0 $nord0 $nord3
-		urgent_workspace $nord0 $nord0 $nord11
-	}
-	position top
+	swaybar_command waybar
 }

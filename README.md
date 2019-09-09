@@ -49,6 +49,7 @@ List of files:
  sway            ➔ i3-compatible Wayland compositor
  systemd         ➔ systemd units
  tmux            ➔ terminal multiplexer
+ waybar          ➔ Wayland bar for Sway and Wlroots based compositors
  x11             ➔ X11 settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```

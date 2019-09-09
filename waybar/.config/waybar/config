@@ -1,0 +1,105 @@
+{
+    "layer": "bottom",
+    "height": 25,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["clock"],
+    "modules-right": ["idle_inhibitor", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
+
+    "backlight": {
+      "format": "{icon} {percent}%",
+      "format-icons": ["", ""]
+    },
+
+    "battery": {
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+      "format": "{icon} {capacity}%",
+      "format-alt": "{icon} {time}",
+      "format-icons": ["", "", "", "", ""]
+    },
+
+    "clock": {
+    "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+    "format": "{:%l:%M:%S %p}",
+    "interval": 1,
+    "format-alt": "{:%Y-%m-%d}",
+    "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')"
+    },
+
+
+    "cpu": {
+      "interval": 10,
+      "format": " {}%",
+      "max-length": 10,
+      "on-click": "alacritty -e htop"
+    },
+
+	"sway/workspaces": {
+      "disable-scroll": true,
+      "all-outputs": true,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "7": "",
+        "urgent": "",
+        "focused": "",
+        "default": ""
+      }
+    },
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>",
+        "pango_markup": true
+    },
+
+    "idle_inhibitor": {
+		"format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "memory": {
+      "interval": 30,
+      "format": " {}%",
+      "max-length": 10
+    },
+
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "Disconnected",
+        "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
+        "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
+        "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
+        "tooltip-format-wifi": "{essid} {frequency}MHz\n({signalStrength}% {signaldBm}dBm) \nIP: {ipaddr}/{cidr}\nUP: {bandwidthUpBits} {bandwidthDownBits}",
+		"interval": 10
+    },
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{volume}% {icon}",
+      "format-muted": "",
+      "format-icons": {
+        "default": ["", ""]
+      },
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "pavucontrol"
+    },
+    "temperature": {
+	  "critical-threshold": 70,
+	  "format-critical": " {temperatureC}°C",
+	  "format": " {temperatureC}°C"
+    },
+    "tray": { "icon-size": 18 }
+}

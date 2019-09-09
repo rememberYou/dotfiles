@@ -1,5 +1,5 @@
 # Assign applications to their own workspace.
-assign [class="^Alacritty$"]          → $ws1
+assign [app_id="Alacritty"]           → $ws1
 assign [class="^qutebrowser$"]        → $ws2
 assign [class="^Chromium$"]           → $ws2
 assign [class="^Emacs$"]              → $ws3
