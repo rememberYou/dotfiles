@@ -13,7 +13,7 @@
     word_wrap = true
 
     # Related to the fonts and colors
-    font = DejaVu Sans Mono 8
+    font = Source Code Pro Medium 8
     format = "<b>%s %p</b>\n%b"
     frame_color = "#5e81ac"
     separator_color = frame
