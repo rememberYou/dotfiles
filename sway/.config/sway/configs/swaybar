@@ -1,3 +1,4 @@
 bar {
 	swaybar_command waybar
+    output DP-1
 }
