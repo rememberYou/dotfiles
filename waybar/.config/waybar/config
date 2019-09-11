@@ -24,10 +24,9 @@
       "tooltip-format": "{:%Y-%m-%d | %H:%M}",
       "format": "{:%l:%M:%S %p}",
       "interval": 1,
-      "format-alt": "{:%Y-%m-%d}",
+      "format-alt": "{:%A, %d %B %Y}",
       "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')"
     },
-
 
     "cpu": {
       "interval": 10,
@@ -103,5 +102,5 @@
 
     "tray": {
       "spacing": 10
-    },
+    }
 }
