@@ -21,11 +21,11 @@
     },
 
     "clock": {
-    "tooltip-format": "{:%Y-%m-%d | %H:%M}",
-    "format": "{:%l:%M:%S %p}",
-    "interval": 1,
-    "format-alt": "{:%Y-%m-%d}",
-    "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')"
+      "tooltip-format": "{:%Y-%m-%d | %H:%M}",
+      "format": "{:%l:%M:%S %p}",
+      "interval": 1,
+      "format-alt": "{:%Y-%m-%d}",
+      "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')"
     },
 
 
@@ -34,6 +34,47 @@
       "format": " {}%",
       "max-length": 10,
       "on-click": "alacritty -e htop"
+    },
+
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": ""
+      }
+    },
+
+    "memory": {
+      "interval": 30,
+      "format": " {}%",
+      "max-length": 10
+    },
+
+    "network": {
+      "format-wifi": " {essid} ({signalStrength}%)",
+      "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+      "format-disconnected": "Disconnected",
+      "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
+      "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
+      "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
+      "tooltip-format-wifi": "{essid} {frequency}MHz\n({signalStrength}% {signaldBm}dBm) \nIP: {ipaddr}/{cidr}\nUP: {bandwidthUpBits} {bandwidthDownBits}",
+	  "interval": 10
+    },
+
+    "pulseaudio": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{volume}% {icon}",
+      "format-muted": " MUTED",
+      "format-icons": {
+        "default": ["", ""]
+      },
+      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+      "on-click-right": "pavucontrol"
+    },
+
+    "sway/mode": {
+      "format": "<span style=\"italic\">{}</span>",
+      "pango_markup": true
     },
 
 	"sway/workspaces": {
@@ -54,52 +95,13 @@
       }
     },
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>",
-        "pango_markup": true
-    },
-
-    "idle_inhibitor": {
-		"format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "memory": {
-      "interval": 30,
-      "format": " {}%",
-      "max-length": 10
-    },
-
-    "network": {
-        "format-wifi": " {essid} ({signalStrength}%)",
-        "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
-        "format-disconnected": "Disconnected",
-        "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
-        "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
-        "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
-        "tooltip-format-wifi": "{essid} {frequency}MHz\n({signalStrength}% {signaldBm}dBm) \nIP: {ipaddr}/{cidr}\nUP: {bandwidthUpBits} {bandwidthDownBits}",
-		"interval": 10
-    },
-    "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-bluetooth": "{volume}% {icon}",
-      "format-muted": "",
-      "format-icons": {
-        "default": ["", ""]
-      },
-      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-      "on-click-right": "pavucontrol"
-    },
     "temperature": {
 	  "critical-threshold": 70,
 	  "format-critical": " {temperatureC}°C",
 	  "format": " {temperatureC}°C"
     },
-    "tray": { "icon-size": 18 }
+
+    "tray": {
+      "spacing": 10
+    },
 }
