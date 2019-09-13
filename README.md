@@ -165,13 +165,6 @@ possibility to follow the specifications of the XDG base directory.
 `zshrc` (resp. `bashrc`) except for a few system manipulations, which
 is not what I recommend.
 
-## TODO
-
-Here is a list of tasks I plan to do in my spare time to improve this
-configuration:
-
-*  Refactoring my [sway](https://github.com/swaywm/sway/) configuration.
-
 ## Contributions
 
 Various functions may be optimized or spelling errors may occur. If you want to
