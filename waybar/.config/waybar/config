@@ -21,11 +21,11 @@
     },
 
     "clock": {
-      "tooltip-format": "{:%Y-%m-%d | %H:%M}",
       "format": "{:%l:%M:%S %p}",
-      "interval": 1,
       "format-alt": "{:%A, %d %B %Y}",
-      "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')"
+      "interval": 1,
+      "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')",
+      "tooltip": false
     },
 
     "cpu": {
@@ -40,7 +40,8 @@
       "format-icons": {
         "activated": "",
         "deactivated": ""
-      }
+      },
+      "tooltip": false
     },
 
     "memory": {
