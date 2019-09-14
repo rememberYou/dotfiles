@@ -79,7 +79,7 @@ are defined:
 
 ## Quick preview
 
-A non-exhaustive preview of the environment I use on a daily basis.
+A non-exhaustive preview of the environment I use on a daily basis:
 
 Last Updated: **14 September 2019**.
 
@@ -174,5 +174,4 @@ Please note that I can't guarantee that your changes will be accepted.
 
 ## License
 
-The code is unlicensed, take what you like and hope that these dotfiles can be
-so useful to you that it is for me.
+The code is unlicensed, take what you like.
