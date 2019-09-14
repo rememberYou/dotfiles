@@ -83,7 +83,7 @@ A non-exhaustive preview of the environment I use on a daily basis.
 
 Last Updated: **14 September 2019**.
 
-Note: you can find my wallpapers [here](https://github.com/rememberYou/wallpapers).
+**NOTE:** you can find my wallpapers [here](https://github.com/rememberYou/wallpapers).
 
 ![Wall](assets/wall.png "Wallpaper")
 ![Global](assets/sway_neofetch_emacs_mako.png "sway, GNU/Emacs, alacritty,
