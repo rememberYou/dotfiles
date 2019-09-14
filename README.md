@@ -81,13 +81,13 @@ are defined:
 
 A non-exhaustive preview of the environment I use on a daily basis.
 
-Last Updated: **05 May, 2018**.
+Last Updated: **14 September 2019**.
 
 Note: you can find my wallpapers [here](https://github.com/rememberYou/wallpapers).
 
 ![Wall](assets/wall.png "Wallpaper")
-![Global](assets/i3_gaps_neofetch_emacs_dunst.png "i3-gaps, GNU/Emacs, termite,
-neofetch, dunst")
+![Global](assets/sway_neofetch_emacs_mako.png "sway, GNU/Emacs, alacritty,
+neofetch, mako")
 ![Newsboat](assets/newsboat_ranger.png "Newsboat, Ranger")
 ![Rofi](assets/rofi.png "Rofi")
 
