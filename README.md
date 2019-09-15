@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/dotfiles-logo.svg" width=512/></p>
+<p align="center"><img src="assets/dotfiles-logo.svg" width=512></p>
 <p align="center">
   <a href="https://www.archlinux.org/"><img src="https://img.shields.io/badge/ARCH-5.2.14-47999e.svg?style=flat-square"/></a>
   <a href="https://www.gnu.org/software/stow/"><img src="https://img.shields.io/badge/GNU%20Stow-2.3.1-b48ead.svg?style=flat-square"/></a>
