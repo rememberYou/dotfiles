@@ -6,6 +6,7 @@
     "modules-right": ["idle_inhibitor", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
 
     "backlight": {
+      "device": "intel_backlight",
       "format": "{icon} {percent}%",
       "format-icons": ["", ""]
     },
@@ -47,7 +48,8 @@
     "memory": {
       "interval": 30,
       "format": " {}%",
-      "max-length": 10
+      "max-length": 10,
+      "tooltip": false
     },
 
     "network": {
@@ -57,7 +59,7 @@
       "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
       "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
       "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
-      "tooltip-format-wifi": "{essid} {frequency}MHz\n({signalStrength}% {signaldBm}dBm) \nIP: {ipaddr}/{cidr}\nUP: {bandwidthUpBits} {bandwidthDownBits}",
+      "tooltip-format-wifi": "{essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
 	  "interval": 10
     },
 
