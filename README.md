@@ -143,7 +143,7 @@ chmod +x stowsym.sh
 # Installation of configuration files
 ./stowsym.sh -i
 
-# Deletion of configuration files
+# Deleting of configuration files
 ./stowsym.sh -d
 ```
 
