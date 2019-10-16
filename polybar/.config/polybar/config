@@ -15,7 +15,7 @@ background = ${color.black}
 border-color = ${color.green}
 foreground = ${color.white}
 
-font-0 = "Tamzen:size=15;0"
+font-0 = "Source Code Pro:style=Medium:size=8;0"
 font-1 = "Font Awesome 5 Free:style=Regular:pixelsize=5;0"
 font-2 = "Font Awesome 5 Free:style=Solid:pixelsize=5;0"
 font-3 = "Font Awesome 5 Brands:style=Regular:pixelsize=5;0"
