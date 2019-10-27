@@ -42,7 +42,6 @@ List of files:
  polybar         ➔ status bars
  python          ➔ specific to Python
  qutebrowser     ➔ keyboard-focused browser with a minimal GUI
- ranger          ➔ console file manager with VI key bindings
  rofi            ➔ window switcher, application launcher, ssh dialog and dmenu replacement
  sh              ➔ common to all shells (e.g. aliases, environment variables, etc.)
  ssh             ➔ SSH settings
