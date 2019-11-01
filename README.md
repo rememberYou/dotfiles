@@ -34,6 +34,7 @@ List of files:
  htop            ➔ interactive process viewer
  i3              ➔ dynamic tiling window manager for X11 inspired by wmii
  isync           ➔ capable of synchronizing mail on IMAP server with local Maildir folder
+ lf              ➔ terminal file manager
  mpd             ➔ music player daemon
  mpv             ➔ media player based on MPlayer and the now unmaintained mplayer2
  ncmpcpp         ➔ mpd client
