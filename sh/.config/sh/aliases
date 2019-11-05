@@ -78,9 +78,6 @@ alias mymakepkg='makepkg -sirc'
 # qutebrowser
 # alias qutebrowser='rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser'
 
-# NNN
-alias n='nnn'
-
 # systemctl
 alias services='systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled'
 
