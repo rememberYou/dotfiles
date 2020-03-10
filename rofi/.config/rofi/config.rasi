@@ -7,6 +7,6 @@ configuration {
     separator-style: "solid";
     show-icons: true;
     show-match: false;
-    theme: ".local/share/rofi/nord";
+    theme: "~/.local/share/rofi/nord";
     width: 30;
 }
