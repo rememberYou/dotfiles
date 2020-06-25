@@ -3,7 +3,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+r exec $term -e "ranger"
 
 # Start rofi.
-bindsym $mod+d exec $menu -location 0 --show drun -p "🍦 Application Manager:"
+bindsym $mod+d exec $menu --show drun -p "🍦 Application Manager:"
 bindsym $mod+Shift+f exec ~/.local/bin/wofi-finder
 bindsym $mod+Shift+w exec networkmanager_dmenu
 bindsym $mod+Shift+x exec ~/.local/bin/rofi-xrandr
