@@ -26,7 +26,7 @@ List of files:
 ```
  alacritty       ➔ cross-platform, GPU-accelerated terminal emulator
  bash            ➔ bash settings, aliases, and custom prompts
- bin             ➔ various useful scripts (e.g. borg, rofi, etc.)
+ bin             ➔ various useful scripts (e.g., borg, rofi)
  picom           ➔ compositor for X11
  dunst           ➔ lightweight replacement for the notification-daemons
  git             ➔ global git config and aliases
@@ -43,13 +43,13 @@ List of files:
  polybar         ➔ status bars
  python          ➔ specific to Python
  qutebrowser     ➔ keyboard-focused browser with a minimal GUI
- rofi            ➔ window switcher, application launcher, ssh dialog and dmenu replacement
- sh              ➔ common to all shells (e.g. aliases, environment variables, etc.)
+ sh              ➔ common to all shells (e.g., aliases, environment variables)
  ssh             ➔ SSH settings
  sway            ➔ i3-compatible Wayland compositor
  systemd         ➔ systemd units
  tmux            ➔ terminal multiplexer
  waybar          ➔ Wayland bar for Sway and Wlroots based compositors
+ wofi            ➔ window switcher, application launcher, ssh dialog for wlroots compositors
  x11             ➔ X11 settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
