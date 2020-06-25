@@ -9,9 +9,9 @@
 # Example of use: ./andotp2yubi -f otp_account.json
 #
 # NOTE: if this is the first time you insert your YubiKey, execute the
-# following commands (replace `trizen` with your package manager):
+# following commands:
 #
-#   trizen -S yubikey-manager acsccid
+#   pacman -S yubikey-manager acsccid
 #   sudo systemctl enable pcscd.service
 #   sudo systemctl start pcscd.service
 
