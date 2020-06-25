@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+if [ -z "$(ykman list)" ]; then
+    wofi -i -p "👣 OTP Manager" -e "👣 No YubiKey detected!"
+    exit 1
+fi
+
+target=$(ykman oath list | wofi --dmenu -i -p "👣 OTP Manager:")
+ykman oath code "$target" | cut -d " " -f3 | wl-copy
+notify-send -t 5000 "OTP in clipboard" "Your $target OTP is currently in your clipboard."

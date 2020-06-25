@@ -6,7 +6,7 @@ set -e
 
 DIR="$HOME/.cache"
 FILE="$DIR/emojis.txt"
-VER='12.0'
+VER='13.0'
 URL="https://www.unicode.org/Public/emoji/${VER}/emoji-test.txt"
 
 get_emojis() {
@@ -22,11 +22,11 @@ is_started() { pgrep -x "$1" > /dev/null 2>&1; }
 
 get_emojis
 
-emoji=$(cat "$FILE" | rofi -dmenu -no-custom -p "🐈 Emoji Manager:")
+emoji=$(cat "$FILE" | wofi --dmenu -p "🐈 Emoji Manager:")
 emoji_icon=$(echo $emoji | cut -d ' ' -f1)
-$(echo -n "$emoji_icon" | xsel -bi)
+$(echo -n "$emoji_icon" | wl-copy)
 
-if is_started dunst; then
+if is_started mako; then
     notify-send -t 5000 "Emoji in clipboard" \
     		"$emoji_icon is currently in your clipboard."
 fi

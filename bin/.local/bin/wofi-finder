@@ -8,5 +8,5 @@
 
 set -e
 
-target=$(locate -q home media | rofi -dmenu -width 90 -i -p "📁 Find:")
+target=$(locate -q home media | wofi --dmenu -i -p "📁 Find:")
 emacs -q "$target"

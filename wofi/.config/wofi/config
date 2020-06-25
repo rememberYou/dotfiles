@@ -1,0 +1,9 @@
+allow_images=true
+allow_markup=true
+insensitive=true
+hide_scroll=true
+key_down=Control_L-n
+key_exit=Control_L-g
+key_up=Control_L-p
+lines=8
+no_actions=true
