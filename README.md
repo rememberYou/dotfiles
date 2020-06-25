@@ -155,15 +155,14 @@ symbolic aliases:
 
 ```bash
 ln -s ~/.config/bash/.bashrc ~
-ln -s ~/.config/zsh/.zshenv ~
+ln -s ~/.config/zsh/zshenv .zshenv
 ```
 
 The reasons for this are that `bash` and `zsh` do not allow the
 possibility to follow the specifications of the XDG base directory.
 
-**NOTE:** the `.zshrc` file (resp. `.bashrc`) cannot be renamed to
-`zshrc` (resp. `bashrc`) except for a few system manipulations, which
-is not what I recommend.
+**NOTE:** the `.bashrc` file cannot be renamed to `bashrc` except for a few
+system manipulations, which is not what I recommend.
 
 ## Contributions
 
