@@ -117,13 +117,13 @@ For macOS users:
 
 Once the installation is complete, make a clone of the repository:
 
-	git clone https://github.com/rememberYou/dotfiles.git
+	git clone https://github.com/rememberYou/dotfiles.git .dotfiles
 
 You can now install any configurations you wish to copy using GNU Stow:
 
 ```bash
 # Make sure you are in the right directory
-cd dotfiles
+cd .dotfiles
 
 # Example to install the sway config
 stow sway
