@@ -6,7 +6,6 @@ bindsym $mod+Shift+r exec $term -e "ranger"
 bindsym $mod+d exec $menu --show drun -p "🍦 Application Manager:"
 bindsym $mod+Shift+f exec ~/.local/bin/wofi-finder
 bindsym $mod+Shift+w exec networkmanager_dmenu
-bindsym $mod+Shift+x exec ~/.local/bin/rofi-xrandr
 
 # Kill focused window.
 bindsym $mod+Shift+q kill
