@@ -10,6 +10,7 @@ test "$XDG_DATA_HOME"   || export XDG_DATA_HOME="$HOME/.local/share"
 test "$XDG_LIB_HOME"    || export XDG_LIB_HOME="$HOME/.local/lib"
 
 # Environment variables respecting programs.
+export AUDACITY_PATH="$XDG_DATA_HOME/audacity"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export CCACHE_DIR="$XDG_CACHE_HOME/ccache"
 export GEM_HOME="$XDG_DATA_HOME/gem"
