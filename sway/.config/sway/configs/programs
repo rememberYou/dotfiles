@@ -13,5 +13,4 @@ for_window [class=.*] inhibit_idle fullscreen
 
 # Fix some bug applications.
 for_window [class="Spotify"] move to workspace $ws4
-for_window [class="Spotify"] focus
 
