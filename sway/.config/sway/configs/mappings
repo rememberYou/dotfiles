@@ -1,6 +1,6 @@
 # Start a terminal.
 bindsym $mod+Return exec $term
-bindsym $mod+Shift+r exec $term -e "ranger"
+bindsym $mod+Shift+n exec $term -e "nnn"
 
 # Start rofi.
 bindsym $mod+d exec $menu --show drun -p "🍦 Application Manager:"
