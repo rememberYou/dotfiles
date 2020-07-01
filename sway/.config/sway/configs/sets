@@ -1,13 +1,13 @@
-# Set window key.
+# Window key.
 set $mod Mod4
 
-# Set navigation keys.
+# Navigation keys.
 set $down j
 set $left h
 set $right l
 set $up k
 
-# Set global variables.
+# Global variables.
 set $browser qutebrowser
 set $locker swaylock --ignore-empty-password --show-failed-attempt --indicator-caps-lock --scaling fill \
                             -i ~/Pictures/locker.jpg
@@ -24,6 +24,7 @@ set $ws5 5
 set $ws6 6
 set $ws7 7
 
+# Nord color palette.
 set $nord0 #2e3440
 set $nord1 #3b4252
 set $nord2 #434c5e
