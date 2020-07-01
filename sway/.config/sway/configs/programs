@@ -1,4 +1,5 @@
 # Assign applications to their own workspace.
+# To find out class, run `xprop` and click on the window.
 assign [app_id="Alacritty"]           → $ws1
 assign [class="^qutebrowser$"]        → $ws2
 assign [class="^Chromium$"]           → $ws2
@@ -11,6 +12,5 @@ for_window [class=.*] focus
 # Inhibit idle when a window is in fullscreen.
 for_window [class=.*] inhibit_idle fullscreen
 
-# Fix some bug applications.
+# Fix some bug for Spotify.
 for_window [class="Spotify"] move to workspace $ws4
-
