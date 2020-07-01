@@ -10,15 +10,10 @@ set $mode_power "<span foreground='$nord13'>💻</span>  \
 <span foreground='$nord4'><b>Shutdown</b></span> <span foreground='$nord13'>(<b>Shift+s</b>)</span>"
 
 mode --pango_markup $mode_power {
-    # Logout the current session.
     bindsym e exec swaymsg exit, mode "default"
-    # Lock the screen.
     bindsym l exec pulseaudio-ctl mute-input && $locker, mode "default"
-    # Reboot the computer.
     bindsym r exec systemctl reboot, mode "default"
-    # Suspend the current session.
     bindsym s exec $locker && systemctl suspend, mode "default"
-    # Shutdown the computer.
     bindsym Shift+s exec systemctl poweroff -i, mode "default"
 
     # Return to default mode.
