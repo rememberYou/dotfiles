@@ -12,5 +12,3 @@ for_window [class=.*] focus
 for_window [class="Spotify"] move to workspace $ws4
 for_window [class="Spotify"] focus
 
-for_window [class="Skype"] move to workspace $ws5
-for_window [class="Skype"] focus
