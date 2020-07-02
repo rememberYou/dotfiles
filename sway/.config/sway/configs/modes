@@ -42,18 +42,18 @@ bindsym $mod+Shift+s mode $mode_screenshot
 set $mode_recording "<span foreground='$nord13'>⏺</span>  \
 <span foreground='$nord4'><b>Region</b></span> <span foreground='$nord13'>(<b>r</b>)</span> \
 <span foreground='$nord2'>—</span> \
-<span foreground='$nord4'><b>Region (+ Audio)</b></span> <span foreground='$nord13'>(<b>Shift+r</b>)</span> \
+<span foreground='$nord4'><b>Region (+ Mic)</b></span> <span foreground='$nord13'>(<b>Shift+r</b>)</span> \
 <span foreground='$nord2'>—</span> \
 <span foreground='$nord4'><b>Screen</b></span> <span foreground='$nord13'>(<b>s</b>)</span> \
 <span foreground='$nord2'>—</span> \
-<span foreground='$nord4'><b>Screen (+ Audio)</b></span> <span foreground='$nord13'>(<b>Shift+s</b>)</span>"
+<span foreground='$nord4'><b>Screen (+ Mic)</b></span> <span foreground='$nord13'>(<b>Shift+s</b>)</span>"
 
 mode --pango_markup $mode_recording {
-    bindsym r exec killall -s SIGINT wf-recorder || wf-recorder -g "$(slurp -d)" \
+    bindsym r exec killall -s SIGINT wf-recorder || wf-recorder --audio=0 -g "$(slurp -d)" \
             -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
     bindsym Shift+r exec killall -s SIGINT wf-recorder || wf-recorder --audio -g "$(slurp -d)" \
             -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
-    bindsym s exec killall -s SIGINT wf-recorder || wf-recorder -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') \
+    bindsym s exec killall -s SIGINT wf-recorder || wf-recorder --audio=0 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') \
             -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
     bindsym Shift+s exec killall -s SIGINT wf-recorder || wf-recorder --audio -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') \
             -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
