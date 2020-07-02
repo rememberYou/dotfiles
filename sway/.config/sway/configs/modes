@@ -49,7 +49,7 @@ set $mode_recording "<span foreground='$nord13'>⏺</span>  \
 <span foreground='$nord4'><b>Screen (+ Mic)</b></span> <span foreground='$nord13'>(<b>Shift+s</b>)</span>"
 
 mode --pango_markup $mode_recording {
-    bindsym r exec killall -s SIGINT wf-recorder || wf-recorder --audio=0 -g "$(slurp -d)" \
+    bindsym r exec killall -s SIGINT wf-recorder || wf-recorder -g "$(slurp -d)" \
             -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
     bindsym Shift+r exec killall -s SIGINT wf-recorder || wf-recorder --audio -g "$(slurp -d)" \
             -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
