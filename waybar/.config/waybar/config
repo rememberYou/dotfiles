@@ -3,7 +3,7 @@
     "height": 25,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["idle_inhibitor", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
+    "modules-right": ["battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
 
     "backlight": {
       "device": "intel_backlight",
@@ -34,15 +34,6 @@
       "format": " {}%",
       "max-length": 10,
       "on-click": "alacritty -e htop"
-    },
-
-    "idle_inhibitor": {
-      "format": "{icon}",
-      "format-icons": {
-        "activated": "",
-        "deactivated": ""
-      },
-      "tooltip": false
     },
 
     "memory": {
