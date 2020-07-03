@@ -1,5 +1,5 @@
 {
-    "layer": "bottom",
+    "layer": "top",
     "height": 25,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
