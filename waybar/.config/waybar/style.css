@@ -44,8 +44,7 @@ window#waybar.hidden { opacity: 0.2; }
 #backlight,
 #network,
 #pulseaudio,
-#mode,
-#idle_inhibitor {
+#mod {
   padding: 0 10px;
   margin: 0 4px;
   color: #ffffff;
@@ -58,8 +57,6 @@ window#waybar.hidden { opacity: 0.2; }
 
 #battery { color: #8fbcbb; }
 #battery.critical:not(.charging) { color: #bf616a; }
-
-#idle_inhibitor.activated { color: #ebcb8b; }
 
 #network.disconnected { color: #bf616a; }
 
