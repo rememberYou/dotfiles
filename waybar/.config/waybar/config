@@ -3,7 +3,7 @@
     "height": 25,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
+    "modules-right": ["custom/weather", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
 
     "backlight": {
       "device": "intel_backlight",
@@ -38,6 +38,16 @@
       "format": " {}%",
       "max-length": 10,
       "on-click": "alacritty -e htop"
+    },
+
+    "custom/weather": {
+        "format": "{}",
+        "format-alt": "{alt}: {}",
+        "format-alt-click": "click-right",
+        "interval": 1800,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/weather.sh",
+        "exec-if": "ping wttr.in -c1"
     },
 
     "memory": {
