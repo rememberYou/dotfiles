@@ -37,15 +37,16 @@ window#waybar.hidden { opacity: 0.2; }
 }
 #workspaces button.urgent { background-color: #bf616a; }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#temperature,
 #backlight,
+#battery,
+#clock,
+#cpu,
+#custom-weather,
+#memory,
+#mode,
 #network,
 #pulseaudio,
-#mod {
+#temperature {
   padding: 0 10px;
   margin: 0 4px;
   color: #ffffff;
