@@ -30,8 +30,6 @@ export GPG_TTY
 
 # Don't save lines which begin with a <space> character and eliminate duplication.
 export HISTCONTROL="ignorespace:erasedups"
-# Default zsh history file.
-export HISTFILE=$XDG_CACHE_HOME/zsh/zsh_history
 # Number of lines to store in an active session.
 export HISTFILESIZE=100000
 # Ignore the archiving of the following commands.
@@ -57,9 +55,6 @@ export PASSWORD_STORE_GENERATED_LENGTH=50
 # Allows you to use $HOME/.local/bin's bash scripts anywhere.
 export PATH="$PATH:$HOME/.local/bin"
 
-# Related to Python.
-export PYTHONHISTORY=$XDG_CACHE_HOME/python/python_history
-
 # Increase the history save size.
 export SAVEHIST=10000
 
@@ -71,6 +66,3 @@ export TMPDIR="/tmp/$USER"
 if [ ! -d "$TMPDIR" ]; then
     mkdir -m 700 "$TMPDIR"
 fi
-
-# Default zsh completion dump file.
-export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
