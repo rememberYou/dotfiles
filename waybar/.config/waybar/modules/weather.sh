@@ -32,7 +32,7 @@ weather=($(cat $cachedir/$cachefile))
 # Restore IFSClear
 IFS=$SAVEIFS
 
-temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])+\.\./\1 to /g')
+temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])+\.\./\1 to /g' | tr -d ' ')
 
 #echo ${weather[1]##*,}
 
@@ -77,4 +77,4 @@ case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
         ;;
 esac
 
-echo -e "{\"text\":\""$temperature $condition"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
+echo -e "{\"text\":\""$condition $temperature"\", \"alt\":\""${weather[0]}"\", \"tooltip\":\""${weather[0]}: $temperature ${weather[1]}"\"}"
