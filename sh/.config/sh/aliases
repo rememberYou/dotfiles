@@ -109,7 +109,7 @@ fi
 
 # Use `arecord -l` to list recording cards or devices.
 if have ffmpeg; then
-	alias rec="ffmpeg -f alsa -i hw:0 ~/Audio/$(date +'%Y-%m-%d-%H%M%S').mp3"
+	alias rec="ffmpeg -f alsa -i hw:0 ~/Audio/Records/$(date +'%Y-%m-%d-%H%M%S').mp3"
 fi
 
 # color picker
