@@ -4,7 +4,7 @@
 
 [ -f "$XDG_CONFIG_HOME/sh/aliases" ] && . "$XDG_CONFIG_HOME/sh/aliases"
 
-export HISTFILE="$XDG_DATA_HOME/bash_history"
+export HISTFILE="$XDG_CACHE_HOME/bash/bash_history"
 
 shopt -s autocd                  # If command is a path, cd into it.
 shopt -s checkjobs               # List the status of any stopped and running jobs before exiting an interactive shell.

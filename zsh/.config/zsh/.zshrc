@@ -6,7 +6,7 @@ ZSH_THEME="geoffgarside"
 
 [ -f "$XDG_CONFIG_HOME/sh/aliases" ] && . "$XDG_CONFIG_HOME/sh/aliases"
 
-export HISTFILE="$XDG_DATA_HOME/zsh_history"
+export HISTFILE="$XDG_CACHE_HOME/zsh/zsh_history"
 
 setopt always_to_end          # Move the cursor to the end of the word after each completion.
 setopt auto_cd                # If command is a path, cd into it.
