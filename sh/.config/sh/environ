@@ -46,6 +46,10 @@ export HISTSIZE=$HISTFILESIZE
 export JAVA_HOME="/usr/lib/jvm/default-runtime"
 export JDK_HOME="/usr/lib/jvm/default"
 
+# Enable code syntax coloring in `less`.
+export LESS='-R '
+export LESSOPEN="| /usr/bin/source-highlight-esc.sh %s"
+
 # Disable warning for GTK-based applications.
 export NO_AT_BRIDGE=1
 
