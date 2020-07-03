@@ -30,6 +30,8 @@ export GPG_TTY
 
 # Don't save lines which begin with a <space> character and eliminate duplication.
 export HISTCONTROL="ignorespace:erasedups"
+# Default zsh history file.
+export HISTFILE=$XDG_CACHE_HOME/zsh/zsh_history
 # Number of lines to store in an active session.
 export HISTFILESIZE=100000
 # Ignore the archiving of the following commands.
