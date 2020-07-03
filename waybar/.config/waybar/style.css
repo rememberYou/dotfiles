@@ -28,6 +28,7 @@ window#waybar.hidden { opacity: 0.2; }
   background: rgba(0, 0, 0, 0.2);
   box-shadow: inherit;
   border-bottom: 3px solid #ffffff;
+  text-shadow: inherit;
 }
 
 #workspaces button.focused {
