@@ -42,6 +42,10 @@
 
     "memory": {
       "interval": 30,
+      "states": {
+        "warning": 60,
+        "critical": 90
+      },
       "format": " {}%",
       "max-length": 10,
       "tooltip": false
