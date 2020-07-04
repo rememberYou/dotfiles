@@ -31,8 +31,7 @@ weather=($(cat $cachedir/$cachefile))
 
 # Restore IFSClear
 IFS=$SAVEIFS
-
-temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])+\.\./\1 to /g' | tr -d ' ')
+temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]])+\.\./\1 to /g' | sed 's/ °/°/g')
 
 #echo ${weather[1]##*,}
 
