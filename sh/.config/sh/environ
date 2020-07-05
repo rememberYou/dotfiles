@@ -59,6 +59,13 @@ export PASSWORD_STORE_GENERATED_LENGTH=50
 # Allows you to use $HOME/.local/bin's bash scripts anywhere.
 export PATH="$PATH:$HOME/.local/bin"
 
+# Allows Qt 5 to enable Wayland support.
+export QT_QPA_PLATFORM=wayland
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+# Fix issues with Java applications and Wayland.
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Increase the history save size.
 export SAVEHIST=10000
 
