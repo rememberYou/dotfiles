@@ -69,6 +69,8 @@ export PATH="$PATH:$HOME/.local/bin"
 export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
+# Use evince as default document reader.
+export READER="evince"
 
 # Increase the history save size.
 export SAVEHIST=10000
