@@ -147,8 +147,6 @@ key_bindings:
 mouse:
   hide_when_typing: true
 
-scale_with_dpi: true
-
 shell:
   program: /bin/zsh
   args:
