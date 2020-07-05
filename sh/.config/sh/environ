@@ -5,6 +5,9 @@
 # Load XDG specifications.
 [ -f ~/.config/sh/xdg ] && . ~/.config/sh/xdg
 
+# Fix issues with Java applications and Wayland.
+export _JAVA_AWT_WM_NONREPARENTING=1
+
 # Use qutebrowser as default browser.
 export BROWSER="qutebrowser"
 
@@ -66,8 +69,6 @@ export PATH="$PATH:$HOME/.local/bin"
 export QT_QPA_PLATFORM=wayland
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 
-# Fix issues with Java applications and Wayland.
-export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Increase the history save size.
 export SAVEHIST=10000
