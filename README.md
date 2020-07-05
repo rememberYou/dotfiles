@@ -26,13 +26,10 @@ List of files:
 ```
  alacritty       ➔ cross-platform, GPU-accelerated terminal emulator
  bash            ➔ bash settings, aliases, and custom prompts
- bin             ➔ various useful scripts (e.g., borg, rofi)
- picom           ➔ compositor for X11
- dunst           ➔ lightweight replacement for the notification-daemons
+ bin             ➔ various useful scripts (e.g. borg, rofi)
  git             ➔ global git config and aliases
  gnupg           ➔ allows you to encrypt and sign your data and communication
  htop            ➔ interactive process viewer
- i3              ➔ dynamic tiling window manager for X11 inspired by wmii
  isync           ➔ capable of synchronizing mail on IMAP server with local Maildir folder
  lf              ➔ terminal file manager
  mpd             ➔ music player daemon
@@ -40,10 +37,9 @@ List of files:
  ncmpcpp         ➔ mpd client
  neofetch        ➔ CLI system information tool
  newsboat        ➔ RSS/Atom feed reader for text terminals
- polybar         ➔ status bars
  python          ➔ specific to Python
  qutebrowser     ➔ keyboard-focused browser with a minimal GUI
- sh              ➔ common to all shells (e.g., aliases, environment variables)
+ sh              ➔ common to all shells (e.g. aliases, environment variables)
  ssh             ➔ SSH settings
  sway            ➔ i3-compatible Wayland compositor
  systemd         ➔ systemd units
