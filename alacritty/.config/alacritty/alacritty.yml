@@ -33,6 +33,9 @@ font:
   italics:
     family: Source Code Pro
     style: Italic
+  bold_italic:
+    family: Source Code Pro
+    style: Bold Italic
 
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
