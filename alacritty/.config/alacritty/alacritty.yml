@@ -25,11 +25,14 @@ colors:
 
 font:
   normal:
-    family: Source Code Pro Medium
+    family: Source Code Pro
+    style : Medium
   bold:
-    family: monospace
-  italic:
-    family: monospace
+    family: Source Code Pro
+    style: Bold
+  italics:
+    family: Source Code Pro
+    style: Italic
 
 key_bindings:
   - { key: V,        mods: Control|Shift,    action: Paste               }
