@@ -22,10 +22,6 @@ export EMAIL="terencio.agozzino@gmail.com"
 export NAME="Terencio Agozzino"
 export TZ="Europe/Brussels"
 
-# Useful to inform Polybar of GitHub's token.
-GITHUB_ACCESS_TOKEN="$(gpg -qd "$HOME/.gnupg/shared/github-token.gpg")"
-export GITHUB_ACCESS_TOKEN
-
 # Identify the private key.
 GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
 export GPGKEY
