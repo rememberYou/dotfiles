@@ -13,6 +13,7 @@ c.hints.uppercase = True
 c.keyhint.delay = 100
 c.scrolling.smooth = True
 c.tabs.background = True
+c.tabs.padding = {"left": 5, "right": 5, "top": 2, "bottom": 2}
 c.tabs.title.format = "{perc}{current_title}"
 c.url.default_page = "https://news.ycombinator.com/"
 
