@@ -5,6 +5,9 @@
 # Load XDG specifications.
 [ -f ~/.config/sh/xdg ] && . ~/.config/sh/xdg
 
+# Use qutebrowser as default browser.
+export BROWSER="qutebrowser"
+
 # Tells Ccache to only use compilers in this directory.
 export CCACHE_PATH="/usr/bin"
 
