@@ -1,6 +1,5 @@
 import os.path
 
-c.qt.force_platform = 'xcb'
 c.completion.web_history.max_items = 10000
 c.content.default_encoding = "utf-8"
 c.content.javascript.enabled = False
