@@ -48,6 +48,6 @@ if os.path.exists(private_whitelist):
     with open(private_whitelist) as f:
         js_whitelist += filter(lambda l: bool(l), f.read().split("\n"))
 
-for site in js_whitelist:
-    with config.pattern(site) as p:
+for website in js_whitelist:
+    with config.pattern(website) as p:
         p.content.javascript.enabled = True
