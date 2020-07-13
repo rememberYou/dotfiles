@@ -2,7 +2,7 @@
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+n exec $term -e "nnn"
 
-# Start rofi.
+# Start wofi.
 bindsym $mod+d exec $menu --show drun -p "🍦 Application Manager:"
 bindsym $mod+Shift+f exec ~/.local/bin/wofi-finder
 bindsym $mod+Shift+w exec networkmanager_dmenu
