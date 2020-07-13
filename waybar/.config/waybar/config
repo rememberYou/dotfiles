@@ -80,7 +80,7 @@
         "default": ["", ""]
       },
       "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-      "on-click-right": "pavucontrol-qt"
+      "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
     },
 
     "sway/mode": {
