@@ -7,4 +7,5 @@ key_exit=Control_L-g
 key_up=Control_L-p
 lines=5
 no_actions=true
+term=alacritty
 width=600
