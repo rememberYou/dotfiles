@@ -24,6 +24,9 @@ test -d "$XDG_LIB_HOME"    || mkdir -p -m 0700 "$XDG_LIB_HOME"
 if [ "$BASH" ] && [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
+# Mute the microphone.
+pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
 # Tell the state of the battery.
 bat_state() {
     upower -i /org/freedesktop/UPower/devices/battery_BAT0 \
