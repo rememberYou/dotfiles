@@ -21,7 +21,7 @@ fi
 cd ~ || exit
 
 # Mute the microphone.
-pulseaudio-ctl mute-input
+pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
 # Set the brightness according to the battery state.
 if [ "$(bat_state)" = "discharging" ]; then
