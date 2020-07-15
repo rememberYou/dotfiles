@@ -38,3 +38,7 @@ if [ "$(bat_state)" = "discharging" ]; then
 else
     light -S 60
 fi
+
+if [ "$(tty)" = "/dev/tty1" ]; then
+    pgrep -x sway | exec ssh-agent sway
+fi
