@@ -25,6 +25,7 @@ IMAPStore gmail-remote
 Account gmail
 
 MaildirStore gmail-local
+Subfolders Verbatim
 Path ~/Maildir/gmail/
 Inbox ~/Maildir/gmail/INBOX
 
