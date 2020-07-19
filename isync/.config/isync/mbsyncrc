@@ -11,7 +11,7 @@
 # 4. Create the root folder to store your emails.
 # `mkdir -p ~/Maildir/gmail`
 
-Create Slave
+Create Both
 SyncState *
 
 IMAPAccount gmail
