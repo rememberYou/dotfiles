@@ -18,7 +18,6 @@ IMAPAccount gmail
 Host imap.gmail.com
 User terencio.agozzino
 PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.gnupg/shared/mbsyncpass.gpg"
-Port 993
 SSLType IMAPS
 AuthMechs Login
 CertificateFile /etc/ssl/certs/ca-certificates.crt
