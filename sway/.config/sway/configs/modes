@@ -11,7 +11,9 @@ set $mode_power "<span foreground='$nord13'>💻</span>  \
 
 mode --pango_markup $mode_power {
     bindsym e exec swaymsg exit, mode "default"
-    bindsym l exec pulseaudio-ctl mute-input && $locker, mode "default"
+    bindsym l exec pactl set-sink-mute @DEFAULT_SINK@ 1 \
+            && pactl set-source-mute @DEFAULT_SOURCE@ 1 \
+            && $locker, mode "default"
     bindsym r exec systemctl reboot, mode "default"
     bindsym s exec $locker && systemctl suspend, mode "default"
     bindsym Shift+s exec systemctl poweroff -i, mode "default"
