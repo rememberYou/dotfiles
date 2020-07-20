@@ -27,7 +27,7 @@ Account gmail
 MaildirStore gmail-local
 Subfolders Verbatim
 Path ~/Maildir/gmail/
-Inbox ~/Maildir/gmail/INBOX
+Inbox ~/Maildir/gmail/Inbox
 
 Channel gmail-all
 Master :gmail-remote:"[Gmail]/All Mail"
