@@ -50,7 +50,8 @@ unsetopt hup                  # No hup signal at shell exit.
 
 alias zshcfg="emacsclient $XDG_CONFIG_HOME/zsh/.zshrc"
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(colorize emoji extract frontend-search zsh-autosuggestions
+         zsh-syntax-highlighting)
 
 . ~/.config/oh-my-zsh/oh-my-zsh.sh
 
