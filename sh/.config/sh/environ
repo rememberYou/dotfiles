@@ -23,12 +23,10 @@ export NAME="Terencio Agozzino"
 export TZ="Europe/Brussels"
 
 # Identify the private key.
-GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
-export GPGKEY
+export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
 
 # Used by gpg-agent.
-GPG_TTY="$(tty)"
-export GPG_TTY
+export GPG_TTY="$(tty)"
 
 # Don't save lines which begin with a <space> character and eliminate duplication.
 export HISTCONTROL="ignorespace:erasedups"
