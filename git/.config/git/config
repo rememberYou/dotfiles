@@ -30,6 +30,7 @@
     template = ~/.config/git/gitmessage
 [core]
 	editor = emacsclient -a "" -c
+    excludesfile = ~/.config/git/gitignore
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
