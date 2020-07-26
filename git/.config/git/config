@@ -42,7 +42,8 @@
 [push]
 	default = current
 [user]
-	name = Terencio Agozzino
 	email = terencio.agozzino@gmail.com
+	name = Terencio Agozzino
+    signingKey = 208FCDBB98190562
 [web]
 	browser = qutebrowser
