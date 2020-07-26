@@ -26,6 +26,8 @@
 	added = green bold
 	changed = yellow bold
 	untracked = red bold
+[commit]
+    template = ~/.config/git/gitmessage
 [core]
 	editor = emacsclient -a "" -c
 [filter "lfs"]
