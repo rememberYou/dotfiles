@@ -48,5 +48,5 @@
 	email = terencio.agozzino@gmail.com
 	name = Terencio Agozzino
     signingKey = 208FCDBB98190562
-[web]
+[instaweb]
 	browser = qutebrowser
