@@ -1,5 +1,8 @@
 background_opacity: 0.96
 
+bell:
+  duration: 0
+
 colors:
    primary:
      background: '0x2e3440'
@@ -151,6 +154,3 @@ shell:
   program: /bin/zsh
   args:
     - --login
-
-visual_bell:
-  duration: 0
