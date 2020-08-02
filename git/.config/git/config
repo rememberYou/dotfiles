@@ -10,12 +10,12 @@
 	search = grep --line-number --ignore-case -E -I
 	today = diff --stat 'HEAD@{midnight}'
 	yesterday = diff --stat 'HEAD@{yesterday}' 'HEAD@{midnight}'
-[color]
-	ui = auto
+
 [color "branch"]
 	current = yellow bold
 	local = white bold
 	remote = cyan bold
+
 [color "diff"]
 	meta = 11
 	frag = magenta bold
@@ -23,8 +23,10 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+
 [pretty]
   custom = "%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) %an%C(reset)%C(bold yellow)%d%C(reset)"
+
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -35,28 +37,37 @@
 	added = green bold
 	changed = yellow bold
 	untracked = red bold
+
 [commit]
     template = ~/.config/git/gitmessage
+
 [core]
 	editor = emacsclient -a "" -c
     excludesfile = ~/.config/git/gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
 [github]
 	user = rememberYou
+
 [log]
 	decorate = short
+
 [pull]
 	default = simple
+
 [push]
 	default = current
+
 [user]
 	email = terencio.agozzino@gmail.com
 	name = Terencio Agozzino
     signingKey = 208FCDBB98190562
+
 [instaweb]
 	browser = qutebrowser
