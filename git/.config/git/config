@@ -17,11 +17,18 @@
 	local = white bold
 	remote = cyan bold
 [color "diff"]
-	meta = yellow bold
+	meta = 11
 	frag = magenta bold
+	commit = yellow bold
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = red bold 52
+	newNormal = green bold
+	newHighlight = green bold 22
+
 [color "status"]
 	added = green bold
 	changed = yellow bold
@@ -31,6 +38,7 @@
 [core]
 	editor = emacsclient -a "" -c
     excludesfile = ~/.config/git/gitignore
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
