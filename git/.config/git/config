@@ -3,9 +3,9 @@
 	fuck-it = reset --hard
 	last = log -1
 	latest = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
-	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	quicklog = log --oneline --decorate -10 --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	quicklog-long = log --oneline --decorate --pretty=format:'%C(yellow)%h%C(reset)%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	lg = log --color --graph --pretty=custom --abbrev-commit
+    quicklog = log --oneline --decorate -10 --pretty=custom
+	quicklog-long = log --oneline --decorate --pretty=custom
 	rfind = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --invert-grep --grep
 	search = grep --line-number --ignore-case -E -I
 	today = diff --stat 'HEAD@{midnight}'
@@ -23,6 +23,8 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[pretty]
+  custom = "%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) %an%C(reset)%C(bold yellow)%d%C(reset)"
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
