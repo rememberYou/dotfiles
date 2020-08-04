@@ -24,9 +24,6 @@
 	new = green bold
 	whitespace = red reverse
 
-[pretty]
-  custom = "%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) %an%C(reset)%C(bold yellow)%d%C(reset)"
-
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = red bold 52
@@ -55,8 +52,14 @@
 [github]
 	user = rememberYou
 
+[instaweb]
+	browser = qutebrowser
+
 [log]
 	decorate = short
+
+[pretty]
+  custom = "%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) %an%C(reset)%C(bold yellow)%d%C(reset)"
 
 [pull]
 	default = simple
@@ -68,6 +71,3 @@
 	email = terencio.agozzino@gmail.com
 	name = Terencio Agozzino
     signingKey = 208FCDBB98190562
-
-[instaweb]
-	browser = qutebrowser
