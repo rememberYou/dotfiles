@@ -1,73 +1,73 @@
 [alias]
-	find = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --grep
-	fuck-it = reset --hard
-	last = log -1
-	latest = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
-	lg = log --color --graph --pretty=custom --abbrev-commit
+    find = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --grep
+    fuck-it = reset --hard
+    last = log -1
+    latest = for-each-ref --sort=committerdate refs/heads/ --format='%(committerdate:short) %(refname:short)'
+    lg = log --color --graph --pretty=custom --abbrev-commit
     quicklog = log --oneline --decorate -10 --pretty=custom
-	quicklog-long = log --oneline --decorate --pretty=custom
-	rfind = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --invert-grep --grep
-	search = grep --line-number --ignore-case -E -I
-	today = diff --stat 'HEAD@{midnight}'
-	yesterday = diff --stat 'HEAD@{yesterday}' 'HEAD@{midnight}'
+    quicklog-long = log --oneline --decorate --pretty=custom
+    rfind = log --graph --oneline --all --decorate --date-order --regexp-ignore-case --extended-regexp --invert-grep --grep
+    search = grep --line-number --ignore-case -E -I
+    today = diff --stat 'HEAD@{midnight}'
+    yesterday = diff --stat 'HEAD@{yesterday}' 'HEAD@{midnight}'
 
 [color "branch"]
-	current = yellow bold
-	local = white bold
-	remote = cyan bold
+    current = yellow bold
+    local = white bold
+    remote = cyan bold
 
 [color "diff"]
-	meta = 11
-	frag = magenta bold
-	commit = yellow bold
-	old = red bold
-	new = green bold
-	whitespace = red reverse
+    meta = 11
+    frag = magenta bold
+    commit = yellow bold
+    old = red bold
+    new = green bold
+    whitespace = red reverse
 
 [color "diff-highlight"]
-	oldNormal = red bold
-	oldHighlight = red bold 52
-	newNormal = green bold
-	newHighlight = green bold 22
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
 
 [color "status"]
-	added = green bold
-	changed = yellow bold
-	untracked = red bold
+    added = green bold
+    changed = yellow bold
+    untracked = red bold
 
 [commit]
     template = ~/.config/git/gitmessage
 
 [core]
-	editor = emacsclient -a "" -c
+    editor = emacsclient -a "" -c
     excludesfile = ~/.config/git/gitignore
     pager = diff-so-fancy | less --tabs=4 -RFX
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
 [github]
-	user = rememberYou
+    user = rememberYou
 
 [instaweb]
-	browser = qutebrowser
+    browser = qutebrowser
 
 [log]
-	decorate = short
+    decorate = short
 
 [pretty]
-  custom = "%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) %an%C(reset)%C(bold yellow)%d%C(reset)"
+    custom = "%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) %an%C(reset)%C(bold yellow)%d%C(reset)"
 
 [pull]
-	default = simple
+    default = simple
 
 [push]
-	default = current
+    default = current
 
 [user]
-	email = terencio.agozzino@gmail.com
-	name = Terencio Agozzino
+    email = terencio.agozzino@gmail.com
+    name = Terencio Agozzino
     signingKey = 208FCDBB98190562
