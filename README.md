@@ -31,7 +31,6 @@ List of files:
  gnupg           ➔ allows you to encrypt and sign your data and communication
  htop            ➔ interactive process viewer
  isync           ➔ capable of synchronizing mail on IMAP server with local Maildir folder
- lf              ➔ terminal file manager
  mpd             ➔ music player daemon
  mpv             ➔ media player based on MPlayer and the now unmaintained mplayer2
  ncmpcpp         ➔ mpd client
