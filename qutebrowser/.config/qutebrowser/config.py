@@ -27,6 +27,7 @@ js_whitelist = [
     "*://deepl.com/*",
     "*://duckduckgo.com/*",
     "*://github.com/*",
+    "*://linkedin.com/*",
     "*://localhost/*",
     "*://news.ycombinator.com/*",
     "*://reddit.com/*",
