@@ -2,7 +2,6 @@ import os.path
 
 c.completion.web_history.max_items = 10000
 c.content.default_encoding = "utf-8"
-c.content.javascript.enabled = False
 c.content.pdfjs = True
 c.downloads.location.directory = os.path.expanduser("~/Downloads")
 c.downloads.location.prompt = False
@@ -16,16 +15,9 @@ c.tabs.padding = {"left": 5, "right": 5, "top": 2, "bottom": 2}
 c.tabs.title.format = "{perc}{current_title}"
 c.url.default_page = "https://news.ycombinator.com/"
 
-# Load binding setting.
 config.source("bindings.py")
-
-# Load fonts setting.
 config.source("fonts.py")
-
-# Load search engines setting.
 config.source("search_engines.py")
-
-# Load nord theme setting.
 config.source("themes/nord.py")
 
 js_whitelist = [

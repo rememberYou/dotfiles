@@ -36,6 +36,7 @@
     untracked = red bold
 
 [commit]
+    gpgsign = true
     template = ~/.config/git/gitmessage
 
 [core]
