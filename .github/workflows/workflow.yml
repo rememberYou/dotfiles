@@ -15,9 +15,7 @@ jobs:
       - name: Installs configuration files
         run: |
           ./stowsym.sh -i
-          ls ~/.config
 
       - name: Uninstalls configuration files
         run: |
-          ./stowsym.sh -
-          ls ~/.config
+          ./stowsym.sh -d
