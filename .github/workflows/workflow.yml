@@ -1,0 +1,16 @@
+---
+name: Build
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: Installs stow
+        run: sudo apt-get install -y stow
+
+      - name: Installs configuration files
+        run: ./stowsym.sh -i
