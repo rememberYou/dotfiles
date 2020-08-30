@@ -13,4 +13,11 @@ jobs:
         run: sudo apt-get install -y stow
 
       - name: Installs configuration files
-        run: ./stowsym.sh -i
+        run: |
+          ./stowsym.sh -i
+          ls ~/.config
+
+      - name: Uninstalls configuration files
+        run: |
+          ./stowsym.sh -
+          ls ~/.config
