@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Installs stow
+      - name: Installs GNU Stow
         run: sudo apt-get install -y stow
 
       - name: Installs configuration files
