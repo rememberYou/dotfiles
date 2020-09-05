@@ -62,6 +62,7 @@ if have emacs; then
 fi
 
 # GPG
+alias mygpg='gpg --list-secret-keys --keyid-format=LONG terencio.agozzino@gmail.com'
 alias gpgC='gpg --recipient $GPGKEY --encrypt'
 alias gpgDP='gpg --delete-keys'
 alias gpgDS='gpg --delete-secret-keys'
