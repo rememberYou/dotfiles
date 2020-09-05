@@ -125,6 +125,10 @@ if have ffmpeg; then
 	alias rec="ffmpeg -f alsa -i hw:0 ~/Audio/Records/$(date +'%Y-%m-%d-%H%M%S').mp3"
 fi
 
+if have fzf; then
+    o() { local f; f=$(ls|fzf); [[ ! -z "$f" ]] && ec "$f"; }
+fi
+
 # color picker
 if have grim; then
     alias cpick='grim -g "$(slurp -p)" -t ppm - | convert - -format "%[pixel:p{0,0}]" txt:-'
