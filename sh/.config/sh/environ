@@ -22,6 +22,9 @@ export EMAIL="terencio.agozzino@gmail.com"
 export NAME="Terencio Agozzino"
 export TZ="Europe/Brussels"
 
+# Used by FZF
+export FZF_DEFAULT_OPTS='--layout=reverse --border'
+
 # Identify the private key.
 export GPGKEY="$(gpg -K | awk 'NR==4 {print $1}' | sed 's/4096R\///g')"
 
