@@ -93,7 +93,29 @@ alias mymakepkg='makepkg -sirc'
 # alias qutebrowser='rm ~/.local/share/qutebrowser/history.sqlite && qutebrowser'
 
 # systemctl
-alias services='systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled'
+if have systemctl && [[ -d /run/systemd/system ]]; then
+	alias enable='sudo systemctl enable'
+	alias disable='sudo systemctl disable'
+	alias y='systemctl'
+
+	reload()  { sudo systemctl reload "$@";  _status "$@"; }
+	restart() { sudo systemctl restart "$@"; _status "$@"; }
+	start()   { sudo systemctl start "$@";   _status "$@"; }
+	stop()    { sudo systemctl stop "$@";    _status "$@"; }
+	_status() { sudo SYSTEMD_PAGER='cat' systemctl status -a -n0 "$@"; }
+	status()  { SYSTEMD_PAGER='cat' systemctl status -a "$@"; }
+
+    alias services='systemctl list-unit-files | grep enabled && systemctl --user list-unit-files | grep enabled'
+	alias list='systemctl list-units -t path,service,socket --no-legend'
+	alias userctl='systemctl --user'
+	alias u='systemctl --user'
+
+	ustart()   { userctl start "$@";   userctl status -a "$@"; }
+	ustop()    { userctl stop "$@";    userctl status -a "$@"; }
+	urestart() { userctl restart "$@"; userctl status -a "$@"; }
+	ureload()  { userctl reload "$@";  userctl status -a "$@"; }
+
+	alias ulist='userctl list-units -t path,service,socket --no-legend'
 
 # top
 alias top_cpu='top -b -o +%CPU | head -n 22'
