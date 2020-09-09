@@ -116,6 +116,7 @@ if have systemctl && [[ -d /run/systemd/system ]]; then
 	ureload()  { userctl reload "$@";  userctl status -a "$@"; }
 
 	alias ulist='userctl list-units -t path,service,socket --no-legend'
+fi
 
 # top
 alias top_cpu='top -b -o +%CPU | head -n 22'
