@@ -1,11 +1,10 @@
 [Unit]
 Description=Mailbox synchronization service
-Wants=network-online.target gpg-agent.socket
-After=network.target network-online.target dbus.socket gpg-agent.socket
+Wants=network-online.target
+Requires=gpg-agent.socket
+After=network-online.target gpg-agent.socket network.target dbus.socket
 
 [Service]
 Type=oneshot
-ExecStart=mbsync -c ${XDG_CONFIG_HOME}/isync/mbsyncrc -a
+ExecStart=mbsync -c /home/someone/.config/isync/mbsyncrc -a
 Environment=MU_HOME="%C/mu"
-StandardOutput=syslog
-StandardError=syslog
