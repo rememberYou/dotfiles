@@ -25,9 +25,6 @@ workspace_auto_back_and_forth yes
 # Hides the cursor after no activity.
 seat seat0 hide_cursor 5000
 
-# Adjust the color temperature of your screen according to your surroundings.
-exec gammastep
-
 # This will lock your screen after 900 seconds of inactivity, then turn off your
 # displays after another 1000 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
