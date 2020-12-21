@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# Started by i3 to launch programs.
+# Started by sway to launch programs.
 
 have() { type "$1" > /dev/null 2>&1; }
 
@@ -12,16 +12,16 @@ if have emacs; then
     emacs --daemon &
 fi
 
+if have gammastep; then
+    gammastep -l `whereami.py` &
+fi
+
 if have mpd; then
     [ ! -s ~/.config/mpd/pid ] && mpd &
 fi
 
 if have razercfg; then
     razercfg -r 4 &
-fi
-
-if have redshift-gtk; then
-    redshift-gtk -l `whereami.py` &
 fi
 
 if have syncthing; then
