@@ -9,8 +9,8 @@
       "device": "intel_backlight",
       "format": "{icon} {percent}%",
       "format-icons": ["", ""],
-      "on-scroll-up": "light -A 1",
-      "on-scroll-down": "light -U 1"
+      "on-scroll-up": "light -A 10",
+      "on-scroll-down": "light -U 10"
     },
 
     "battery": {
@@ -24,7 +24,7 @@
     },
 
     "clock": {
-      "format": "{:%H:%M:%S %p}",
+      "format": "{:%l:%M %p}",
       "format-alt": "{:%A, %d %B %Y}",
       "interval": 1,
       "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')",
