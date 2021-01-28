@@ -13,6 +13,7 @@ c.scrolling.smooth = True
 c.tabs.padding = {"left": 5, "right": 5, "top": 2, "bottom": 2}
 c.tabs.title.format = "{perc}{current_title}"
 c.url.default_page = "https://news.ycombinator.com/"
+c.zoom.default = 67
 
 config.load_autoconfig()
 config.source("bindings.py")
