@@ -33,8 +33,8 @@ set $mode_screenshot "<span foreground='$nord13'>🖼</span>  \
 
 mode --pango_markup $mode_screenshot {
     bindsym c exec --no-startup-id grim -g "$(slurp -d)" - | wl-copy -t image/png, mode "default"
-    bindsym f exec --no-startup-id grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png, mode "default"
-    bindsym r exec --no-startup-id grim -g "$(slurp -d)" ~/Pictures/Screenshots/$(date +'%Y-%m-%d-%H%M%S').png, mode "default"
+    bindsym f exec --no-startup-id grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') ~/pictures/screenshots/$(date +'%Y-%m-%d-%H%M%S').png, mode "default"
+    bindsym r exec --no-startup-id grim -g "$(slurp -d)" ~/pictures/screenshots/$(date +'%Y-%m-%d-%H%M%S').png, mode "default"
     # Return to default mode.
     bindsym Escape mode "default"
     bindsym Return mode "default"
@@ -52,13 +52,13 @@ set $mode_recording "<span foreground='$nord13'>⏺</span>  \
 
 mode --pango_markup $mode_recording {
     bindsym r exec killall -s SIGINT wf-recorder || wf-recorder -g "$(slurp -d)" \
-            -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
+            -f ~/videos/recordings/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
     bindsym Shift+r exec killall -s SIGINT wf-recorder || wf-recorder --audio -g "$(slurp -d)" \
-            -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
+            -f ~/videos/recordings/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
     bindsym s exec killall -s SIGINT wf-recorder || wf-recorder --audio=0 -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') \
-            -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
+            -f ~/videos/recordings/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
     bindsym Shift+s exec killall -s SIGINT wf-recorder || wf-recorder --audio -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') \
-            -f ~/Videos/Records/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
+            -f ~/videos/recordings/$(date +'%Y-%m-%d-%H%M%S').mp4, mode "default"
 
     # Return to default mode.
     bindsym Escape mode "default"

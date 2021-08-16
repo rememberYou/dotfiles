@@ -8,7 +8,7 @@
 
 window#waybar {
   background-color: #2e3440;
-  border-bottom: 3px solid rgba(76, 86, 105, 0.5);
+  border-bottom: 3px solid rgba(66, 65, 74, 0.5);
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
@@ -25,15 +25,15 @@ window#waybar.hidden { opacity: 0.2; }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(16, 12, 16, 0.2);
   box-shadow: inherit;
-  border-bottom: 3px solid #ffffff;
+  border-bottom: 3px solid #a5a294;
   text-shadow: inherit;
 }
 
 #workspaces button.focused {
-  background-color: #4c566a;
-  border-bottom: 3px solid #ebcb8b;
+  background-color: #42414a;
+  border-bottom: 3px solid #c6baa5;
 }
 #workspaces button.urgent { background-color: #bf616a; }
 
