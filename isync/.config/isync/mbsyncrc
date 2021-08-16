@@ -26,33 +26,33 @@ Account gmail
 
 MaildirStore gmail-local
 Subfolders Verbatim
-Path ~/Maildir/gmail/
-Inbox ~/Maildir/gmail/Inbox
+Path ~/mails/gmail/
+Inbox ~/mails/gmail/Inbox
 
 Channel gmail-all
-Master :gmail-remote:"[Gmail]/All Mail"
-Slave :gmail-local:"All Mail"
+Far :gmail-remote:"[Gmail]/All Mail"
+Near :gmail-local:"All Mail"
 
 Channel gmail-draft
-Master :gmail-remote:"[Gmail]/Drafts"
-Slave :gmail-local:"Drafts"
+Far :gmail-remote:"[Gmail]/Drafts"
+Near :gmail-local:"Drafts"
 
 Channel gmail-inbox
-Master :gmail-remote:
-Slave :gmail-local:
+Far :gmail-remote:
+Near :gmail-local:
 Patterns "INBOX"
 
 Channel gmail-sent
-Master :gmail-remote:"[Gmail]/Sent Mail"
-Slave :gmail-local:"Sent"
+Far :gmail-remote:"[Gmail]/Sent Mail"
+Near :gmail-local:"Sent"
 
 Channel gmail-starred
-Master :gmail-remote:"[Gmail]/Starred"
-Slave :gmail-local:"Starred"
+Far :gmail-remote:"[Gmail]/Starred"
+Near :gmail-local:"Starred"
 
 Channel gmail-trash
-Master :gmail-remote:"[Gmail]/Trash"
-Slave :gmail-local:"Trash"
+Far :gmail-remote:"[Gmail]/Trash"
+Near :gmail-local:"Trash"
 
 Group gmail
 Channel gmail-all

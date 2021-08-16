@@ -141,13 +141,13 @@ fi
 
 # youtube-dl
 if have youtube-dl; then
-    # alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/Music/%(title)s.%(ext)s"'
-    alias yeam='youtube-dl --extract-audio --audio-format mp3 --audio-quality 0 -o "~/Music/%(title)s.%(ext)s"'
+    # alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/music/%(title)s.%(ext)s"'
+    alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/music/%(title)s.%(ext)s"'
 fi
 
 # Use `arecord -l` to list recording cards or devices.
 if have ffmpeg; then
-	alias rec="ffmpeg -f alsa -i hw:0 ~/Audio/Records/$(date +'%Y-%m-%d-%H%M%S').mp3"
+	alias rec="ffmpeg -f alsa -i hw:0 ~/audio/records/$(date +'%Y-%m-%d-%H%M%S').mp3"
 fi
 
 if have fzf; then

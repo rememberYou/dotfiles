@@ -3,7 +3,7 @@ import os.path
 c.completion.web_history.max_items = 10000
 c.content.default_encoding = "utf-8"
 c.content.pdfjs = True
-c.downloads.location.directory = os.path.expanduser("~/Downloads")
+c.downloads.location.directory = os.path.expanduser("~/downloads")
 c.downloads.location.prompt = False
 c.downloads.remove_finished = 30000
 c.editor.command = ["em", "{}"]
