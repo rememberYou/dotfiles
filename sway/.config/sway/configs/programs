@@ -12,5 +12,8 @@ for_window [class=.*] focus
 # Inhibit idle when a window is in fullscreen.
 for_window [class=.*] inhibit_idle fullscreen
 
+# Inhibit idle when a window title contains a "Meet" window title
+for_window [app_id="qutebrowser" title="Meet - .*-.*-.*"] inhibit_idle visible
+
 # Fix some bug for Spotify.
 for_window [class="Spotify"] move to workspace $ws4
