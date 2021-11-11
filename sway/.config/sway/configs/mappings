@@ -2,9 +2,9 @@
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+n exec $term -e "nnn"
 
-# Start wofi.
-bindsym $mod+d exec $menu --show drun -p "🍦 Application Manager:"
-bindsym $mod+Shift+f exec ~/.local/bin/wofi-finder
+# Start rofi.
+bindsym $mod+d exec rofi -show drun -theme launchpad
+bindsym $mod+Shift+f exec ~/.local/bin/rofi-finder
 bindsym $mod+Shift+w exec networkmanager_dmenu
 
 # Kill focused window.
@@ -47,12 +47,12 @@ bindsym $mod+Shift+t move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+t scratchpad show
 
-# Get a password with wofit from pass.
-bindsym $mod+p exec ~/.local/bin/wofi-pass
+# Get a password with rofi from pass.
+bindsym $mod+p exec ~/.local/bin/rofi-pass
 # Get an emoji from emoji picker
-bindsym $mod+u exec ~/.local/bin/wofi-emojis
+bindsym $mod+u exec rofi -show emoji -modi emoji
 # Get an OTP with rofi from YubiKey.
-bindsym $mod+y exec ~/.local/bin/wofi-yubi
+bindsym $mod+y exec ~/.local/bin/rofi-yubi
 
 # Manage the brightness.
 bindsym XF86MonBrightnessDown exec light -U 10

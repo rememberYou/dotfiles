@@ -1,0 +1,5 @@
+@theme "theme.rasi"
+
+window {
+	width: 60%;
+}

@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Allows you to find your local files.
+#
+# NOTE: this script use `locate` instead of `find` for better
+# performance. Therefore, be careful to not forget to update your database
+# for `mlocate` with `sudo updatedb -U /home/$USER`.
+#
+# To speed up the search, add your .cache and .local folders to the PRUNEPATHS
+# variable of the /etc/udpatedb.conf file and update again the database with
+# `sudo updatedb -U /home/$USER`.
+
+set -e
+
+# xdg-open "$(find /home/$USER/ -not -path '*/\.*' \( ! -iname ".*" \) | rofi -threads 0 -width 100 -dmenu -i -p "find:")"
+xdg-open "$(locate -q home | rofi -dmenu -no-custom -i -p "📁" -theme finder)"

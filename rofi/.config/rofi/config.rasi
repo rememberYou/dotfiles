@@ -1,0 +1,13 @@
+configuration {
+    disable-history:                false;
+    display-drun: 					"";
+    display-filebrowser:            "📁";
+    display-run: 					"";
+    display-ssh:                    "~#";
+    drun-display-format:            "{icon} {name}";
+    font:							"Source Code Pro Medium 12";
+    icon-theme: 					"Papirus";
+    show-icons:                     true;
+}
+
+@theme "theme.rasi"

@@ -16,11 +16,14 @@ fi
 
 target=$(echo "$pw_store" | awk -F / -v OFS=/ '/\.gpg$/ { print $( NF -1 ),
 	     substr($NF, 1, length( $NF ) -4 ) }' |
-	     wofi --dmenu -i -p "🔐 Password Manager:")
+	     rofi -dmenu -no-custom -i -p "🔐")
 if have gopass; then
-    gopass show -c "$target"
+    gopass -c "$target"
+    time=$(gopass config cliptimeout | awk 'NR == 1 { print $2 }')
 else
     pass -c "$target"
-    notify-send -u critical -t $((5 * 1000)) "Password in clipboard" \
-	    "Your $target password is currently in your clipboard."
+    time=5
 fi
+
+notify-send -u critical -t $(("$time" * 1000)) "Password in clipboard" \
+	    "Your $target password is currently in your clipboard."

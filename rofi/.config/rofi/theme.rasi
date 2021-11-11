@@ -1,0 +1,98 @@
+
+@import "colors.rasi"
+
+window {
+	border-color:					@ac;
+	border:							0px;
+    background-color:               @bg;
+    border-radius:                  12px;
+    location:                       center;
+    text-color:                     @fg;
+    transparency:                   "real";
+	width:							30%;
+    x-offset:                       0;
+    y-offset:                       0;
+}
+
+prompt {
+    background-color: 				@al;
+    enabled: 						true;
+    font:							"Source Code Pro Medium 12";
+	padding: 						2% 1.5% 0% 1%;
+    text-color: 					@fg;
+}
+
+entry {
+    background-color:               @al;
+    blink:                          true;
+    expand:                         true;
+    horizontal-align:               0;
+    padding:                        2% 0% 0% 0%;
+    placeholder-color:              @fg;
+    placeholder:                    "Search";
+    text-color:                     @fg;
+}
+
+inputbar {
+    background-color:               @bg;
+	border:							0% 0% 0% 0%;
+    border-color:					@ac;
+    border-radius:                  0px;
+    children: 						[ prompt, entry ];
+    expand:                         false;
+    margin:                         0% 0% 0% 0%;
+    padding:                        1.5%;
+    text-color:                     @fg;
+}
+
+listview {
+    background-color:               @al;
+    cycle:                          false;
+    dynamic:                        true;
+    layout:                         vertical;
+    lines:                          7;
+    padding:                        10px;
+    spacing:                        0%;
+}
+
+mainbox {
+    background-color:               @bg;
+	border-color:					@bc;
+    border-radius:                  0% 0% 0% 0%;
+    children:                       [ inputbar, listview ];
+    padding:                        0%;
+    spacing:                       	0%;
+}
+
+element {
+    background-color:               @al;
+    border-radius:                  0%;
+    orientation:                    horizontal;
+    padding:                        0.5% 0.5% 0.5% 0.5%;
+    text-color:                     @fg;
+}
+
+element-icon {
+    background-color: 				inherit;
+    border:                         0px;
+    horizontal-align:               0.5;
+    size:                           24px;
+    text-color:       				inherit;
+    vertical-align:                 0.5;
+}
+
+element-text {
+    background-color: 				@al;
+    expand:                         true;
+    horizontal-align:               0;
+    margin:                         0% 0.25% 0% 0.25%;
+    text-color:       				inherit;
+    vertical-align:                 0.5;
+}
+
+element selected {
+    background-color:               @ac;
+	border:							0% 0% 0% 0%;
+    border-color:                  	@bg;
+    text-color:                     @bg;
+}
