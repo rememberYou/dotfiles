@@ -6,7 +6,8 @@ import random
 import time
 
 # DEFAULT FOLDER
-FOLDER_WALL = '/home/someone/Pictures/Wallpapers/2560x1440/'
+FOLDER_WALL = "/home/someone/wallpapers/2560x1440/"
+
 
 def interval_wall(wallpapers, seconds):
     while True:
@@ -18,11 +19,21 @@ def interval_wall(wallpapers, seconds):
             wallpapers = glob.glob(FOLDER_WALL + "*")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Set random wallpapers")
-    parser.add_argument('--version', action='version', version='%(prog)s 0.1.0')
-    parser.add_argument('-d', '--directory', type=str, nargs=1, help='specific the main folder')
-    parser.add_argument('-t', '--time', type=int, nargs=1, help='interval of background changes')
+    parser.add_argument(
+        "--version", action="version", version="%(prog)s 0.1.0"
+    )
+    parser.add_argument(
+        "-d", "--directory", type=str, nargs=1, help="specific the main folder"
+    )
+    parser.add_argument(
+        "-t",
+        "--time",
+        type=int,
+        nargs=1,
+        help="interval of background changes",
+    )
     args = parser.parse_args()
 
     if args.directory:
