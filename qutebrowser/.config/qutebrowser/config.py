@@ -10,6 +10,12 @@ c.editor.command = ["em", "{}"]
 c.hints.uppercase = True
 c.keyhint.delay = 100
 c.scrolling.smooth = True
+# To use spell checker, you need to install Hunspell dictionaries manually or
+# with the given qutebrowser script.
+#
+# /usr/share/qutebrowser/scripts/dictcli.py install en-US
+# /usr/share/qutebrowser/scripts/dictcli.py install fr-FR
+c.spellcheck.languages = ["en-US", "fr-FR"]
 c.tabs.padding = {"left": 5, "right": 5, "top": 2, "bottom": 2}
 c.tabs.title.format = "{perc}{current_title}"
 c.url.default_page = "https://news.ycombinator.com/"
