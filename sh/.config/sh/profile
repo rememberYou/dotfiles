@@ -25,6 +25,14 @@ if [ "$BASH" ] && [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
 
+if grep -i WSL2 /proc/version > /dev/null; then
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0 #GWSL
+  export PULSE_SERVER=tcp:$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}') #GWSL
+  export LIBGL_ALWAYS_INDIRECT=1 #GWSL
+  export GDK_SCALE=2 #GWSL
+  export QT_SCALE_FACTOR=2 #GWSL
+end
+
 cd ~ || exit
 
 # Mute the microphone.
