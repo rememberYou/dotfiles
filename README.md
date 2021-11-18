@@ -43,6 +43,7 @@ List of files:
  newsboat        ➔ RSS/Atom feed reader for text terminals
  python          ➔ specific to Python
  qutebrowser     ➔ keyboard-focused browser with a minimal GUI
+ rofi            ➔ window switcher, application launcher, ssh dialog and dmenu replacement
  sh              ➔ common to all shells (e.g. aliases, environment variables)
  ssh             ➔ SSH settings
  sway            ➔ i3-compatible Wayland compositor
