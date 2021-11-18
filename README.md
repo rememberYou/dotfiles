@@ -49,7 +49,6 @@ List of files:
  systemd         ➔ systemd units
  tmux            ➔ terminal multiplexer
  waybar          ➔ Wayland bar for Sway and Wlroots based compositors
- wofi            ➔ window switcher, application launcher, ssh dialog for wlroots compositors
  x11             ➔ X11 settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
