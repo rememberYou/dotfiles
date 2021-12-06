@@ -1,6 +1,6 @@
 configuration {
     disable-history:                false;
-    display-drun: 					"";
+    display-drun: 					"λ";
     display-filebrowser:            "📁";
     display-run: 					"";
     display-ssh:                    "~#";
