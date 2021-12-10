@@ -80,6 +80,7 @@ alias xelatex='xelatex --shell-escape'
 # Navigation
 alias d='cd $XDG_DATA_HOME/docker/'
 alias g='cd $XDG_DATA_HOME/git/'
+alias n='cd $XDG_DATA_HOME/notebooks/'
 alias q='cd $XDG_DATA_HOME/qemu/'
 
 # nmcli
@@ -163,3 +164,5 @@ fi
 if have reflector; then
     alias reflect='sudo reflector --latest 200 --threads 8 --verbose --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist'
 fi
+
+alias log="journalctl -u NetworkManager -b -n 1000"
