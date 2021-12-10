@@ -10,6 +10,14 @@ test "$XDG_DATA_HOME" || export XDG_DATA_HOME="$HOME/.local/share"
 test "$XDG_LIB_HOME" || export XDG_LIB_HOME="$HOME/.local/lib"
 test "$XDG_CURRENT_DESKTOP" || export XDG_CURRENT_DESKTOP="sway"
 
+# https://wiki.archlinux.org/title/XDG_user_directories
+test "$XDG_DESKTOP_DIR" || export XDG_DESKTOP_DIR="$HOME/desktop"
+test "$XDG_DOCUMENTS_DIR" || export XDG_DOCUMENTS_DIR="$HOME/documents"
+test "$XDG_DOWNLOAD_DIR" || export XDG_DOWNLOAD_DIR="$HOME/download"
+test "$XDG_PICTURES_DIR" || export XDG_PICTURES_DIR="$HOME/pictures"
+test "$XDG_MUSIC_DIR" || export XDG_MUSIC_DIR="$HOME/music"
+test "$XDG_VIDEOS_DIR" || export XDG_VIDEOS_DIR="$HOME/videos"
+
 # Environment variables respecting programs.
 export ANDROID_SDK_HOME="$XDG_CONFIG_HOME/android"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
