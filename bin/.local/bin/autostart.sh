@@ -31,3 +31,11 @@ fi
 if have xbindkeys; then
     [ -f "$XDG_CONFIG_HOME/X11/xbindkeysrc" ] && xbindkeys -f "$XDG_CONFIG_HOME/X11/xbindkeysrc" &
 fi
+
+# if have feh; then
+#     feh --no-fehbg --bg-center `wallpaper.py` &
+# fi
+
+# if have polybar; then
+#     [ -f "$XDG_CONFIG_HOME/polybar/launch.sh" ] && . "$XDG_CONFIG_HOME/polybar/launch.sh" &
+# fi
