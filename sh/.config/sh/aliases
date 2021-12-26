@@ -131,7 +131,7 @@ alias tka='tmux kill-server'
 alias tl='tmux list-sessions'
 alias ts='tmux new-session -s'
 
-# Traduction
+# Translation
 if have trans; then
     alias de='trans --brief :de'
     alias en='trans --brief :en'
