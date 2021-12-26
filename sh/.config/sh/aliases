@@ -142,7 +142,6 @@ fi
 
 # youtube-dl
 if have youtube-dl; then
-    # alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/music/%(title)s.%(ext)s"'
     alias yeam='youtube-dl --embed-thumbnail --extract-audio --audio-format mp3 --audio-quality 0 -o "~/music/%(title)s.%(ext)s"'
 fi
 
