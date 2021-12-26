@@ -165,3 +165,4 @@ if have reflector; then
 fi
 
 alias log="journalctl -u NetworkManager -b -n 1000"
+alias weather='curl wttr.in'
