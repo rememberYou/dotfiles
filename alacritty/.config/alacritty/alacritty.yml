@@ -1,4 +1,4 @@
-background_opacity: 0.96
+window.opacity: 0.96
 
 bell:
   duration: 0
