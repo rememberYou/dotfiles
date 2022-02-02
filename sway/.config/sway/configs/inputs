@@ -20,5 +20,5 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 input "5426:132:Razer_Razer_DeathAdder_V2" {
     accel_profile flat
 	pointer_accel -0.7
-    scroll_factor 1.25
+    scroll_factor 1.75
 }
