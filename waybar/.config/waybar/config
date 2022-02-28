@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "height": 25,
+    "height": 32,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
     "modules-right": ["custom/weather", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
