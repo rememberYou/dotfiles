@@ -14,10 +14,6 @@
     },
 
     "battery": {
-      "states": {
-        "warning": 30,
-        "critical": 15
-      },
       "format": "{icon} {capacity}%",
       "format-charging": " {capacity}%",
       "format-discharging": "{icon} {capacity}% {time}",
@@ -25,7 +21,12 @@
       "format-full": "",
       "format-icons": ["", "", "", "", ""],
       "format-plugged": " {capacity}%",
-      "format-time": "({H}:{M})"
+      "format-time": "({H}:{M})",
+      "states": {
+        "warning": 30,
+        "critical": 15
+      },
+    },
     },
 
     "clock": {
