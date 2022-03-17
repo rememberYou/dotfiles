@@ -3,7 +3,7 @@
     "height": 32,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/weather", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "network", "tray"],
+    "modules-right": ["custom/weather", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "tray"],
 
     "backlight": {
       "device": "intel_backlight",
@@ -26,7 +26,6 @@
         "warning": 30,
         "critical": 15
       },
-    },
     },
 
     "clock": {
@@ -58,17 +57,7 @@
         "critical": 90
       },
       "format": " {}%",
-    },
-
-    "network": {
-      "format-wifi": " {essid} ({signalStrength}%)",
-      "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
-      "format-disconnected": "Disconnected",
-      "on-click": "wl-copy $(ip address show up scope global | grep inet | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c5-)",
-      "on-click-right": "wl-copy $(ip address show up scope global | grep inet6 | head -n1 | cut -d/ -f 1 | tr -d [:space:] | cut -c6-)",
-      "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n",
-      "tooltip-format-wifi": "{essid} {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
-	  "interval": 10
+      "tooltip-format": "{used:0.1f}G/{total:0.1f}G used"
     },
 
     "pulseaudio": {
@@ -116,5 +105,5 @@
 
     "tray": {
       "spacing": 10
-    }
+    },
 }
