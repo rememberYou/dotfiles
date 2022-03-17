@@ -19,8 +19,13 @@
         "critical": 15
       },
       "format": "{icon} {capacity}%",
-      "format-alt": "{icon} {time}",
-      "format-icons": ["", "", "", "", ""]
+      "format-charging": " {capacity}%",
+      "format-discharging": "{icon} {capacity}% {time}",
+      "format-empty": "",
+      "format-full": "",
+      "format-icons": ["", "", "", "", ""],
+      "format-plugged": " {capacity}%",
+      "format-time": "({H}:{M})"
     },
 
     "clock": {
