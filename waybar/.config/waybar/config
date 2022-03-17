@@ -30,11 +30,10 @@
     },
 
     "clock": {
-      "format": "{:%l:%M %p}",
       "format-alt": "{:%A, %d %B %Y}",
       "interval": 1,
       "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')",
-      "tooltip": false
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "cpu": {
