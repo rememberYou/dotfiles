@@ -37,14 +37,12 @@
     },
 
     "cpu": {
-      "interval": 10,
       "states": {
         "warning": 60,
         "critical": 90
       },
-      "format": " {}%",
-      "max-length": 10,
-      "on-click": "alacritty -e htop"
+      "format": " {usage}%",
+      "format-alt": " {avg_frequency}GHz"
     },
 
     "custom/weather": {
