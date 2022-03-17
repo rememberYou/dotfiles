@@ -49,7 +49,8 @@
     },
 
     "custom/weather": {
-      "exec": "bash $HOME/.config/waybar/modules/weather.sh",
+      "exec": "~/.config/waybar/modules/weather.sh",
+      "exec-if": "ping wttr.in -c1",
       "interval": 300,
       "on-click-right": "$BROWSER https://wttr.in",
       "return-type": "json"
