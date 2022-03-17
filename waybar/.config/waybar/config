@@ -46,13 +46,10 @@
     },
 
     "custom/weather": {
-        "format": "{}",
-        "format-alt": "{alt}: {}",
-        "format-alt-click": "click-right",
-        "interval": 1800,
-        "return-type": "json",
-        "exec": "~/.config/waybar/modules/weather.sh",
-        "exec-if": "ping wttr.in -c1"
+      "exec": "bash $HOME/.config/waybar/modules/weather.sh",
+      "interval": 300,
+      "on-click-right": "$BROWSER https://wttr.in",
+      "return-type": "json"
     },
 
     "memory": {
