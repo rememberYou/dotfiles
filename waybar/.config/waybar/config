@@ -1,134 +1,165 @@
 {
-    "layer": "top",
-    "height": 32,
-    "modules-left": ["sway/workspaces", "sway/mode"],
-    "modules-center": ["clock"],
-    "modules-right": [
-      "custom/weather",
-      "battery",
-      "pulseaudio",
-      "backlight",
-      "cpu",
-      "temperature",
-      "disk",
-      "memory",
-      "network",
-      "tray"
+  "layer": "top",
+  "height": 32,
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/weather",
+    "battery",
+    "pulseaudio",
+    "backlight",
+    "cpu",
+    "temperature",
+    "disk",
+    "memory",
+    "network",
+    "tray"
+  ],
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": [
+      "",
+      ""
     ],
+    "on-scroll-up": "light -A 10",
+    "on-scroll-down": "light -U 10"
+  },
 
-    "backlight": {
-      "device": "intel_backlight",
-      "format": "{icon} {percent}%",
-      "format-icons": ["", ""],
-      "on-scroll-up": "light -A 10",
-      "on-scroll-down": "light -U 10"
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-discharging": "{icon} {capacity}% {time}",
+    "format-empty": "",
+    "format-full": "",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "format-plugged": " {capacity}%",
+    "format-time": "({H}:{M})",
+    "full-at": 99,
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
+  },
 
-    "battery": {
-      "format": "{icon} {capacity}%",
-      "format-charging": " {capacity}%",
-      "format-discharging": "{icon} {capacity}% {time}",
-      "format-empty": "",
-      "format-full": "",
-      "format-icons": ["", "", "", "", ""],
-      "format-plugged": " {capacity}%",
-      "format-time": "({H}:{M})",
-      "full-at": 99,
-      "states": {
-        "warning": 30,
-        "critical": 15
-      },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%A, %d %B %Y}",
+    "interval": 1,
+    "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "cpu": {
+    "states": {
+      "warning": 60,
+      "critical": 90
     },
+    "format": " {usage}%",
+    "format-alt": " {avg_frequency}GHz"
+  },
 
-    "network": {
-      "format-wifi": " {essid} ({signalStrength}%)",
-      "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
-      "format-disconnected": "",
-      "on-click-right": "${TERMINAL} -e nmtui",
-      "tooltip-format-wifi": "{essid} ({ifname})\nFreq: {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
-      "tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
-	  "interval": 10
+  "custom/weather": {
+    "exec": "~/.config/waybar/modules/weather.sh",
+    "exec-if": "ping wttr.in -c1",
+    "interval": 300,
+    "on-click-right": "$BROWSER https://wttr.in",
+    "return-type": "json"
+  },
+
+  "disk": {
+    "format": " {percentage_used}%",
+    "states": {
+      "warning": 70,
+      "critical": 90,
     },
+    "tooltip-format": "Used: {used} ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nTotal: {total}",
+  },
 
-    "cpu": {
-      "states": {
-        "warning": 60,
-        "critical": 90
-      },
-      "format": " {usage}%",
-      "format-alt": " {avg_frequency}GHz"
+  "memory": {
+    "states": {
+      "warning": 60,
+      "critical": 90
     },
+    "format": " {}%",
+    "tooltip-format": "{used:0.1f}G/{total:0.1f}G used"
+  },
 
-    "custom/weather": {
-      "exec": "~/.config/waybar/modules/weather.sh",
-      "exec-if": "ping wttr.in -c1",
-      "interval": 300,
-      "on-click-right": "$BROWSER https://wttr.in",
-      "return-type": "json"
+  "network": {
+    "format-wifi": " {essid} ({signalStrength}%)",
+    "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+    "format-disconnected": "",
+    "on-click-right": "${TERMINAL} -e nmtui",
+    "tooltip-format-wifi": "{essid} ({ifname})\nFreq: {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
+    "tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
+    "interval": 10
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-muted": " MUTED",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
     },
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    "on-click-middle": "pavucontrol-qt",
+    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "tooltip": false
+  },
 
-    "disk": {
-	  "format": " {percentage_used}%",
-	  "states": {
-	    "warning": 70,
-		"critical": 90,
-	  },
-	  "tooltip-format": "Used: {used} ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nTotal: {total}",
-	},
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>",
+    "pango_markup": true
+  },
 
-    "memory": {
-      "states": {
-        "warning": 60,
-        "critical": 90
-      },
-      "format": " {}%",
-      "tooltip-format": "{used:0.1f}G/{total:0.1f}G used"
-    },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "7": "",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
 
-    "pulseaudio": {
-      "format": "{icon} {volume}%",
-      "format-bluetooth": "{volume}% {icon}",
-      "format-muted": " MUTED",
-      "format-icons": {
-        "default": ["", ""]
-      },
-      "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-      "on-click-middle": "pavucontrol-qt",
-      "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
-      "tooltip": false
-    },
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip": false
+  },
 
-    "sway/mode": {
-      "format": "<span style=\"italic\">{}</span>",
-      "pango_markup": true
-    },
-
-	"sway/workspaces": {
-      "disable-scroll": true,
-      "all-outputs": true,
-      "format": "{icon}",
-      "format-icons": {
-        "1": "",
-        "2": "",
-        "3": "",
-        "4": "",
-        "5": "",
-        "6": "",
-        "7": "",
-        "urgent": "",
-        "focused": "",
-        "default": ""
-      }
-    },
-
-    "temperature": {
-	  "critical-threshold": 80,
-      "format": "{icon} {temperatureC}°C",
-      "format-icons": ["", "", "", "", ""],
-      "tooltip": false
-    },
-
-    "tray": {
-      "spacing": 10
-    },
+  "tray": {
+    "spacing": 10
+  },
 }
