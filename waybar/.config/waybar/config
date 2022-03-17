@@ -22,18 +22,21 @@
       "format-icons": ["", "", "", "", ""],
       "format-plugged": " {capacity}%",
       "format-time": "({H}:{M})",
+      "full-at": 99,
       "states": {
         "warning": 30,
         "critical": 15
       },
     },
 
-    "clock": {
-      "format": "{:%I:%M %p}",
-      "format-alt": "{:%A, %d %B %Y}",
-      "interval": 1,
-      "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "network": {
+      "format-wifi": " {essid} ({signalStrength}%)",
+      "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+      "format-disconnected": "",
+      "on-click-right": "${TERMINAL} -e nmtui",
+      "tooltip-format-wifi": "{essid} ({ifname})\nFreq: {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
+      "tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
+	  "interval": 10
     },
 
     "cpu": {
