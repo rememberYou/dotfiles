@@ -29,6 +29,7 @@
     },
 
     "clock": {
+      "format": "{:%I:%M %p}",
       "format-alt": "{:%A, %d %B %Y}",
       "interval": 1,
       "on-click-right": "wl-copy $(date '+%Y-%m-%d %T')",
