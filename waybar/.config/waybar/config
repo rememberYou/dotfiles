@@ -3,7 +3,18 @@
     "height": 32,
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/weather", "battery", "pulseaudio", "backlight", "cpu", "temperature", "memory", "tray"],
+    "modules-right": [
+      "custom/weather",
+      "battery",
+      "pulseaudio",
+      "backlight",
+      "cpu",
+      "temperature",
+      "disk",
+      "memory",
+      "network",
+      "tray"
+    ],
 
     "backlight": {
       "device": "intel_backlight",
@@ -55,6 +66,15 @@
       "on-click-right": "$BROWSER https://wttr.in",
       "return-type": "json"
     },
+
+    "disk": {
+	  "format": " {percentage_used}%",
+	  "states": {
+	    "warning": 70,
+		"critical": 90,
+	  },
+	  "tooltip-format": "Used: {used} ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nTotal: {total}",
+	},
 
     "memory": {
       "states": {
