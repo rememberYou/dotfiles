@@ -112,9 +112,10 @@
     },
 
     "temperature": {
-	  "critical-threshold": 70,
-	  "format-critical": " {temperatureC}°C",
-	  "format": " {temperatureC}°C"
+	  "critical-threshold": 80,
+      "format": "{icon} {temperatureC}°C",
+      "format-icons": ["", "", "", "", ""],
+      "tooltip": false
     },
 
     "tray": {
