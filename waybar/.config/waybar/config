@@ -36,8 +36,6 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-discharging": "{icon} {capacity}% {time}",
-    "format-empty": "",
-    "format-full": "",
     "format-icons": [
       "",
       "",
@@ -47,11 +45,14 @@
     ],
     "format-plugged": " {capacity}%",
     "format-time": "({H}:{M})",
-    "full-at": 99,
     "states": {
-      "warning": 30,
-      "critical": 15
+      "critical": 15,
+      "empty": 5,
+      "warning": 30
     },
+    "full-at": 98,
+    "format-empty": "",
+    "format-full": ""
   },
 
   "clock": {
@@ -64,7 +65,7 @@
 
   "cpu": {
     "states": {
-      "warning": 60,
+      "warning": 70,
       "critical": 90
     },
     "format": " {usage}%",
@@ -90,7 +91,7 @@
 
   "memory": {
     "states": {
-      "warning": 60,
+      "warning": 70,
       "critical": 90
     },
     "format": " {}%",

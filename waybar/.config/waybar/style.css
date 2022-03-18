@@ -42,6 +42,7 @@ window#waybar.hidden { opacity: 0.2; }
 #clock,
 #cpu,
 #custom-weather,
+#disk,
 #memory,
 #mode,
 #network,
@@ -58,11 +59,20 @@ window#waybar.hidden { opacity: 0.2; }
 }
 
 #battery { color: #8fbcbb; }
-#battery.critical:not(.charging) { color: #bf616a; }
-
-#network.disconnected { color: #bf616a; }
-
-#pulseaudio.muted { color: #bf616a; }
-
 #temperature { color: #88c0d0; }
-#temperature.critical { color: #bf616a; }
+
+#battery.warning,
+#cpu.warning,
+#disk.warning,
+#memory.warning {
+  color: #c6c2a5;
+}
+
+#battery.critical:not(.charging),
+#cpu.critical,
+#disk.critical,
+#memory.critical,
+#pulseaudio.muted,
+#temperature.critical {
+  color: #bf616a;
+}
