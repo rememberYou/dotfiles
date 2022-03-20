@@ -1,0 +1,7 @@
+[Unit]
+Description=GnuPG Refresh Keys
+After=network.target network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/gpg --refresh-keys
