@@ -1,62 +1,107 @@
-# To use this configuration file, you will need to:
-#
-# 1. Save your gmail password in a file which you will encrypt with GPG:
-# `gpg --recipient $GPGKEY --encrypt gpg -c mbsyncpass && rm mbsyncpass`
-#
-# 2. Change the "PassCmd" field to indicate the path to your previously
-# created encrypted file containing your Gmail password.
-#
-# 3. Change the "User" field to indicate your Gmail username.
-#
-# 4. Create the root folder to store your emails.
-# `mkdir -p ~/Maildir/gmail/{Drafts,Sent,Trash}`
+# To use this Gmail configuration file:
+# 1. Change the "User" and "PassCmd" fields
+# 2. Create the root folder to store your emails (e.g., mails):
+#    `mkdir -p ~/mails`
+# 3. If you don't have 2FA, autorize "less secure" apps from accessing your
+#    emails over IMAP: https://myaccount.google.com/lesssecureapps
 
 Create Both
+Expunge Both
 SyncState *
 
-IMAPAccount gmail
+# terencio.agozzino@gmail.com
+
+IMAPAccount terencio-agozzino
 Host imap.gmail.com
 User terencio.agozzino
-PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.config/gnupg/shared/mbsyncpass.gpg"
+PassCmd "pass email/gmail/terencio.agozzino"
 SSLType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
-IMAPStore gmail-remote
-Account gmail
+IMAPStore personal-terencio-remote
+Account terencio-agozzino
 
-MaildirStore gmail-local
+MaildirStore personal-terencio-local
 Subfolders Verbatim
-Path ~/mails/gmail/
-Inbox ~/mails/gmail/Inbox
+Path ~/mails/personal/terencio-agozzino/
+Inbox ~/mails/personal/terencio-agozzino/inbox
 
-Channel gmail-all
-Far :gmail-remote:"[Gmail]/All Mail"
-Near :gmail-local:"All Mail"
+Channel personal-terencio-all
+Far :personal-terencio-remote:"[Gmail]/All Mail"
+Near :personal-terencio-local:"all"
 
-Channel gmail-draft
-Far :gmail-remote:"[Gmail]/Drafts"
-Near :gmail-local:"Drafts"
+Channel personal-terencio-draft
+Far :personal-terencio-remote:"[Gmail]/Drafts"
+Near :personal-terencio-local:"drafts"
 
-Channel gmail-inbox
-Far :gmail-remote:
-Near :gmail-local:
+Channel personal-terencio-inbox
+Far :personal-terencio-remote:
+Near :personal-terencio-local:
 Patterns "INBOX"
 
-Channel gmail-sent
-Far :gmail-remote:"[Gmail]/Sent Mail"
-Near :gmail-local:"Sent"
+Channel personal-terencio-sent
+Far :personal-terencio-remote:"[Gmail]/Sent Mail"
+Near :personal-terencio-local:"sent"
 
-Channel gmail-starred
-Far :gmail-remote:"[Gmail]/Starred"
-Near :gmail-local:"Starred"
+Channel personal-terencio-starred
+Far :personal-terencio-remote:"[Gmail]/Starred"
+Near :personal-terencio-local:"starred"
 
-Channel gmail-trash
-Far :gmail-remote:"[Gmail]/Trash"
-Near :gmail-local:"Trash"
+Channel personal-terencio-trash
+Far :personal-terencio-remote:"[Gmail]/Trash"
+Near :personal-terencio-local:"trash"
 
-Group gmail
-Channel gmail-all
-Channel gmail-draft
-Channel gmail-sent
-Channel gmail-starred
-Channel gmail-trash
+Group terencio-agozzino
+Channel personal-terencio-all
+Channel personal-terencio-draft
+Channel personal-terencio-sent
+Channel personal-terencio-starred
+Channel personal-terencio-trash
+
+# erroriamnotfound@gmail.com
+
+IMAPAccount erroriamnotfound
+Host imap.gmail.com
+User erroriamnotfound
+PassCmd "pass email/gmail/erroriamnotfound"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+IMAPStore personal-error-remote
+Account erroriamnotfound
+
+MaildirStore personal-error-local
+Subfolders Verbatim
+Path ~/mails/personal/erroriamnotfound/
+Inbox ~/mails/personal/erroriamnotfound/inbox
+
+Channel personal-error-all
+Far :personal-error-remote:"[Gmail]/All Mail"
+Near :personal-error-local:"all"
+
+Channel personal-error-draft
+Far :personal-error-remote:"[Gmail]/Drafts"
+Near :personal-error-local:"drafts"
+
+Channel personal-error-inbox
+Far :personal-error-remote:
+Near :personal-error-local:
+Patterns "INBOX"
+
+Channel personal-error-sent
+Far :personal-error-remote:"[Gmail]/Sent Mail"
+Near :personal-error-local:"sent"
+
+Channel personal-error-starred
+Far :personal-error-remote:"[Gmail]/Starred"
+Near :personal-error-local:"starred"
+
+Channel personal-error-trash
+Far :personal-error-remote:"[Gmail]/Trash"
+Near :personal-error-local:"trash"
+
+Group erroriamnotfound
+Channel personal-error-all
+Channel personal-error-draft
+Channel personal-error-sent
+Channel personal-error-starred
