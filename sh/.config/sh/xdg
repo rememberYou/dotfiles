@@ -46,4 +46,5 @@ export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export ZSH_COMPDUMP="$XDG_CACHE_HOME/zsh/zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 export _Z_DATA="$XDG_DATA_HOME/z/data"
 
+# Useful for mbsync.service
 systemctl import-environment --user GNUPGHOME PASSWORD_STORE_DIR
