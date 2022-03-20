@@ -48,6 +48,7 @@
     "states": {
       "critical": 15,
       "empty": 5,
+      "full": 100,
       "warning": 30
     },
     "full-at": 98,
