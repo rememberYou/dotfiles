@@ -1,12 +1,7 @@
-input "9456:320:Metadot_-_Das_Keyboard_Das_Keyboard" {
-    xkb_layout us_qwerty-fr
-    repeat_delay 330
-    repeat_rate 25
-}
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input "1:1:AT_Translated_Set_2_keyboard" {
+input "type:keyboard" {
     xkb_layout us_qwerty-fr
     repeat_delay 330
     repeat_rate 25
