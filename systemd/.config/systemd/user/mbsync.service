@@ -1,10 +1,11 @@
 [Unit]
-Description=Mailbox synchronization service
+Description=Mailbox Synchronization Service
+Documentation=man:mbsync(1)
 Wants=network-online.target
 Requires=gpg-agent.socket
 After=network-online.target gpg-agent.socket network.target dbus.socket
 
 [Service]
 Type=oneshot
-ExecStart=mbsync -c /home/someone/.config/isync/mbsyncrc -a
+ExecStart=mbsync -c %h/.config/isync/mbsyncrc -a
 Environment=MU_HOME="%C/mu"
