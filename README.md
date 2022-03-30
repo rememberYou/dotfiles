@@ -29,7 +29,6 @@ have have about these dotfiles. Feel free to visit them ☺
 List of files:
 
 ```
- alacritty       ➔ cross-platform, GPU-accelerated terminal emulator
  bash            ➔ bash settings, aliases, and custom prompts
  bin             ➔ various useful scripts (e.g. borg, rofi)
  git             ➔ global git config and aliases
