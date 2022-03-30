@@ -31,6 +31,7 @@ List of files:
 ```
  bash            ➔ bash settings, aliases, and custom prompts
  bin             ➔ various useful scripts (e.g. borg, rofi)
+ foot            ➔ fast, lightweight, and minimalistic Wayland terminal emulator
  git             ➔ global git config and aliases
  gnupg           ➔ allows you to encrypt and sign your data and communication
  htop            ➔ interactive process viewer
