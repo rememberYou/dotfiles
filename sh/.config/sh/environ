@@ -73,7 +73,7 @@ export READER="evince"
 export SAVEHIST=10000
 
 # Use alacritty as default terminal.
-export TERMINAL="alacritty"
+export TERMINAL="foot"
 
 # Add temporary files according to the user.
 export TMPDIR="/tmp/$USER"
