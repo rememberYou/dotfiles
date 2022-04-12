@@ -120,8 +120,8 @@
       ]
     },
     "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-    "on-click-middle": "pavucontrol-qt",
-    "on-click-right": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+    "on-click-right": "pavucontrol-qt",
     "tooltip": false
   },
 
