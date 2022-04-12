@@ -1,3 +1,17 @@
+
+@define-color bgcolor #2e3440;
+@define-color fgcolor #ffffff;
+@define-color border_bottom #c6baa5;
+
+@define-color hover #a5a294;
+@define-color focus #42414a;
+
+@define-color critical #bf616a;
+@define-color warning #bf8761;
+
+@define-color green #8fbcbb;
+@define-color blue #88c0d0;
+
 * {
   border: none;
   border-radius: 0;
@@ -7,9 +21,9 @@
 }
 
 window#waybar {
-  background-color: #2e3440;
+  background-color: @bgcolor;
   border-bottom: 3px solid rgba(66, 65, 74, 0.5);
-  color: #ffffff;
+  color: @fgcolor;
   transition-property: background-color;
   transition-duration: .5s;
 }
@@ -19,7 +33,7 @@ window#waybar.hidden { opacity: 0.2; }
 #workspaces button {
   background-color: transparent;
   border-bottom: 3px solid transparent;
-  color: #ffffff;
+  color: @fgcolor;
   padding: 0 5px;
 }
 
@@ -27,15 +41,15 @@ window#waybar.hidden { opacity: 0.2; }
 #workspaces button:hover {
   background: rgba(16, 12, 16, 0.2);
   box-shadow: inherit;
-  border-bottom: 3px solid #a5a294;
+  border-bottom: 3px solid @hover;
   text-shadow: inherit;
 }
 
 #workspaces button.focused {
-  background-color: #42414a;
-  border-bottom: 3px solid #c6baa5;
+  background-color: @focus;
+  border-bottom: 3px solid @border_bottom;
 }
-#workspaces button.urgent { background-color: #bf616a; }
+#workspaces button.urgent { background-color: @critical; }
 
 #backlight,
 #battery,
@@ -50,29 +64,24 @@ window#waybar.hidden { opacity: 0.2; }
 #temperature {
   padding: 0 10px;
   margin: 0 4px;
-  color: #ffffff;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
-#battery { color: #8fbcbb; }
-#temperature { color: #88c0d0; }
+#battery { color: @green; }
+#temperature { color: @blue; }
 
 #battery.warning,
 #cpu.warning,
 #disk.warning,
 #memory.warning {
-  color: #c6c2a5;
+  color: @warning;
 }
 
 #battery.critical:not(.charging),
 #cpu.critical,
 #disk.critical,
 #memory.critical,
+#network.disconnected,
 #pulseaudio.muted,
 #temperature.critical {
-  color: #bf616a;
+  color: @critical;
 }
