@@ -84,7 +84,7 @@ alias n='cd $XDG_DATA_HOME/notebooks/'
 alias q='cd $XDG_DATA_HOME/qemu/'
 
 # nmcli
-alias wifi='nmcli device wifi list'
+alias wifi='nmcli device wifi rescan && nmcli device wifi list'
 
 # pacman
 alias inpac='pacman -Qmq | sort'
