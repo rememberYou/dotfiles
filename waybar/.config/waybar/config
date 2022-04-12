@@ -101,8 +101,9 @@
 
   "network": {
     "format-wifi": " {essid} ({signalStrength}%)",
-    "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
     "format-disconnected": "睊 N/A",
+    "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
+    "format-linked": " {ifname}: No IP",
     "on-click-right": "nmcli dev wifi rescan && alacritty -e nmtui",
     "tooltip-format-wifi": "{essid} ({ifname})\nFreq: {frequency}MHz\nStrength: {signaldBm}dBm ({signalStrength}%)\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",
     "tooltip-format-ethernet": "{ifname}\nIP: {ipaddr}/{cidr}\n⬆: {bandwidthUpBits} ⬇: {bandwidthDownBits}",

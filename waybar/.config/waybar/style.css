@@ -81,6 +81,7 @@ window#waybar.hidden { opacity: 0.2; }
 #disk.critical,
 #memory.critical,
 #network.disconnected,
+#network.linked,
 #pulseaudio.muted,
 #temperature.critical {
   color: @critical;
