@@ -12,7 +12,7 @@ set $browser qutebrowser
 set $locker swaylock --ignore-empty-password --show-failed-attempt --indicator-caps-lock --scaling fill \
                             -i ~/Pictures/locker.jpg
 set $font pango:Source Code Pro Medium 9
-set $term alacritty
+set $term foot
 
 # Global variables for workspaces.
 set $ws1 1
