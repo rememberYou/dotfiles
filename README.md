@@ -30,7 +30,7 @@ List of files:
 
 ```
  bash            ➔ bash settings, aliases, and custom prompts
- bin             ➔ various useful scripts (e.g. borg, rofi)
+ bin             ➔ various useful scripts (e.g., borg and rofi)
  foot            ➔ fast, lightweight, and minimalistic Wayland terminal emulator
  git             ➔ global git config and aliases
  gnupg           ➔ allows you to encrypt and sign your data and communication
@@ -44,12 +44,12 @@ List of files:
  python          ➔ specific to Python
  qutebrowser     ➔ keyboard-focused browser with a minimal GUI
  rofi            ➔ window switcher, application launcher, ssh dialog and dmenu replacement
- sh              ➔ common to all shells (e.g. aliases, environment variables)
+ sh              ➔ common to all shells (e.g., aliases and environment variables)
  ssh             ➔ SSH settings
  sway            ➔ i3-compatible Wayland compositor
  systemd         ➔ systemd units
  tmux            ➔ terminal multiplexer
- waybar          ➔ Wayland bar for Sway and Wlroots based compositors
+ waybar          ➔ Wayland bar for sway and Wlroots based compositors
  x11             ➔ X11 settings
  zsh             ➔ zshell settings, aliases, and custom prompts
 ```
