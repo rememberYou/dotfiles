@@ -2,7 +2,6 @@
 # Read `man 5 sway-output` for more information about this section.
 
 output DP-1 pos 0 0 res 1920x1080
-output eDP-1 scale 2
 output eDP-1 pos 1920 0 res 2560x1440
 output * bg `/home/someone/.local/bin/wallpaper.py` fill
 focus output DP-1
