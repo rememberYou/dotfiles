@@ -1,11 +1,13 @@
 # Assign applications to their own workspace.
 # To find out class, run `xprop` and click on the window.
-assign [app_id="^foot"]               → $ws1
-assign [class="^qutebrowser$"]        → $ws2
-assign [class="^Chromium$"]           → $ws2
-assign [class="^Emacs$"]              → $ws3
-assign [class="^Gimp$"]               → $ws6
-assign [class="qemu-system-*"]        → $ws7
+assign [app_id="^foot"]                    → $ws1
+assign [class="^qutebrowser$"]             → $ws2
+assign [class="^Chromium$"]                → $ws2
+assign [class="^Emacs$"]                   → $ws3
+assign [class="^Gimp$"]                    → $ws7
+assign [class="qemu-system-*"]             → $ws7
+assign [class="Microsoft Teams - Preview"] → $ws6
+assign [class="Slack"]                     → $ws6
 
 for_window [class=.*] focus
 
