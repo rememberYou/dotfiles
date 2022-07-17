@@ -41,7 +41,6 @@ inputbar {
     children: 						[ prompt, entry ];
     expand:                         false;
     margin:                         0% 0% 0% 0%;
-    padding:                        0.5%;
     text-color:                     @fg;
 }
 
